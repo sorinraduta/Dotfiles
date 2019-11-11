@@ -1,1 +1,9 @@
 #include ".Xresources.d/dwm"
+
+{%@@ if profile == "MacBookPro" @@%}
+Xft.antialias:  true
+Xft.hinting:    true
+Xft.rgba:       rgba
+Xft.hintstyle:  hintfull
+Xft.dpi:        144
+{%@@ endif @@%}
