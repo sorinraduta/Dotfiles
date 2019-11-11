@@ -1,0 +1,46 @@
+config:
+  backup: true
+  banner: true
+  create: true
+  dotpath: ~/.dotfiles
+  ignoreempty: false
+  keepdot: false
+  longkey: false
+  showdiff: false
+  workdir: ~/.config/dotdrop
+dotfiles:
+  f_Xresources:
+    dst: ~/.Xresources
+    src: .Xresources
+  d_Xresources:
+    dst: ~/.Xresources.d
+    src: .Xresources.d
+  d_scripts:
+    dst: ~/.scripts
+    src: .scripts
+  f_zshrc:
+    dst: ~/.zshrc
+    src: .zshrc
+  # f_zsh-theme:
+  #   dst: ~/.oh-my-zsh/themes/disconnect.zsh-theme
+  #   src: .oh-my-zsh/themes/disconnect.zsh-theme
+  d_wal-templates:
+    dst: ~/.config/wal/templates
+    src: wal_templates
+  f_compton:
+    dst: ~/.config/compton/compton.conf
+    src: compton.conf
+  # f_rofi:
+  #   dst: ~/.config/rofi/disconnect.rasi
+  #   src: .config/rofi/disconnect.rasi
+profiles:
+  disconnect:
+    dotfiles:
+    - f_Xresources
+    - d_Xresources
+    - d_scripts
+    - f_zshrc
+    # - f_zsh-theme
+    - d_wal-templates
+    - f_compton
+    # - f_rofi
