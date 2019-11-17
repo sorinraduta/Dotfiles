@@ -30,9 +30,9 @@ dotfiles:
   f_compton:
     dst: ~/.config/compton/compton.conf
     src: compton.conf
-  # f_rofi:
-  #   dst: ~/.config/rofi/disconnect.rasi
-  #   src: .config/rofi/disconnect.rasi
+  f_rofi:
+    dst: ~/.config/rofi/disconnect.rasi
+    src: disconnect.rasi
 profiles:
   disconnect:
     dotfiles:
@@ -43,4 +43,4 @@ profiles:
     - f_zsh-theme
     - d_wal-templates
     - f_compton
-    # - f_rofi
+    - f_rofi

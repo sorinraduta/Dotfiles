@@ -1,4 +1,5 @@
 #include ".Xresources.d/dwm"
+#include ".Xresources.d/rofi"
 
 {%@@ if profile == "MacBookPro" @@%}
 Xft.antialias:  true
