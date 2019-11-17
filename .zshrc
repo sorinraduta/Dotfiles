@@ -94,3 +94,5 @@ source $ZSH/oh-my-zsh.sh
 alias dco="docker-compose"
 alias pac="sudo pacman --noconfirm"
 alias mci="sudo make clean install"
+
+echo | fortune | cowsay

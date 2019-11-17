@@ -1,6 +1,6 @@
 #!/bin/bash
 
-source ./lockscreen.sh
+source /home/rappy/.scripts/lockscreen.sh
 wallpapers_dir=/home/rappy/.wallpapers
 used_wallpapers_file=/home/rappy/.cache/.used_wallpapers
 
