@@ -1,1 +1,2 @@
- rofi.theme: disconnect
+ rofi.theme:    disconnect
+ rofi.modi:     drun
