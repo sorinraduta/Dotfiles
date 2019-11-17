@@ -21,9 +21,9 @@ dotfiles:
   f_zshrc:
     dst: ~/.zshrc
     src: .zshrc
-  # f_zsh-theme:
-  #   dst: ~/.oh-my-zsh/themes/disconnect.zsh-theme
-  #   src: .oh-my-zsh/themes/disconnect.zsh-theme
+  f_zsh-theme:
+    dst: ~/.oh-my-zsh/themes/disconnect.zsh-theme
+    src: disconnect.zsh-theme
   d_wal-templates:
     dst: ~/.config/wal/templates
     src: wal_templates
@@ -40,7 +40,7 @@ profiles:
     - d_Xresources
     - d_scripts
     - f_zshrc
-    # - f_zsh-theme
+    - f_zsh-theme
     - d_wal-templates
     - f_compton
     # - f_rofi
