@@ -33,6 +33,9 @@ dotfiles:
   f_rofi:
     dst: ~/.config/rofi/disconnect.rasi
     src: disconnect.rasi
+  f_polybar:
+    dst: ~/.config/polybar/config
+    src: polybar.conf
 profiles:
   disconnect:
     dotfiles:
@@ -44,3 +47,4 @@ profiles:
     - d_wal-templates
     - f_compton
     - f_rofi
+    - f_polybar
