@@ -62,7 +62,7 @@ ZSH_THEME="disconnect"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git extract z)
+plugins=(git extract z ssh-agent)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -94,5 +94,6 @@ source $ZSH/oh-my-zsh.sh
 alias dco="docker-compose"
 alias pac="sudo pacman --noconfirm"
 alias mci="sudo make clean install"
+alias reload="source ~/.zshrc"
 
 echo | fortune | cowsay
