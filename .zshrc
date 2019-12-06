@@ -2,7 +2,12 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
+{%@@ if profile == "disconnect" @@%}
   export ZSH="/home/rappy/.oh-my-zsh"
+{%@@ elif profile == "work" @@%}
+  export ZSH="/home/sorin/.oh-my-zsh"
+  export DOCKER_HOST=/run/containerd/containerd.sock
+{%@@ endif @@%}
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -95,5 +100,12 @@ alias dco="docker-compose"
 alias pac="sudo pacman --noconfirm"
 alias mci="sudo make clean install"
 alias reload="source ~/.zshrc"
+
+{%@@ if profile == "work" @@%}
+alias dco="sudo docker-compose"
+alias docker-compose="sudo docker-compose"
+alias docker="sudo docker"
+alias proceduresls="node ~/Downloads/rpc-test/index.js"
+{%@@ endif @@%}
 
 echo | fortune | cowsay

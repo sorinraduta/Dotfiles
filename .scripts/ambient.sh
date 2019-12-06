@@ -1,8 +1,8 @@
 #!/bin/bash
 
-source /home/rappy/.scripts/lockscreen.sh
-wallpapers_dir=/home/rappy/.wallpapers
-used_wallpapers_file=/home/rappy/.cache/.used_wallpapers
+source /home/sorin/.scripts/lockscreen.sh
+wallpapers_dir=/home/sorin/.wallpapers
+used_wallpapers_file=/home/sorin/.cache/.used_wallpapers
 
 cd $wallpapers_dir
 

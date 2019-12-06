@@ -1,7 +1,7 @@
 #!/bin/bash
 
-lockscreens_dir=/home/rappy/.wallpapers
-used_lockscreens_file=/home/rappy/.cache/.used_lockscreens
+lockscreens_dir=/home/sorin/.wallpapers
+used_lockscreens_file=/home/sorin/.cache/.used_lockscreens
 
 cd $lockscreens_dir
 
@@ -20,5 +20,5 @@ do
 done
 
 echo $random_lockscreen >> $used_lockscreens_file
-cp $random_lockscreen /home/rappy/.lockscreen.
-mogrify -format png /home/rappy/.lockscreen.
+cp $random_lockscreen /home/sorin/.lockscreen.
+mogrify -format png /home/sorin/.lockscreen.
