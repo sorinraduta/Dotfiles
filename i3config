@@ -112,40 +112,98 @@ bindsym $mod+a focus parent
 #bindsym $mod+d focus child
 
 # workspace variables
-set $workspace1 "1 "
-set $workspace2 "2 "
-set $workspace3 "3 "
-set $workspace4 "4 "
-set $workspace5 "5 "
-set $workspace6 "6 "
-set $workspace7 7
-set $workspace8 8
-set $workspace9 9
-set $workspace10 "0 "
+set $workspaceMain1 "1 Browser"
+set $workspaceMain2 "2 Code"
+set $workspaceMain3 "3 Terminal"
+set $workspaceMain4 "4 "
+set $workspaceMain5 "5 "
+set $workspaceMain6 "6 "
+set $workspaceMain7 "7 main"
+set $workspaceMain8 "8 main"
+set $workspaceMain9 "9 main"
+set $workspaceMain10 "0 main"
+
+set $workspaceSecondary1 "1"
+set $workspaceSecondary2 "2"
+set $workspaceSecondary3 "3"
+set $workspaceSecondary4 "4"
+set $workspaceSecondary5 "5"
+set $workspaceSecondary6 "6"
+set $workspaceSecondary7 "7"
+set $workspaceSecondary8 "8"
+set $workspaceSecondary9 "9"
+set $workspaceSecondary10 "10"
 
 # switch to workspace
-bindsym $mod+1 workspace $workspace1
-bindsym $mod+2 workspace $workspace2
-bindsym $mod+3 workspace $workspace3
-bindsym $mod+4 workspace $workspace4
-bindsym $mod+5 workspace $workspace5
-bindsym $mod+6 workspace $workspace6
-bindsym $mod+7 workspace $workspace7
-bindsym $mod+8 workspace $workspace8
-bindsym $mod+9 workspace $workspace9
-bindsym $mod+0 workspace $workspace10
+bindsym $mod+1 workspace $workspaceMain1
+bindsym $mod+2 workspace $workspaceMain2
+bindsym $mod+3 workspace $workspaceMain3
+bindsym $mod+4 workspace $workspaceMain4
+bindsym $mod+5 workspace $workspaceMain5
+bindsym $mod+6 workspace $workspaceMain6
+bindsym $mod+7 workspace $workspaceMain7
+bindsym $mod+8 workspace $workspaceMain8
+bindsym $mod+9 workspace $workspaceMain9
+bindsym $mod+0 workspace $workspaceMain10
+
+bindsym $mod+KP_End workspace $workspaceSecondary1
+bindsym $mod+KP_Down workspace $workspaceSecondary2
+bindsym $mod+KP_Next workspace $workspaceSecondary3
+bindsym $mod+KP_Left workspace $workspaceSecondary4
+bindsym $mod+KP_Begin workspace $workspaceSecondary5
+bindsym $mod+KP_Right workspace $workspaceSecondary6
+bindsym $mod+KP_Home workspace $workspaceSecondary7
+bindsym $mod+KP_Up workspace $workspaceSecondary8
+bindsym $mod+KP_Prior workspace $workspaceSecondary9
+bindsym $mod+KP_Insert workspace $workspaceSecondary10
 
 # move focused container to workspace
-bindsym $mod+Shift+1 move container to workspace $workspace1
-bindsym $mod+Shift+2 move container to workspace $workspace2
-bindsym $mod+Shift+3 move container to workspace $workspace3
-bindsym $mod+Shift+4 move container to workspace $workspace4
-bindsym $mod+Shift+5 move container to workspace $workspace5
-bindsym $mod+Shift+6 move container to workspace $workspace6
-bindsym $mod+Shift+7 move container to workspace $workspace7
-bindsym $mod+Shift+8 move container to workspace $workspace8
-bindsym $mod+Shift+9 move container to workspace $workspace9
-bindsym $mod+Shift+0 move container to workspace $workspace10
+bindsym $mod+Shift+1 move container to workspace $workspaceMain1
+bindsym $mod+Shift+2 move container to workspace $workspaceMain2
+bindsym $mod+Shift+3 move container to workspace $workspaceMain3
+bindsym $mod+Shift+4 move container to workspace $workspaceMain4
+bindsym $mod+Shift+5 move container to workspace $workspaceMain5
+bindsym $mod+Shift+6 move container to workspace $workspaceMain6
+bindsym $mod+Shift+7 move container to workspace $workspaceMain7
+bindsym $mod+Shift+8 move container to workspace $workspaceMain8
+bindsym $mod+Shift+9 move container to workspace $workspaceMain9
+bindsym $mod+Shift+0 move container to workspace $workspaceMain10
+
+bindsym $mod+Shift+KP_1 move container to workspace $workspaceSecondary1
+bindsym $mod+Shift+KP_2 move container to workspace $workspaceSecondary2
+bindsym $mod+Shift+KP_3 move container to workspace $workspaceSecondary3
+bindsym $mod+Shift+KP_4 move container to workspace $workspaceSecondary4
+bindsym $mod+Shift+KP_5 move container to workspace $workspaceSecondary5
+bindsym $mod+Shift+KP_6 move container to workspace $workspaceSecondary6
+bindsym $mod+Shift+KP_7 move container to workspace $workspaceSecondary7
+bindsym $mod+Shift+KP_8 move container to workspace $workspaceSecondary8
+bindsym $mod+Shift+KP_9 move container to workspace $workspaceSecondary9
+bindsym $mod+Shift+KP_0 move container to workspace $workspaceSecondary10
+
+set $monitorLeft "DisplayPort-0"
+set $monitorRight "HDMI-0"
+
+workspace $workspaceMain1 output $monitorLeft
+workspace $workspaceMain2 output $monitorLeft
+workspace $workspaceMain3 output $monitorLeft
+workspace $workspaceMain4 output $monitorLeft
+workspace $workspaceMain5 output $monitorLeft
+workspace $workspaceMain6 output $monitorLeft
+workspace $workspaceMain7 output $monitorLeft
+workspace $workspaceMain8 output $monitorLeft
+workspace $workspaceMain9 output $monitorLeft
+workspace $workspaceMain10 output $monitorLeft
+
+workspace $workspaceSecondary1 output $monitorRight
+workspace $workspaceSecondary2 output $monitorRight
+workspace $workspaceSecondary3 output $monitorRight
+workspace $workspaceSecondary4 output $monitorRight
+workspace $workspaceSecondary5 output $monitorRight
+workspace $workspaceSecondary6 output $monitorRight
+workspace $workspaceSecondary7 output $monitorRight
+workspace $workspaceSecondary8 output $monitorRight
+workspace $workspaceSecondary9 output $monitorRight
+workspace $workspaceSecondary10 output $monitorRight
 
 # Borders
 # default_border pixel 2
@@ -153,13 +211,13 @@ default_border normal 1
 hide_edge_borders both
 
 # assign apps to workspaces
-assign [class="Chromium-browser"] $workspace1
-assign [class="Google-chrome"] $workspace1
+assign [class="Chromium-browser"] $workspaceMain1
+assign [class="Google-chrome"] $workspaceMain1
 assign [class="Code"] $workspace2
-assign [class="Gnome-terminal"] $workspace3
-assign [class="discord"] $workspace4
-assign [class="Spotify"] $workspace6
-for_window [class="Spotify"] move to workspace $workspace10 #hack
+assign [class="Gnome-terminal"] $workspaceSecondary1
+assign [class="discord"] $workspaceSecondary4
+assign [class="Spotify"] $workspaceSecondary4
+for_window [class="Spotify"] move to workspace $workspaceSecondary10 #hack
 
 # Focus apps at launch
 for_window [class=".*"] focus
@@ -208,24 +266,24 @@ bindsym $mod+r mode "resize"
   client.focused          $base01 $base01    $base07 $base0F
   client.focused_inactive $base02 $base02    $base03 $base0F
   client.unfocused        $base02 $base02    $base03 $base0F
-  client.urgent           $base02 $base08    $base00 $base0F
+  client.urgent           $base02 $base09    $base00 $base0F
 
-# Bar
-bar {
-        font pango: System San Francisco Display, FontAwesome 8
-        status_command i3blocks -c ~/.config/i3/i3blocks.conf
-        position top
-        colors {
-                separator  $base03
-                background #383838
-                statusline $base05
-                #                  border  background text
-                focused_workspace  $base01 $base01    $base07
-                active_workspace   $base01 $base02    $base03
-                inactive_workspace $base01 $base01    $base03
-                urgent_workspace   $base01 $base01    $base08
-        }
-}
+## Bar
+#bar {
+#        font pango: System San Francisco Display, FontAwesome 8
+#        status_command i3blocks -c ~/.config/i3/i3blocks.conf
+#        position top
+#        colors {
+#                separator  $base03
+#                background #383838
+#                statusline $base05
+#                #                  border  background text
+#                focused_workspace  $base01 $base01    $base07
+#                active_workspace   $base01 $base02    $base03
+#                inactive_workspace $base01 $base01    $base03
+#                urgent_workspace   $base01 $base01    $base09
+#        }
+#}
 
 # https://faq.i3wm.org/question/3747/enabling-multimedia-keys/?answer=3759#post-id-3759
 # Pulse Audio controls
@@ -262,4 +320,4 @@ bindsym $mod+Escape exec i3lock --color "$base02"
 exec_always ~/scripts/autostart.sh
 
 # wallpaper
-//
+#
