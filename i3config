@@ -211,10 +211,16 @@ default_border normal 1
 hide_edge_borders both
 
 # assign apps to workspaces
-assign [class="Chromium-browser"] $workspaceMain1
-assign [class="Google-chrome"] $workspaceMain1
-assign [class="Code"] $workspace2
+assign [class="Chromium" window_role="browser"] $workspaceMain1
+assign [class="Chromium" window_role="pop-up"] $workspaceSecondary2
+assign [class="Google-chrome" window_role="browser"] $workspaceMain1
+assign [class="Google-chrome" window_role="pop-up"] $workspaceSecondary2
+
+assign [class="Code"] $workspaceMain2
+assign [class="code-oss"] $workspaceMain2
+
 assign [class="Gnome-terminal"] $workspaceSecondary1
+assign [class="feh"] $workspaceSecondary10
 assign [class="discord"] $workspaceSecondary4
 assign [class="Spotify"] $workspaceSecondary4
 for_window [class="Spotify"] move to workspace $workspaceSecondary10 #hack
@@ -315,6 +321,9 @@ exec --no-startup-id i3-msg workspace ""
 
 # lockscreen
 bindsym $mod+Escape exec i3lock --color "$base02"
+
+# screenshot
+bindsym $mod+p exec ~/.scripts/screenshot.sh
 
 # startup
 exec_always ~/scripts/autostart.sh
