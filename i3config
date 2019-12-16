@@ -11,6 +11,11 @@
 
 set $mod Mod4
 
+set $color1 #17223b
+set $color2 #263859
+set $color3 #6b778d
+set $color4 #ff6768
+
 set $base00 #101218
 set $base01 #1f222d
 set $base02 #252936
@@ -115,24 +120,24 @@ bindsym $mod+a focus parent
 set $workspaceMain1 "1 Browser"
 set $workspaceMain2 "2 Code"
 set $workspaceMain3 "3 Terminal"
-set $workspaceMain4 "4 "
-set $workspaceMain5 "5 "
-set $workspaceMain6 "6 "
+set $workspaceMain4 "4 main"
+set $workspaceMain5 "5 main"
+set $workspaceMain6 "6 main"
 set $workspaceMain7 "7 main"
 set $workspaceMain8 "8 main"
 set $workspaceMain9 "9 main"
-set $workspaceMain10 "0 main"
+set $workspaceMain10 "10 main"
 
-set $workspaceSecondary1 "1"
-set $workspaceSecondary2 "2"
-set $workspaceSecondary3 "3"
-set $workspaceSecondary4 "4"
-set $workspaceSecondary5 "5"
-set $workspaceSecondary6 "6"
-set $workspaceSecondary7 "7"
-set $workspaceSecondary8 "8"
-set $workspaceSecondary9 "9"
-set $workspaceSecondary10 "10"
+set $workspaceSecondary1 "1 secondary"
+set $workspaceSecondary2 "2 secondary"
+set $workspaceSecondary3 "3 secondary"
+set $workspaceSecondary4 "4 secondary"
+set $workspaceSecondary5 "5 secondary"
+set $workspaceSecondary6 "6 secondary"
+set $workspaceSecondary7 "7 secondary"
+set $workspaceSecondary8 "8 secondary"
+set $workspaceSecondary9 "9 secondary"
+set $workspaceSecondary10 "10 secondary"
 
 # switch to workspace
 bindsym $mod+1 workspace $workspaceMain1
@@ -210,19 +215,22 @@ workspace $workspaceSecondary10 output $monitorRight
 default_border normal 1
 hide_edge_borders both
 
+# Hide title
+new_window 1pixel
+for_window [class="^.*"] border pixel 2
+
 # assign apps to workspaces
 assign [class="Chromium" window_role="browser"] $workspaceMain1
-assign [class="Chromium" window_role="pop-up"] $workspaceSecondary2
 assign [class="Google-chrome" window_role="browser"] $workspaceMain1
-assign [class="Google-chrome" window_role="pop-up"] $workspaceSecondary2
-
 assign [class="Code"] $workspaceMain2
 assign [class="code-oss"] $workspaceMain2
 
 assign [class="Gnome-terminal"] $workspaceSecondary1
-assign [class="feh"] $workspaceSecondary10
+assign [class="Chromium" window_role="pop-up"] $workspaceSecondary2
+assign [class="Google-chrome" window_role="pop-up"] $workspaceSecondary2
 assign [class="discord"] $workspaceSecondary4
 assign [class="Spotify"] $workspaceSecondary4
+assign [class="feh"] $workspaceSecondary10
 for_window [class="Spotify"] move to workspace $workspaceSecondary10 #hack
 
 # Focus apps at launch
@@ -239,6 +247,11 @@ bindsym $mod+Shift+r restart# Sopcast instalation
 # http://ubuntuhandbook.org/index.php/2017/03/install-sopcast-player-ubuntu-16-04-16-10/
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+
+# Gaps
+gaps inner 10
+smart_gaps on
+smart_borders on
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -266,30 +279,12 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-
 # Widow Colours
 #                         border  background text    indicator
-  client.focused          $base01 $base01    $base07 $base0F
+  client.focused          $color4 $color4    $base07 $base0F
   client.focused_inactive $base02 $base02    $base03 $base0F
   client.unfocused        $base02 $base02    $base03 $base0F
   client.urgent           $base02 $base09    $base00 $base0F
-
-## Bar
-#bar {
-#        font pango: System San Francisco Display, FontAwesome 8
-#        status_command i3blocks -c ~/.config/i3/i3blocks.conf
-#        position top
-#        colors {
-#                separator  $base03
-#                background #383838
-#                statusline $base05
-#                #                  border  background text
-#                focused_workspace  $base01 $base01    $base07
-#                active_workspace   $base01 $base02    $base03
-#                inactive_workspace $base01 $base01    $base03
-#                urgent_workspace   $base01 $base01    $base09
-#        }
-#}
 
 # https://faq.i3wm.org/question/3747/enabling-multimedia-keys/?answer=3759#post-id-3759
 # Pulse Audio controls
@@ -312,9 +307,6 @@ bindsym XF86AudioPause exec playerctl play-pause
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
-# startup apps
-exec --no-startup-id compton
-
 # startup workspaces
 exec --no-startup-id i3-msg workspace ""
 exec --no-startup-id i3-msg workspace ""
@@ -326,7 +318,7 @@ bindsym $mod+Escape exec i3lock --color "$base02"
 bindsym $mod+p exec ~/.scripts/screenshot.sh
 
 # startup
-exec_always ~/scripts/autostart.sh
+exec_always ~/.scripts/autostart.sh
 
 # wallpaper
 #

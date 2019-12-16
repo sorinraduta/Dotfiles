@@ -24,5 +24,3 @@ echo $random_wallpaper >> $used_wallpapers_file
 
 wal -i $random_wallpaper
 feh --bg-fill $random_wallpaper
-xrdb -merge $HOME/.cache/wal/colors.dwm.Xresources
-xdotool key Super_L+Escape x r d b Control+i
