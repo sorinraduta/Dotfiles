@@ -9,6 +9,9 @@ config:
   showdiff: false
   workdir: ~/.config/dotdrop
 dotfiles:
+  # f_font_hack:
+  #   dst: ~/.local/share/fonts/
+  #   src: ./fonts
   f_Xresources:
     dst: ~/.Xresources
     src: .Xresources

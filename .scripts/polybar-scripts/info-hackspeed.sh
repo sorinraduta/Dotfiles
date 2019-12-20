@@ -5,7 +5,7 @@ KEYBOARD_ID="10"
 
 # cpm: characters per minute
 # wpm: words per minute (1 word = 5 characters)
-METRIC=cpm
+METRIC=wpm
 FORMAT="# %d $METRIC"
 
 INTERVAL=5

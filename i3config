@@ -224,6 +224,7 @@ assign [class="Chromium" window_role="browser"] $workspaceMain1
 assign [class="Google-chrome" window_role="browser"] $workspaceMain1
 assign [class="Code"] $workspaceMain2
 assign [class="code-oss"] $workspaceMain2
+assign [class="^Gimp"] $workspaceMain10
 
 assign [class="Gnome-terminal"] $workspaceSecondary1
 assign [class="Chromium" window_role="pop-up"] $workspaceSecondary2
@@ -308,8 +309,8 @@ bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
 # startup workspaces
-exec --no-startup-id i3-msg workspace ""
-exec --no-startup-id i3-msg workspace ""
+# exec --no-startup-id i3-msg workspace ""
+# exec --no-startup-id i3-msg workspace ""
 
 # lockscreen
 bindsym $mod+Escape exec i3lock --color "$base02"
