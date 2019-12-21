@@ -1,7 +1,7 @@
 #!/bin/bash
 
-lockscreens_dir=/home/sorin/.wallpapers
-used_lockscreens_file=/home/sorin/.cache/.used_lockscreens
+lockscreens_dir=$HOME/.wallpapers
+used_lockscreens_file=$HOME/.cache/.used_lockscreens
 
 cd $lockscreens_dir
 
@@ -20,5 +20,6 @@ do
 done
 
 echo $random_lockscreen >> $used_lockscreens_file
-cp $random_lockscreen /home/sorin/.lockscreen.
-mogrify -format png /home/sorin/.lockscreen.
+cp $random_lockscreen $HOME/.lockscreen.
+mogrify -format png $HOME/.lockscreen.
+xautolock -time 10 -locker "i3lock -t -i $HOME/.lockscreen.png"

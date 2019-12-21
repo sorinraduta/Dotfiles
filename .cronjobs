@@ -1,0 +1,2 @@
+@daily DISPLAY=:0.0 ~/.scripts/wallpaper.sh
+@daily ~/.scripts/lockscreen.sh

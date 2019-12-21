@@ -100,6 +100,8 @@ alias dco="docker-compose"
 alias pac="sudo pacman --noconfirm"
 alias mci="sudo make clean install"
 alias reload="source ~/.zshrc"
+alias dotfiles="dotdrop --cfg=~/.dotfiles/config.yaml"
+alias dot="dotdrop --cfg=~/.dotfiles/config.yaml -f install"
 
 {%@@ if profile == "work" @@%}
 alias dco="sudo docker-compose"

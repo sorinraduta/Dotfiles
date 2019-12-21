@@ -1,13 +1,13 @@
 config:
-  backup: true
-  banner: true
+  backup: false
+  banner: false
   create: true
   dotpath: ~/.dotfiles
   ignoreempty: false
   keepdot: false
   longkey: false
   showdiff: false
-  workdir: ~/.config/dotdrop
+  workdir: ~/.dotfiles
 dotfiles:
   # f_font_hack:
   #   dst: ~/.local/share/fonts/
@@ -15,6 +15,9 @@ dotfiles:
   f_xinitrc:
     dst: ~/.xinitrc
     src: .xinitrc
+  f_cronjobs:
+    dst: ~/.cronjobs
+    src: .cronjobs
   f_Xresources:
     dst: ~/.Xresources
     src: .Xresources
@@ -49,6 +52,7 @@ profiles:
   disconnect:
     dotfiles:
     - f_xinitrc
+    - f_cronjobs
     - f_Xresources
     - d_Xresources
     - d_scripts
@@ -62,6 +66,7 @@ profiles:
   work:
     dotfiles:
     - f_xinitrc
+    - f_cronjobs
     - f_Xresources
     - d_Xresources
     - d_scripts

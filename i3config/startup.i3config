@@ -4,4 +4,4 @@
 #  |___/\__\__,_|_|  \__|\_,_| .__/
 #                            |_|   
 
-exec_always ~/.scripts/autostart.sh
+# exec_always ~/.scripts/autostart.sh

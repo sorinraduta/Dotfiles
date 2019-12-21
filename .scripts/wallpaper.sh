@@ -1,8 +1,6 @@
 #!/bin/bash
-
-source /home/sorin/.scripts/lockscreen.sh
-wallpapers_dir=/home/sorin/.wallpapers
-used_wallpapers_file=/home/sorin/.cache/.used_wallpapers
+wallpapers_dir=$HOME/.wallpapers
+used_wallpapers_file=$HOME/.cache/.used_wallpapers
 
 cd $wallpapers_dir
 
@@ -22,5 +20,4 @@ done
 
 echo $random_wallpaper >> $used_wallpapers_file
 
-wal -i $random_wallpaper
 feh --bg-fill $random_wallpaper
