@@ -1,0 +1,44 @@
+#     _                                            
+#    /_\  _ __ _ __  ___ __ _ _ _ __ _ _ _  __ ___ 
+#   / _ \| '_ \ '_ \/ -_) _` | '_/ _` | ' \/ _/ -_)
+#  /_/ \_\ .__/ .__/\___\__,_|_| \__,_|_||_\__\___|
+#        |_|  |_|                                  
+
+# Font for window titles. Will also be used by the bar unless a different font
+# is used in the bar {} block below.
+font pango:System San Francisco Display 8
+
+# Colors
+# set $color1 #17223b
+# set $color2 #263859
+# set $color3 #6b778d
+# set $color4 #ff6768
+
+set $white  #ffffff
+set $grey   #888888
+set $urgent #900000
+set $color1 #010038
+set $color2 #293a80
+set $color3 #537ec5
+set $color4 #f39422
+
+# Widow Colors
+# state                 border  background text     indicator
+client.focused          $color4 $color4    $grey    $color4
+client.focused_inactive $color1 $color1    $grey    $color1
+client.unfocused        $color1 $color1    $white   $color1
+client.urgent           $urgent $urgent    $grey    $urgent
+
+# Borders
+default_border pixel 2
+default_border normal 1
+hide_edge_borders both
+
+# Hide title
+new_window 1pixel
+for_window [class="^.*"] border pixel 2
+
+# Gaps
+gaps inner 10
+smart_gaps on
+smart_borders on

@@ -12,6 +12,9 @@ dotfiles:
   # f_font_hack:
   #   dst: ~/.local/share/fonts/
   #   src: ./fonts
+  f_xinitrc:
+    dst: ~/.xinitrc
+    src: .xinitrc
   f_Xresources:
     dst: ~/.Xresources
     src: .Xresources
@@ -36,8 +39,8 @@ dotfiles:
   f_rofi:
     dst: ~/.config/rofi/disconnect.rasi
     src: disconnect.rasi
-  f_i3:
-    dst: ~/.config/i3/config
+  d_i3:
+    dst: ~/.config/i3/modules
     src: i3config
   f_polybar:
     dst: ~/.config/polybar/config
@@ -45,6 +48,7 @@ dotfiles:
 profiles:
   disconnect:
     dotfiles:
+    - f_xinitrc
     - f_Xresources
     - d_Xresources
     - d_scripts
@@ -53,10 +57,11 @@ profiles:
     - d_wal-templates
     - f_compton
     - f_rofi
-    - f_i3
+    - d_i3
     - f_polybar
   work:
     dotfiles:
+    - f_xinitrc
     - f_Xresources
     - d_Xresources
     - d_scripts
@@ -65,5 +70,5 @@ profiles:
     - d_wal-templates
     - f_compton
     - f_rofi
-    - f_i3
+    - d_i3
     - f_polybar
