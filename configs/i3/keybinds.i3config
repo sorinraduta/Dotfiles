@@ -105,7 +105,7 @@ bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
 # lockscreen
-bindsym $mod+Escape exec i3lock --color "$base02"
+bindsym $mod+Escape exec i3lock -t -i $HOME/.lockscreen.png
 
 # screenshot
 bindsym $mod+p exec ~/.scripts/screenshot.sh

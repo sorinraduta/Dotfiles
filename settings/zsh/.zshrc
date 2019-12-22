@@ -2,10 +2,8 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-{%@@ if profile == "disconnect" @@%}
-  export ZSH="/home/rappy/.oh-my-zsh"
-{%@@ elif profile == "work" @@%}
-  export ZSH="/home/sorin/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
+{%@@ if profile == "work" @@%}
   export DOCKER_HOST=/run/containerd/containerd.sock
 {%@@ endif @@%}
 
@@ -102,6 +100,9 @@ alias mci="sudo make clean install"
 alias reload="source ~/.zshrc"
 alias dotfiles="dotdrop --cfg=~/.dotfiles/config.yaml"
 alias dot="dotdrop --cfg=~/.dotfiles/config.yaml -f install"
+alias rm="rm -i"
+alias wallpaper="~/.dotfiles/scripts/wallpaper.sh"
+alias lockscreen="~/.dotfiles/scripts/lockscreen.sh"
 
 {%@@ if profile == "work" @@%}
 alias dco="sudo docker-compose"

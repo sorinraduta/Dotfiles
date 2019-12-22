@@ -32,16 +32,16 @@ dotfiles:
     src: settings/zsh/.zshrc
   f_zsh-theme:
     dst: ~/.oh-my-zsh/themes/disconnect.zsh-theme
-    src: zsh/disconnect.zsh-theme
+    src: settings/zsh/disconnect.zsh-theme
   d_wal-templates:
     dst: ~/.config/wal/templates
     src: settings/wal
   f_compton:
     dst: ~/.config/compton/compton.conf
-    src: config/compton
+    src: configs/compton
   f_rofi:
     dst: ~/.config/rofi/disconnect.rasi
-    src: config/rofi
+    src: configs/rofi
   d_i3:
     dst: ~/.config/i3/modules
     src: configs/i3
