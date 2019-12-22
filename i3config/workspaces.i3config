@@ -5,8 +5,13 @@
 #                          |_|                   
 
 # Define monitors
-set $monitorLeft "DisplayPort-0"
-set $monitorRight "HDMI-0"
+{%@@ if profile == "disconnect" @@%}
+set $mainMonitor "DVI-I-1"
+set $secondaryMonitor "VGA-2"
+{%@@ elif profile == "work" @@%}
+set $mainMonitor "DisplayPort-0"
+set $secondaryMonitor "HDMI-0"
+{%@@ endif @@%}
 
 
 # Define workspaces
@@ -94,27 +99,27 @@ bindsym $mod+Shift+KP_0 move container to workspace $workspaceSecondary10
 
 
 # Assign workspaces to monitors
-workspace $workspaceMain1 output $monitorLeft
-workspace $workspaceMain2 output $monitorLeft
-workspace $workspaceMain3 output $monitorLeft
-workspace $workspaceMain4 output $monitorLeft
-workspace $workspaceMain5 output $monitorLeft
-workspace $workspaceMain6 output $monitorLeft
-workspace $workspaceMain7 output $monitorLeft
-workspace $workspaceMain8 output $monitorLeft
-workspace $workspaceMain9 output $monitorLeft
-workspace $workspaceMain10 output $monitorLeft
+workspace $workspaceMain1 output $mainMonitor
+workspace $workspaceMain2 output $mainMonitor
+workspace $workspaceMain3 output $mainMonitor
+workspace $workspaceMain4 output $mainMonitor
+workspace $workspaceMain5 output $mainMonitor
+workspace $workspaceMain6 output $mainMonitor
+workspace $workspaceMain7 output $mainMonitor
+workspace $workspaceMain8 output $mainMonitor
+workspace $workspaceMain9 output $mainMonitor
+workspace $workspaceMain10 output $mainMonitor
 
-workspace $workspaceSecondary1 output $monitorRight
-workspace $workspaceSecondary2 output $monitorRight
-workspace $workspaceSecondary3 output $monitorRight
-workspace $workspaceSecondary4 output $monitorRight
-workspace $workspaceSecondary5 output $monitorRight
-workspace $workspaceSecondary6 output $monitorRight
-workspace $workspaceSecondary7 output $monitorRight
-workspace $workspaceSecondary8 output $monitorRight
-workspace $workspaceSecondary9 output $monitorRight
-workspace $workspaceSecondary10 output $monitorRight
+workspace $workspaceSecondary1 output $secondaryMonitor
+workspace $workspaceSecondary2 output $secondaryMonitor
+workspace $workspaceSecondary3 output $secondaryMonitor
+workspace $workspaceSecondary4 output $secondaryMonitor
+workspace $workspaceSecondary5 output $secondaryMonitor
+workspace $workspaceSecondary6 output $secondaryMonitor
+workspace $workspaceSecondary7 output $secondaryMonitor
+workspace $workspaceSecondary8 output $secondaryMonitor
+workspace $workspaceSecondary9 output $secondaryMonitor
+workspace $workspaceSecondary10 output $secondaryMonitor
 
 
 # Assign apps to workspaces

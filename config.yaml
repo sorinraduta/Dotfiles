@@ -62,7 +62,6 @@ profiles:
     - f_compton
     - f_rofi
     - d_i3
-    - f_polybar
   work:
     dotfiles:
     - f_xinitrc
@@ -76,4 +75,3 @@ profiles:
     - f_compton
     - f_rofi
     - d_i3
-    - f_polybar

@@ -63,9 +63,7 @@ get_session(){
     echo "dbus-launch ${dbus_args[*]}"
 }
 
-# Initialize script containing:
-# - merge i3config modules
-# - other scripts
-source $HOME/.scripts/initialize.sh
+# Merge i3config modules
+cat $HOME/.config/i3/modules/*.i3config > $HOME/.config/i3/config
 
 exec $(get_session)

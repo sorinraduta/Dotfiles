@@ -4,4 +4,18 @@
 #  |___/\__\__,_|_|  \__|\_,_| .__/
 #                            |_|   
 
-# exec_always ~/.scripts/autostart.sh
+
+exec_always --no-startup-id $HOME/.scripts/screenlayout.sh
+exec_always --no-startup-id $HOME/.scripts/wallpaper.sh
+exec_always --no-startup-id $HOME/.scripts/lockscreen.sh
+exec_always --no-startup-id polybar disconnect
+
+# Programs
+exec_always --no-startup-id compton -b -c --paint-on-overlay --respect-prop-shadow --config $HOME/.config/compton/compton.conf
+# exec_always --no-startup-id xfce4-power-manager &
+# exec_always --no-startup-id nm-applet 2>&1 > /dev/null &
+# exec_always --no-startup-id volnoti &
+
+# Other stuff
+exec_always --no-startup-id crontab $HOME/.cronjobs
+exec_always --no-startup-id echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf && sudo sysctl -p

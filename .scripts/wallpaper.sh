@@ -1,4 +1,5 @@
 #!/bin/bash
+
 wallpapers_dir=$HOME/.wallpapers
 used_wallpapers_file=$HOME/.cache/.used_wallpapers
 
