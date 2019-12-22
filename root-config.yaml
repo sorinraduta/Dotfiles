@@ -1,0 +1,22 @@
+config:
+  backup: false
+  banner: false
+  create: true
+  dotpath: .
+  ignoreempty: false
+  keepdot: false
+  longkey: false
+  showdiff: false
+  workdir: ~/.dotfiles
+dotfiles:
+  
+  f_lightdm:
+    dst: /etc/lightdm/lightdm.conf
+    src: configs/lightdm
+profiles:
+  disconnect:
+    dotfiles:
+    - f_lightdm
+  work:
+    dotfiles:
+    - f_lightdm

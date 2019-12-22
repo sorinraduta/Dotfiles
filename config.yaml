@@ -2,12 +2,13 @@ config:
   backup: false
   banner: false
   create: true
-  dotpath: ~/.dotfiles
+  dotpath: .
   ignoreempty: false
   keepdot: false
   longkey: false
   showdiff: false
   workdir: ~/.dotfiles
+
 dotfiles:
   # f_font_hack:
   #   dst: ~/.local/share/fonts/

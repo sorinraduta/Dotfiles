@@ -92,23 +92,25 @@ source $ZSH/oh-my-zsh.sh
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
+# alias zshconfig="mate $HOME/.zshrc"
+# alias ohmyzsh="mate $HOME/.oh-my-zsh"
 alias dco="docker-compose"
 alias pac="sudo pacman --noconfirm"
 alias mci="sudo make clean install"
-alias reload="source ~/.zshrc"
-alias dotfiles="dotdrop --cfg=~/.dotfiles/config.yaml"
-alias dot="dotdrop --cfg=~/.dotfiles/config.yaml -f install"
+alias reload="source $HOME/.zshrc"
+alias dotfiles="dotdrop --cfg=$HOME/.dotfiles/config.yaml"
+alias sudotfiles="sudo dotdrop --cfg=$HOME/.dotfiles/root-config.yaml"
+alias dot="dotdrop --cfg=$HOME/.dotfiles/config.yaml -f install"
+alias sudot="sudo dotdrop --cfg=$HOME/.dotfiles/root-config.yaml -f install"
 alias rm="rm -i"
-alias wallpaper="~/.dotfiles/scripts/wallpaper.sh"
-alias lockscreen="~/.dotfiles/scripts/lockscreen.sh"
+alias wallpaper="$HOME/.dotfiles/scripts/wallpaper.sh"
+alias lockscreen="$HOME/.dotfiles/scripts/lockscreen.sh"
 
 {%@@ if profile == "work" @@%}
 alias dco="sudo docker-compose"
 alias docker-compose="sudo docker-compose"
 alias docker="sudo docker"
-alias proceduresls="node ~/Downloads/rpc-test/index.js"
+alias proceduresls="node $HOME/Downloads/rpc-test/index.js"
 {%@@ endif @@%}
 
 echo | fortune | cowsay
