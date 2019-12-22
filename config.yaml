@@ -14,40 +14,40 @@ dotfiles:
   #   src: ./fonts
   f_xinitrc:
     dst: ~/.xinitrc
-    src: .xinitrc
+    src: settings/xinitrc
   f_cronjobs:
     dst: ~/.cronjobs
-    src: .cronjobs
+    src: settings/.cronjobs
   f_Xresources:
     dst: ~/.Xresources
-    src: .Xresources
+    src: settings/Xresources/.Xresources
   d_Xresources:
     dst: ~/.Xresources.d
-    src: .Xresources.d
+    src: settings/Xresources/.Xresources.d
   d_scripts:
     dst: ~/.scripts
-    src: .scripts
+    src: scripts
   f_zshrc:
     dst: ~/.zshrc
-    src: .zshrc
+    src: settings/zsh/.zshrc
   f_zsh-theme:
     dst: ~/.oh-my-zsh/themes/disconnect.zsh-theme
-    src: disconnect.zsh-theme
+    src: zsh/disconnect.zsh-theme
   d_wal-templates:
     dst: ~/.config/wal/templates
-    src: wal_templates
+    src: settings/wal
   f_compton:
     dst: ~/.config/compton/compton.conf
-    src: compton.conf
+    src: config/compton
   f_rofi:
     dst: ~/.config/rofi/disconnect.rasi
-    src: disconnect.rasi
+    src: config/rofi
   d_i3:
     dst: ~/.config/i3/modules
-    src: i3config
+    src: configs/i3
   f_polybar:
     dst: ~/.config/polybar/config
-    src: polybar
+    src: configs/polybar
 profiles:
   disconnect:
     dotfiles:
