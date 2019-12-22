@@ -12,7 +12,7 @@ config:
 dotfiles:
   # f_font_hack:
   #   dst: ~/.local/share/fonts/
-  #   src: ./fonts
+  #   src: fonts/hack/*
   f_profile:
     dst: ~/.profile
     src: settings/profile
@@ -39,16 +39,16 @@ dotfiles:
     src: settings/wal
   f_compton:
     dst: ~/.config/compton/compton.conf
-    src: configs/compton
+    src: configs/compton.conf
   f_rofi:
     dst: ~/.config/rofi/disconnect.rasi
-    src: configs/rofi
+    src: configs/rofi.rasi
   d_i3:
     dst: ~/.config/i3/modules
     src: configs/i3
   f_polybar:
     dst: ~/.config/polybar/config
-    src: configs/polybar
+    src: configs/polybar.conf
 profiles:
   disconnect:
     dotfiles:
@@ -63,6 +63,7 @@ profiles:
     - f_compton
     - f_rofi
     - d_i3
+    # - f_font_hack
   work:
     dotfiles:
     - f_profile
@@ -76,3 +77,4 @@ profiles:
     - f_compton
     - f_rofi
     - d_i3
+    # - f_font_hack
