@@ -13,9 +13,9 @@ dotfiles:
   # f_font_hack:
   #   dst: ~/.local/share/fonts/
   #   src: ./fonts
-  f_xinitrc:
-    dst: ~/.xinitrc
-    src: settings/xinitrc
+  f_profile:
+    dst: ~/.profile
+    src: settings/profile
   f_cronjobs:
     dst: ~/.cronjobs
     src: settings/.cronjobs
@@ -52,7 +52,7 @@ dotfiles:
 profiles:
   disconnect:
     dotfiles:
-    - f_xinitrc
+    - f_profile
     - f_cronjobs
     - f_Xresources
     - d_Xresources
@@ -65,7 +65,7 @@ profiles:
     - d_i3
   work:
     dotfiles:
-    - f_xinitrc
+    - f_profile
     - f_cronjobs
     - f_Xresources
     - d_Xresources

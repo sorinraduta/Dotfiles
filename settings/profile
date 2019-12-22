@@ -1,0 +1,3 @@
+#!/bin/bash
+
+cat $HOME/.config/i3/modules/*.i3config > $HOME/.config/i3/config

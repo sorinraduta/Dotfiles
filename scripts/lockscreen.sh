@@ -23,4 +23,5 @@ echo $random_lockscreen >> $used_lockscreens_file
 
 cp $random_lockscreen $HOME/.lockscreen.
 mogrify -format png $HOME/.lockscreen.
-xautolock -time 10 -locker "i3lock -t -i $HOME/.lockscreen.png"
+# xautolock -time 10 -locker "i3lock -t -i $HOME/.lockscreen.png"
+xautolock -time 10 -locker "dm-tool lock"

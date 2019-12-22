@@ -11,7 +11,7 @@ exec --no-startup-id $HOME/.scripts/lockscreen.sh
 exec --no-startup-id polybar disconnect
 
 # Programs
-exec --no-startup-id compton -b --config $HOME/.config/compton/compton.conf
+exec --no-startup-id compton -b -c --paint-on-overlay --respect-prop-shadow --config $HOME/.config/compton/compton.conf
 # exec --no-startup-id xfce4-power-manager &
 # exec --no-startup-id nm-applet 2>&1 > /dev/null &
 # exec --no-startup-id volnoti &
