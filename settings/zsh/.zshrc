@@ -105,6 +105,8 @@ alias sudot="sudo dotdrop --cfg=$HOME/.dotfiles/root-config.yaml -f install"
 alias rm="rm -i"
 alias wallpaper="$HOME/.dotfiles/scripts/wallpaper.sh"
 alias lockscreen="$HOME/.dotfiles/scripts/lockscreen.sh"
+alias resetwallpapers="rm $HOME/.cache/.used_wallpapers"
+alias resetlockscreens="rm $HOME/.cache/.used_lockscreens"
 
 {%@@ if profile == "work" @@%}
 alias dco="sudo docker-compose"

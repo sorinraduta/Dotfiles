@@ -1,8 +1,8 @@
-#  __      __       _                            
+#  __      __       _
 #  \ \    / /__ _ _| |__ ____ __  __ _ __ ___ ___
 #   \ \/\/ / _ \ '_| / /(_-< '_ \/ _` / _/ -_|_-<
 #    \_/\_/\___/_| |_\_\/__/ .__/\__,_\__\___/__/
-#                          |_|                   
+#                          |_|
 
 # Define monitors
 {%@@ if profile == "disconnect" @@%}
@@ -46,8 +46,8 @@ for_window [class="Lxappearance"] floating enable
 for_window [class="Gpick"] floating enable
 
 # Startup workspaces
-# exec --no-startup-id i3-msg workspace ""
-# exec --no-startup-id i3-msg workspace ""
+# exec --no-startup-id i3-msg workspace ""
+# exec --no-startup-id i3-msg workspace ""
 
 
 # Focus workspace
