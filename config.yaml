@@ -63,6 +63,7 @@ profiles:
     - f_compton
     - f_rofi
     - d_i3
+    - f_polybar
     # - f_font_hack
   work:
     dotfiles:
@@ -77,4 +78,5 @@ profiles:
     - f_compton
     - f_rofi
     - d_i3
+    - f_polybar
     # - f_font_hack

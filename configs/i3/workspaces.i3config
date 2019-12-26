@@ -15,27 +15,30 @@ set $secondaryMonitor "HDMI-0"
 
 
 # Define workspaces
-set $workspaceMain1 "1 Browser"
-set $workspaceMain2 "2 Text editting"
-set $workspaceMain3 "3 Chatting"
-set $workspaceMain4 "4 Music"
-set $workspaceMain5 "5 main"
-set $workspaceMain6 "6 main"
-set $workspaceMain7 "7 main"
-set $workspaceMain8 "8 main"
-set $workspaceMain9 "9 main"
-set $workspaceMain10 "10 Image editting"
+# set $workspaceMain1 "1 Browser"
+# set $workspaceMain2 "2 Text editting"
+# set $workspaceMain3 "3 Chatting"
+set $workspaceMain1 "1-main"
+set $workspaceMain2 "2-main"
+set $workspaceMain3 "3-main"
+set $workspaceMain4 "4-main"
+set $workspaceMain5 "5-main"
+set $workspaceMain6 "6-main"
+set $workspaceMain7 "7-main"
+set $workspaceMain8 "8-main"
+set $workspaceMain9 "9-main"
+set $workspaceMain10 "10-main"
 
-set $workspaceSecondary1 "1 Terminal"
-set $workspaceSecondary2 "2 Browser inspector"
-set $workspaceSecondary3 "3 Productivity"
-set $workspaceSecondary4 "4 secondary"
-set $workspaceSecondary5 "5 secondary"
-set $workspaceSecondary6 "6 secondary"
-set $workspaceSecondary7 "7 secondary"
-set $workspaceSecondary8 "8 secondary"
-set $workspaceSecondary9 "9 secondary"
-set $workspaceSecondary10 "10 Images"
+set $workspaceSecondary1 "1-secondary"
+set $workspaceSecondary2 "2-secondary"
+set $workspaceSecondary3 "3-secondary"
+set $workspaceSecondary4 "4-secondary"
+set $workspaceSecondary5 "5-secondary"
+set $workspaceSecondary6 "6-secondary"
+set $workspaceSecondary7 "7-secondary"
+set $workspaceSecondary8 "8-secondary"
+set $workspaceSecondary9 "9-secondary"
+set $workspaceSecondary10 "10-secondary"
 
 
 # Focus container at launch
@@ -74,28 +77,28 @@ bindsym $mod+KP_Prior workspace $workspaceSecondary9
 bindsym $mod+KP_Insert workspace $workspaceSecondary10
 
 
-# Move focused container to workspace
-bindsym $mod+Shift+1 move container to workspace $workspaceMain1
-bindsym $mod+Shift+2 move container to workspace $workspaceMain2
-bindsym $mod+Shift+3 move container to workspace $workspaceMain3
-bindsym $mod+Shift+4 move container to workspace $workspaceMain4
-bindsym $mod+Shift+5 move container to workspace $workspaceMain5
-bindsym $mod+Shift+6 move container to workspace $workspaceMain6
-bindsym $mod+Shift+7 move container to workspace $workspaceMain7
-bindsym $mod+Shift+8 move container to workspace $workspaceMain8
-bindsym $mod+Shift+9 move container to workspace $workspaceMain9
-bindsym $mod+Shift+0 move container to workspace $workspaceMain10
+# Move focused container to workspace and focuse it
+bindsym $mod+Shift+1 move container to workspace $workspaceMain1; workspace $workspaceMain1
+bindsym $mod+Shift+2 move container to workspace $workspaceMain2; workspace $workspaceMain2
+bindsym $mod+Shift+3 move container to workspace $workspaceMain3; workspace $workspaceMain3
+bindsym $mod+Shift+4 move container to workspace $workspaceMain4; workspace $workspaceMain4
+bindsym $mod+Shift+5 move container to workspace $workspaceMain5; workspace $workspaceMain5
+bindsym $mod+Shift+6 move container to workspace $workspaceMain6; workspace $workspaceMain6
+bindsym $mod+Shift+7 move container to workspace $workspaceMain7; workspace $workspaceMain7
+bindsym $mod+Shift+8 move container to workspace $workspaceMain8; workspace $workspaceMain8
+bindsym $mod+Shift+9 move container to workspace $workspaceMain9; workspace $workspaceMain9
+bindsym $mod+Shift+0 move container to workspace $workspaceMain10; workspace $workspaceMain10
 
-bindsym $mod+Shift+KP_1 move container to workspace $workspaceSecondary1
-bindsym $mod+Shift+KP_2 move container to workspace $workspaceSecondary2
-bindsym $mod+Shift+KP_3 move container to workspace $workspaceSecondary3
-bindsym $mod+Shift+KP_4 move container to workspace $workspaceSecondary4
-bindsym $mod+Shift+KP_5 move container to workspace $workspaceSecondary5
-bindsym $mod+Shift+KP_6 move container to workspace $workspaceSecondary6
-bindsym $mod+Shift+KP_7 move container to workspace $workspaceSecondary7
-bindsym $mod+Shift+KP_8 move container to workspace $workspaceSecondary8
-bindsym $mod+Shift+KP_9 move container to workspace $workspaceSecondary9
-bindsym $mod+Shift+KP_0 move container to workspace $workspaceSecondary10
+bindsym $mod+Shift+KP_1 move container to workspace $workspaceSecondary1; workspace $workspaceSecondary1
+bindsym $mod+Shift+KP_2 move container to workspace $workspaceSecondary2; workspace $workspaceSecondary2
+bindsym $mod+Shift+KP_3 move container to workspace $workspaceSecondary3; workspace $workspaceSecondary3
+bindsym $mod+Shift+KP_4 move container to workspace $workspaceSecondary4; workspace $workspaceSecondary4
+bindsym $mod+Shift+KP_5 move container to workspace $workspaceSecondary5; workspace $workspaceSecondary5
+bindsym $mod+Shift+KP_6 move container to workspace $workspaceSecondary6; workspace $workspaceSecondary6
+bindsym $mod+Shift+KP_7 move container to workspace $workspaceSecondary7; workspace $workspaceSecondary7
+bindsym $mod+Shift+KP_8 move container to workspace $workspaceSecondary8; workspace $workspaceSecondary8
+bindsym $mod+Shift+KP_9 move container to workspace $workspaceSecondary9; workspace $workspaceSecondary9
+bindsym $mod+Shift+KP_0 move container to workspace $workspaceSecondary10; workspace $workspaceSecondary10
 
 
 # Assign workspaces to monitors
@@ -156,6 +159,7 @@ assign [class="^Gimp"] $workspaceMain10
 ## Terminal (secondary)[1]
 assign [class="Gnome-terminal"] $workspaceSecondary1
 assign [class="St"] $workspaceSecondary1
+assign [class="Termite"] $workspaceSecondary1
 
 ## Browser inspector (secondary)[2]
 assign [class="Chromium" window_role="pop-up"] $workspaceSecondary2
