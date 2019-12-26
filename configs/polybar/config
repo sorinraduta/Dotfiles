@@ -58,7 +58,7 @@ font-3 = Font Awesome 5 Free Solid:pixelsize=10;1
 font-4 = Font Awesome 5 Brands Regular:pixelsize=10;1
 font-5 = Font Awesome 5 Free Regular:pixelsize=10;1
 
-modules-left = xwindow pulseaudio-control
+modules-left = xwindow pulseaudio-control dotfiles
 modules-center = i3
 modules-right = info-trash info-redshift-temp updates-arch-combined filesystem xkeyboard memory cpu eth-up eth-down temperature date time powermenu
 
@@ -378,6 +378,15 @@ label-foreground = ${colors.foreground}
 format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
 click-left = ~/.config/polybar/scripts/info-trash.sh --clean &
+
+[module/dotfiles]
+type = custom/script
+exec = ~/.config/polybar/scripts/info-dotfiles-diff.sh
+interval = 60
+label=%output%
+label-foreground = ${colors.foreground}
+format-prefix = " "
+format-prefix-foreground = ${colors.alert}
 
 [module/pulseaudio-control]
 type = custom/script
