@@ -46,9 +46,9 @@ dotfiles:
   d_i3:
     dst: ~/.config/i3/modules
     src: configs/i3
-  f_polybar:
-    dst: ~/.config/polybar/config
-    src: configs/polybar.conf
+  d_polybar:
+    dst: ~/.config/polybar
+    src: configs/polybar
 profiles:
   disconnect:
     dotfiles:
@@ -63,7 +63,7 @@ profiles:
     - f_compton
     - f_rofi
     - d_i3
-    - f_polybar
+    - d_polybar
     # - f_font_hack
   work:
     dotfiles:
@@ -78,5 +78,5 @@ profiles:
     - f_compton
     - f_rofi
     - d_i3
-    - f_polybar
+    - d_polybar
     # - f_font_hack
