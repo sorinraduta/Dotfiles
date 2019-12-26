@@ -1,8 +1,8 @@
-#   ___ _            _             
-#  / __| |_ __ _ _ _| |_ _  _ _ __ 
+#   ___ _            _
+#  / __| |_ __ _ _ _| |_ _  _ _ __
 #  \__ \  _/ _` | '_|  _| || | '_ \
 #  |___/\__\__,_|_|  \__|\_,_| .__/
-#                            |_|   
+#                            |_|
 
 
 # exec --no-startup-id $HOME/.scripts/display-setup.sh
@@ -14,9 +14,6 @@ exec --no-startup-id polybar disconnect
 exec --no-startup-id compton -b -c --paint-on-overlay --respect-prop-shadow --config $HOME/.config/compton/compton.conf
 exec --no-startup-id volnoti
 exec --no-startup-id redshift -o
+exec --no-startup-id light-locker
 # exec --no-startup-id xfce4-power-manager &
 # exec --no-startup-id nm-applet 2>&1 > /dev/null &
-
-# Other stuff
-exec --no-startup-id crontab $HOME/.cronjobs
-exec --no-startup-id echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf && sudo sysctl -p
