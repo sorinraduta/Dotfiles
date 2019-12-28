@@ -49,6 +49,9 @@ dotfiles:
   d_polybar:
     dst: ~/.config/polybar
     src: configs/polybar
+  f_dunst:
+    dst: ~/.config/dunst/dunstrc
+    src: configs/dunstrc
 profiles:
   disconnect:
     dotfiles:
@@ -64,6 +67,7 @@ profiles:
     - f_rofi
     - d_i3
     - d_polybar
+    - f_dunst
   work:
     dotfiles:
     - f_profile
@@ -78,3 +82,4 @@ profiles:
     - f_rofi
     - d_i3
     - d_polybar
+    - f_dunst
