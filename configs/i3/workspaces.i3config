@@ -15,9 +15,6 @@ set $secondaryMonitor "HDMI-0"
 
 
 # Define workspaces
-# set $workspaceMain1 "1 Browser"
-# set $workspaceMain2 "2 Text editting"
-# set $workspaceMain3 "3 Chatting"
 set $workspaceMain1 "1-main"
 set $workspaceMain2 "2-main"
 set $workspaceMain3 "3-main"
@@ -138,8 +135,11 @@ assign [title="Discord"] $workspaceMain3
 assign [title="Skype"] $workspaceMain3
 assign [title="Messenger"] $workspaceMain3
 
-## Productivity (secondary)[3] *1*
-assign [title="Trello"] $workspaceSecondary3
+## Music (main)[4] *1*
+assign [title="YouTube"] $workspaceMain4
+
+## Productivity (secondary)[5] *1*
+assign [title="Trello"] $workspaceSecondary5
 
 ## Browsers (main)[1]
 assign [class="Chromium" window_role="browser"] $workspaceMain1
@@ -151,7 +151,6 @@ assign [class="code-oss"] $workspaceMain2
 
 ## Music (main)[4]
 assign [class="Spotify"] $workspaceMain4
-assign [title="YouTube Music"] $workspaceMain4
 
 ## Image editing (main)[10]
 assign [class="^Gimp"] $workspaceMain10
@@ -161,9 +160,9 @@ assign [class="Gnome-terminal"] $workspaceSecondary1
 assign [class="St"] $workspaceSecondary1
 assign [class="Termite"] $workspaceSecondary1
 
-## Browser inspector (secondary)[2]
-assign [class="Chromium" window_role="pop-up"] $workspaceSecondary2
-assign [class="Google-chrome" window_role="pop-up"] $workspaceSecondary2
+## Browser inspector (secondary)[3]
+assign [class="Chromium" window_role="pop-up"] $workspaceSecondary3
+assign [class="Google-chrome" window_role="pop-up"] $workspaceSecondary3
 
 ## Images (secondary)[10]
 assign [class="feh"] $workspaceSecondary10
