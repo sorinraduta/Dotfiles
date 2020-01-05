@@ -10,6 +10,11 @@ config:
   workdir: ~/.dotfiles
 
 dotfiles:
+  f_font_hack:
+    # dst: ~/.local/share/fonts/
+    dst: ~/test
+    src: fonts/hack
+    link: link
   f_lightdm:
     dst: /etc/lightdm/lightdm.conf
     src: configs/lightdm.conf
@@ -22,11 +27,13 @@ dotfiles:
 profiles:
   disconnect:
     dotfiles:
+    - f_font_hack
     - f_lightdm
     - f_lightdm-webkit2-greeter
     - f_display-setup
   work:
     dotfiles:
+    - f_font_hack
     - f_lightdm
     - f_lightdm-webkit2-greeter
     - f_display-setup

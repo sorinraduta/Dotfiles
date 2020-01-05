@@ -166,3 +166,5 @@ assign [class="Google-chrome" window_role="pop-up"] $workspaceSecondary3
 
 ## Images (secondary)[10]
 assign [class="feh"] $workspaceSecondary10
+
+# {{@@ env['VAR'] @@}}

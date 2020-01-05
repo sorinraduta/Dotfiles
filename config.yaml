@@ -1,8 +1,17 @@
+actions:
+  pre:
+    env_vars: ./misc/variables.sh
+  post:
+    i3-merge-modules: cat ~/.config/i3/modules/*.i3config > ~/.config/i3/config
+    i3-restart: i3-msg restart
+
 config:
   backup: false
   banner: false
   create: true
   dotpath: .
+  default_actions:
+    - env_vars
   ignoreempty: false
   keepdot: false
   longkey: false
@@ -10,33 +19,30 @@ config:
   workdir: ~/.dotfiles
 
 dotfiles:
-  # f_font_hack:
-  #   dst: ~/.local/share/fonts/
-  #   src: fonts/hack/*
-  f_profile:
-    dst: ~/.profile
-    src: settings/profile
-  f_cronjobs:
-    dst: ~/.cronjobs
-    src: settings/.cronjobs
-  f_Xresources:
-    dst: ~/.Xresources
-    src: settings/Xresources/.Xresources
-  d_Xresources:
-    dst: ~/.Xresources.d
-    src: settings/Xresources/.Xresources.d
   d_scripts:
     dst: ~/.scripts
     src: scripts
+  f_profile:
+    dst: ~/.profile
+    src: misc/profile
+  f_cronjobs:
+    dst: ~/.cronjobs
+    src: misc/.cronjobs
+  f_Xresources:
+    dst: ~/.Xresources
+    src: configs/Xresources/.Xresources
+  d_Xresources:
+    dst: ~/.Xresources.d
+    src: configs/Xresources/.Xresources.d
   f_zshrc:
     dst: ~/.zshrc
-    src: settings/zsh/.zshrc
+    src: configs/zsh/.zshrc
   f_zsh-theme:
     dst: ~/.oh-my-zsh/themes/disconnect.zsh-theme
-    src: settings/zsh/disconnect.zsh-theme
+    src: configs/zsh/disconnect.zsh-theme
   d_wal-templates:
     dst: ~/.config/wal/templates
-    src: settings/wal
+    src: configs/wal
   f_compton:
     dst: ~/.config/compton/compton.conf
     src: configs/compton.conf
@@ -46,6 +52,9 @@ dotfiles:
   d_i3:
     dst: ~/.config/i3/modules
     src: configs/i3
+    actions:
+      - i3-merge-modules
+      - i3-restart
   d_polybar:
     dst: ~/.config/polybar
     src: configs/polybar

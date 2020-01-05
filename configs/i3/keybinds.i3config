@@ -77,13 +77,14 @@ bindsym $mod+a focus parent
 bindsym $mod+Shift+c reload
 
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
-bindsym $mod+Shift+r exec "cat ~/.config/i3/modules/*.i3config > ~/.config/i3/config && i3-msg restart"
+bindsym $mod+Shift+r restart
 
 # http://ubuntuhandbook.org/index.php/2017/03/install-sopcast-player-ubuntu-16-04-16-10/
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
 # https://faq.i3wm.org/question/3747/enabling-multimedia-keys/?answer=3759#post-id-3759
+# http://wiki.linuxquestions.org/wiki/XF86_keyboard_symbols
 # Pulse Audio controls
 bindsym XF86AudioRaiseVolume exec --no-startup-id ~/.scripts/volnoti.sh up
 bindsym XF86AudioLowerVolume exec --no-startup-id ~/.scripts/volnoti.sh down
@@ -109,6 +110,8 @@ bindsym $mod+Escape exec --no-startup-id dm-tool lock
 
 # screenshot
 bindsym $mod+p exec --no-startup-id ~/.scripts/screenshot.sh
+bindsym $mod+Print exec --no-startup-id ~/.scripts/screenshot.sh
+bindsym Print exec --no-startup-id ~/.scripts/screenshot.sh
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
