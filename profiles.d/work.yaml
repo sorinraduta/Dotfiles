@@ -2,22 +2,25 @@ config:
   backup: false
   banner: false
   create: true
-  dotpath: dotfiles
+  dotpath: ../dotfiles
   ignoreempty: false
   import_configs:
-  - profiles.d/home.yaml
-  - profiles.d/work.yaml
+  - shared.yaml
+  import_variables:
+  - ../variables.d/monitors/work.yaml
   keepdot: false
   longkey: false
   showdiff: false
   workdir: ~/.dotfiles
 
 dotfiles:
+#   d_example:
+#     dst: ~/.example
+#     src: example
 
 profiles:
-  disconnect:
-    include:
-    - home
   work:
+    # dotfiles:
+    # - d_example
     include:
-    - work
+    - shared

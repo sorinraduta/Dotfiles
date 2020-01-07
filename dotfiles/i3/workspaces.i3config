@@ -159,6 +159,7 @@ assign [class="^Gimp"] $workspaceMain10
 assign [class="Gnome-terminal"] $workspaceSecondary1
 assign [class="St"] $workspaceSecondary1
 assign [class="Termite"] $workspaceSecondary1
+assign [class="kitty"] $workspaceSecondary1
 
 ## Browser inspector (secondary)[3]
 assign [class="Chromium" window_role="pop-up"] $workspaceSecondary3
@@ -166,5 +167,3 @@ assign [class="Google-chrome" window_role="pop-up"] $workspaceSecondary3
 
 ## Images (secondary)[10]
 assign [class="feh"] $workspaceSecondary10
-
-# {{@@ env['VAR'] @@}}

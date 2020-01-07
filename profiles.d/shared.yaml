@@ -1,0 +1,76 @@
+actions:
+  post:
+    i3-merge-modules: cat ~/.config/i3/modules/*.i3config > ~/.config/i3/config
+    i3-restart: i3-msg restart
+
+config:
+  backup: false
+  banner: false
+  create: true
+  dotpath: dotfiles
+  ignoreempty: false
+  keepdot: false
+  longkey: false
+  showdiff: false
+  workdir: ~/.dotfiles
+
+dotfiles:
+  d_scripts:
+    dst: ~/.scripts
+    src: scripts
+  f_profile:
+    dst: ~/.profile
+    src: profile
+  f_cronjobs:
+    dst: ~/.cronjobs
+    src: .cronjobs
+  f_Xresources:
+    dst: ~/.Xresources
+    src: Xresources/.Xresources
+  d_Xresources:
+    dst: ~/.Xresources.d
+    src: Xresources/.Xresources.d
+  f_zshrc:
+    dst: ~/.zshrc
+    src: zsh/.zshrc
+  f_zsh-theme:
+    dst: ~/.oh-my-zsh/themes/disconnect.zsh-theme
+    src: zsh/disconnect.zsh-theme
+  d_wal-templates:
+    dst: ~/.config/wal/templates
+    src: wal
+  f_compton:
+    dst: ~/.config/compton/compton.conf
+    src: compton.conf
+  f_rofi:
+    dst: ~/.config/rofi/disconnect.rasi
+    src: rofi.rasi
+  d_i3:
+    dst: ~/.config/i3/modules
+    src: i3
+    actions:
+    - i3-merge-modules
+    - i3-restart
+  d_polybar:
+    dst: ~/.config/polybar
+    src: polybar
+  f_dunst:
+    dst: ~/.config/dunst/dunstrc
+    src: dunstrc
+    
+profiles:
+  shared:
+    dotfiles:
+    - f_profile
+    - f_cronjobs
+    - f_Xresources
+    - d_Xresources
+    - d_scripts
+    - f_zshrc
+    - f_zsh-theme
+    - d_wal-templates
+    - f_compton
+    - f_rofi
+    - d_i3
+    - d_polybar
+    - f_dunst

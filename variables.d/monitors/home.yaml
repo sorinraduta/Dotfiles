@@ -1,0 +1,4 @@
+variables:
+  main: DVI-I-1
+  secondary: VGA-2
+  
