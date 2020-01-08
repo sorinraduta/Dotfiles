@@ -3,7 +3,8 @@
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
-{%@@ if profile == "work" @@%}
+export DOTFILES="$HOME/.dotfiles"
+{%@@ if env['DOTDROP_DOCKER_HACK'] == "true" @@%}
   export DOCKER_HOST=/run/containerd/containerd.sock
 {%@@ endif @@%}
 
@@ -98,18 +99,18 @@ alias dco="docker-compose"
 alias pac="sudo pacman --noconfirm"
 alias mci="sudo make clean install"
 alias reload="source $HOME/.zshrc"
-alias dotfiles="dotdrop --cfg=$HOME/.dotfiles/config.yaml"
-alias sudotfiles="sudo dotdrop --cfg=$HOME/.dotfiles/root-config.yaml"
-alias dot="dotdrop --cfg=$HOME/.dotfiles/config.yaml -f install"
-alias sudot="sudo dotdrop --cfg=$HOME/.dotfiles/root-config.yaml -f install"
+alias dotfiles='eval $(grep -v "^#" $DOTFILES/.env | xargs) dotdrop --cfg=$DOTFILES/config.yaml'
+alias sudotfiles="sudo dotdrop --cfg=$DOTFILES/root-config.yaml"
+alias dot='eval $(grep -v "^#" $DOTFILES/.env | xargs) dotdrop --cfg=$DOTFILES/config.yaml -f install'
+alias sudot="sudo dotdrop --cfg=$DOTFILES/root-config.yaml -f install"
 alias rm="rm -i"
 alias cp="cp -i"
-alias wallpaper="$HOME/.dotfiles/scripts/wallpaper.sh"
-alias lockscreen="$HOME/.dotfiles/scripts/lockscreen.sh"
+alias wallpaper="$DOTFILES/scripts/wallpaper.sh"
+alias lockscreen="$DOTFILES/scripts/lockscreen.sh"
 alias resetwallpapers="rm $HOME/.cache/.used_wallpapers"
 alias resetlockscreens="rm $HOME/.cache/.used_lockscreens"
 
-{%@@ if profile == "work" @@%}
+{%@@ if env['DOTDROP_DOCKER_HACK'] == "true" @@%}
 alias dco="sudo docker-compose"
 alias docker-compose="sudo docker-compose"
 alias docker="sudo docker"

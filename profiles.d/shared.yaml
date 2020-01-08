@@ -7,7 +7,7 @@ config:
   backup: false
   banner: false
   create: true
-  dotpath: dotfiles
+  dotpath: ../dotfiles
   ignoreempty: false
   keepdot: false
   longkey: false
@@ -15,6 +15,27 @@ config:
   workdir: ~/.dotfiles
 
 dotfiles:
+  f_font_hack_regular:
+    dst: ~/.local/share/fonts/Hack-Regular.ttf
+    src: fonts/hack/Hack-Regular.ttf
+  f_font_hack_bold:
+    dst: ~/.local/share/fonts/Hack-Bold.ttf
+    src: fonts/hack/Hack-Bold.ttf
+  f_font_hack_bold_italic:
+    dst: ~/.local/share/fonts/Hack-BoldItalic.ttf
+    src: fonts/hack/Hack-BoldItalic.ttf
+  f_font_hack_italic:
+    dst: ~/.local/share/fonts/Hack-Italic.ttf
+    src: fonts/hack/Hack-Italic.ttf
+  f_font_font_awesome_brands:
+    dst: ~/.local/share/fonts/Font-Awesome-5-Brands-Regular-400.otf
+    src: fonts/font-awesome/Font-Awesome-5-Brands-Regular-400.otf
+  f_font_font_awesome_regular:
+    dst: ~/.local/share/fonts/Font-Awesome-5-Free-Regular-400.otf
+    src: fonts/font-awesome/Font-Awesome-5-Free-Regular-400.otf
+  f_font_font_awesome_solid:
+    dst: ~/.local/share/fonts/Font-Awesome-5-Free-Solid-900.otf
+    src: fonts/font-awesome/Font-Awesome-5-Free-Solid-900.otf
   d_scripts:
     dst: ~/.scripts
     src: scripts
@@ -61,6 +82,13 @@ dotfiles:
 profiles:
   shared:
     dotfiles:
+    - f_font_hack_regular
+    - f_font_hack_bold
+    - f_font_hack_bold_italic
+    - f_font_hack_italic
+    - f_font_font_awesome_brands
+    - f_font_font_awesome_regular
+    - f_font_font_awesome_solid
     - f_profile
     - f_cronjobs
     - f_Xresources

@@ -6,8 +6,6 @@ config:
   ignoreempty: false
   import_configs:
   - shared.yaml
-  import_variables:
-  - ../variables.d/monitors/home.yaml
   keepdot: false
   longkey: false
   showdiff: false

@@ -25,16 +25,12 @@ background-alt = #444
 ;foreground = ${xrdb:color7:#222}
 foreground = #dfdfdf
 foreground-alt = #555
-primary = #ffb52a
-secondary = #e60053
-alert = #bd2c40
+primary = {{@@ env['DOTDROP_COLOR_1'] @@}}
+secondary = {{@@ env['DOTDROP_COLOR_2'] @@}}
+alert = {{@@ env['DOTDROP_COLOR_ALERT'] @@}}
 
 [bar/disconnect-main-top]
-{%@@ if profile == "disconnect" @@%}
-monitor = DVI-I-1
-{%@@ elif profile == "work" @@%}
-monitor = DisplayPort-0
-{%@@ endif @@%}
+monitor = {{@@ env['DOTDROP_MAIN_MONITOR'] @@}}
 width = 100%
 height = 27
 ;offset-x = 1%
@@ -83,11 +79,7 @@ cursor-click = pointer
 cursor-scroll = ns-resize
 
 [bar/disconnect-secondary-top]
-{%@@ if profile == "disconnect" @@%}
-monitor = VGA-2
-{%@@ elif profile == "work" @@%}
-monitor = HDMI-0
-{%@@ endif @@%}
+monitor = {{@@ env['DOTDROP_SECONDARY_MONITOR'] @@}}
 width = 100%
 height = 27
 ;offset-x = 1%
@@ -276,20 +268,16 @@ format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
 ;format-underline = #4bffdc
 label = %percentage_used%%
-
+;;;;asdf
 [module/eth-up]
 type = internal/network
-{%@@ if profile == "disconnect" @@%}
-interface = enp3s0
-{%@@ elif profile == "work" @@%}
-interface = eno1
-{%@@ endif @@%}
+interface = {{@@ env['DOTDROP_ETHERNET_INTERFACE'] @@}}
 interval = 3.0
 
-{%@@ if profile == "disconnect" @@%}
-format-connected = <label-connected>
-{%@@ elif profile == "laptop" @@%}
+{%@@ if env['DOTDROP_HAS_WIRELESS'] == "true" @@%}
 format-connected = <ramp-signal> <label-connected>
+{%@@ else @@%}
+format-connected = <label-connected>
 {%@@ endif @@%}
 ;format-connected-underline = #55aa55
 format-connected-prefix = " "
@@ -301,26 +289,22 @@ format-disconnected = <label-disconnected>
 label-disconnected = %ifname%
 label-disconnected-foreground = ${colors.alert}
 
-;ramp-signal-0 = 000
-;ramp-signal-1 = 111
-;ramp-signal-2 = 222
-;ramp-signal-3 = 333
-;ramp-signal-4 = 444
-;ramp-signal-foreground = ${colors.foreground-alt}
+ramp-signal-0 = 000
+ramp-signal-1 = 111
+ramp-signal-2 = 222
+ramp-signal-3 = 333
+ramp-signal-4 = 444
+ramp-signal-foreground = ${colors.foreground-alt}
 
 [module/eth-down]
 type = internal/network
-{%@@ if profile == "disconnect" @@%}
-interface = enp3s0
-{%@@ elif profile == "work" @@%}
-interface = eno1
-{%@@ endif @@%}
+interface = {{@@ env['DOTDROP_ETHERNET_INTERFACE'] @@}}
 interval = 3.0
 
-{%@@ if profile == "disconnect" @@%}
-format-connected = <label-connected>
-{%@@ elif profile == "laptop" @@%}
+{%@@ if env['DOTDROP_HAS_WIRELESS'] == "true" @@%}
 format-connected = <ramp-signal> <label-connected>
+{%@@ else @@%}
+format-connected = <label-connected>
 {%@@ endif @@%}
 ;format-connected-underline = #55aa55
 format-connected-prefix = " "
@@ -420,7 +404,7 @@ margin-bottom = 5
 
 [module/updates-arch-combined]
 type = custom/script
-exec = ~/.config/polybar/scripts/updates-arch-combined.sh
+exec = {{@@ env['DOTDROP_POLYBAR_SCRIPTS_PATH'] @@}}/updates-arch-combined.sh
 interval = 600
 label=%output%
 label-foreground = ${colors.foreground}
@@ -429,22 +413,22 @@ format-prefix-foreground = ${colors.foreground-alt}
 
 [module/info-redshift-temp]
 type = custom/script
-exec = ~/.config/polybar/scripts/info-redshift-temp.sh
+exec = {{@@ env['DOTDROP_POLYBAR_SCRIPTS_PATH'] @@}}/info-redshift-temp.sh
 interval = 5
 
 [module/info-trash]
 type = custom/script
-exec = ~/.config/polybar/scripts/info-trash.sh
+exec = {{@@ env['DOTDROP_POLYBAR_SCRIPTS_PATH'] @@}}/info-trash.sh
 interval = 60
 label=%output%
 label-foreground = ${colors.foreground}
 format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
-click-left = ~/.config/polybar/scripts/info-trash.sh --clean &
+click-left = {{@@ env['DOTDROP_POLYBAR_SCRIPTS_PATH'] @@}}/info-trash.sh --clean &
 
 [module/info-commit]
 type = custom/script
-exec = ~/.config/polybar/scripts/info-commit.sh
+exec = {{@@ env['DOTDROP_POLYBAR_SCRIPTS_PATH'] @@}}/info-commit.sh
 interval = 60
 label=%output%
 label-foreground = ${colors.foreground}
@@ -457,11 +441,11 @@ tail = true
 label=%output%
 ;format-underline = ${colors.primary}
 
-exec = ~/.config/polybar/scripts/pulseaudio-control.sh --listen
+exec = {{@@ env['DOTDROP_POLYBAR_SCRIPTS_PATH'] @@}}/pulseaudio-control.sh --listen
 click-right = exec pavucontrol &
-click-left = ~/.config/polybar/scripts/pulseaudio-control.sh --togmute
-click-middle = ~/.config/polybar/scripts/pulseaudio-control.sh --change
-scroll-up = ~/.config/polybar/scripts/pulseaudio-control.sh --up
-scroll-down = ~/.config/polybar/scripts/pulseaudio-control.sh --down
+click-left = {{@@ env['DOTDROP_POLYBAR_SCRIPTS_PATH'] @@}}/pulseaudio-control.sh --togmute
+click-middle = {{@@ env['DOTDROP_POLYBAR_SCRIPTS_PATH'] @@}}/pulseaudio-control.sh --change
+scroll-up = {{@@ env['DOTDROP_POLYBAR_SCRIPTS_PATH'] @@}}/pulseaudio-control.sh --up
+scroll-down = {{@@ env['DOTDROP_POLYBAR_SCRIPTS_PATH'] @@}}/pulseaudio-control.sh --down
 label-padding = 2
 label-foreground = ${colors.foreground}

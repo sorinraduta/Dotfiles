@@ -2,7 +2,7 @@ config:
   backup: false
   banner: false
   create: true
-  dotpath: .
+  dotpath: ./dotfiles
   ignoreempty: false
   keepdot: false
   longkey: false
@@ -10,30 +10,25 @@ config:
   workdir: ~/.dotfiles
 
 dotfiles:
-  f_font_hack:
-    # dst: ~/.local/share/fonts/
-    dst: ~/test
-    src: fonts/hack
-    link: link
   f_lightdm:
     dst: /etc/lightdm/lightdm.conf
-    src: configs/lightdm.conf
+    src: lightdm.conf
   f_lightdm-webkit2-greeter:
     dst: /etc/lightdm/lightdm-webkit2-greeter.conf
-    src: configs/lightdm-webkit2-greeter.conf
+    src: lightdm-webkit2-greeter.conf
   f_display-setup:
     dst: /usr/share/display-setup.sh
     src: scripts/display-setup.sh
+
 profiles:
+  shared:
+    dotfiles:
+    - f_lightdm
+    - f_lightdm-webkit2-greeter
+    - f_display-setup
   disconnect:
-    dotfiles:
-    - f_font_hack
-    - f_lightdm
-    - f_lightdm-webkit2-greeter
-    - f_display-setup
+    include:
+    - shared
   work:
-    dotfiles:
-    - f_font_hack
-    - f_lightdm
-    - f_lightdm-webkit2-greeter
-    - f_display-setup
+    include:
+    - shared

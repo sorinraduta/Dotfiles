@@ -5,14 +5,8 @@
 #                          |_|
 
 # Define monitors
-{%@@ if profile == "disconnect" @@%}
-set $mainMonitor "DVI-I-1"
-set $secondaryMonitor "VGA-2"
-{%@@ elif profile == "work" @@%}
-set $mainMonitor "DisplayPort-0"
-set $secondaryMonitor "HDMI-0"
-{%@@ endif @@%}
-
+set $mainMonitor "{{@@ env['DOTDROP_MAIN_MONITOR'] @@}}"
+set $secondaryMonitor "{{@@ env['DOTDROP_SECONDARY_MONITOR'] @@}}"
 
 # Define workspaces
 set $workspaceMain1 "1-main"
