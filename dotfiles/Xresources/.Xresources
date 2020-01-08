@@ -1,7 +1,7 @@
 #include ".Xresources.d/dwm"
 #include ".Xresources.d/rofi"
 
-{%@@ if profile == "MacBookPro" @@%}
+{%@@ if env['DOTDROP_IS_MACBOOK'] == "true" @@%}
 Xft.antialias:  true
 Xft.hinting:    true
 Xft.rgba:       rgba
