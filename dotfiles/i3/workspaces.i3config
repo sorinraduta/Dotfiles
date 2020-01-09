@@ -134,6 +134,7 @@ assign [title="YouTube"] $workspaceMain4
 
 ## Productivity (secondary)[5] *1*
 assign [title="Trello"] $workspaceSecondary5
+assign [title="Jira"] $workspaceSecondary5
 
 ## Browsers (main)[1]
 assign [class="Chromium" window_role="browser"] $workspaceMain1
