@@ -105,8 +105,8 @@ alias dot='eval $(grep -v "^#" $DOTFILES/.env | xargs) dotdrop --cfg=$DOTFILES/c
 alias sudot="sudo dotdrop --cfg=$DOTFILES/root-config.yaml -f install"
 alias rm="rm -i"
 alias cp="cp -i"
-alias wallpaper="$DOTFILES/scripts/wallpaper.sh"
-alias lockscreen="$DOTFILES/scripts/lockscreen.sh"
+alias wallpaper="~/.scripts/wallpaper.sh"
+alias lockscreen="~/.scripts/lockscreen.sh"
 alias resetwallpapers="rm $HOME/.cache/.used_wallpapers"
 alias resetlockscreens="rm $HOME/.cache/.used_lockscreens"
 
