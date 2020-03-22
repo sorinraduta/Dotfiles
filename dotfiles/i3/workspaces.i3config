@@ -150,11 +150,11 @@ assign [class="Spotify"] $workspaceMain4
 ## Image editing (main)[10]
 assign [class="^Gimp"] $workspaceMain10
 
-## Terminal (secondary)[1]
-assign [class="Gnome-terminal"] $workspaceSecondary1
-assign [class="St"] $workspaceSecondary1
-assign [class="Termite"] $workspaceSecondary1
-assign [class="kitty"] $workspaceSecondary1
+## Terminal (secondary)[2]
+assign [class="Gnome-terminal"] $workspaceSecondary2
+assign [class="St"] $workspaceSecondary2
+assign [class="Termite"] $workspaceSecondary2
+assign [class="kitty"] $workspaceSecondary2
 
 ## Browser inspector (secondary)[3]
 assign [class="Chromium" window_role="pop-up"] $workspaceSecondary3
