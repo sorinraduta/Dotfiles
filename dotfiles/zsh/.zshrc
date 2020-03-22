@@ -4,9 +4,7 @@
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 export DOTFILES="$HOME/.dotfiles"
-{%@@ if env['DOTDROP_DOCKER_HACK'] == "true" @@%}
-  export DOCKER_HOST=/run/containerd/containerd.sock
-{%@@ endif @@%}
+export GOPATH="$HOME/go"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -87,14 +85,8 @@ source $ZSH/oh-my-zsh.sh
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig="mate $HOME/.zshrc"
-# alias ohmyzsh="mate $HOME/.oh-my-zsh"
+# Aliases
+alias zshrc="vim $HOME/.zshrc"
 alias dco="docker-compose"
 alias pac="sudo pacman --noconfirm"
 alias mci="sudo make clean install"
@@ -109,12 +101,8 @@ alias wallpaper="$DOTFILES/scripts/wallpaper.sh"
 alias lockscreen="$DOTFILES/scripts/lockscreen.sh"
 alias resetwallpapers="rm $HOME/.cache/.used_wallpapers"
 alias resetlockscreens="rm $HOME/.cache/.used_lockscreens"
+alias gcb='git branch | egrep -v "(master|\*)" | xargs git branch -D'
 
-{%@@ if env['DOTDROP_DOCKER_HACK'] == "true" @@%}
-alias dco="sudo docker-compose"
-alias docker-compose="sudo docker-compose"
-alias docker="sudo docker"
-alias proceduresls="node $HOME/Downloads/rpc-test/index.js"
-{%@@ endif @@%}
-
-echo | fortune | cowsay
+echo Welcome, $(whoami)!
+echo $(date +"%H:%M:%S - %d:%m:%Y")
+echo ""
