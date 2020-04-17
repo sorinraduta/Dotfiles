@@ -66,7 +66,7 @@ ZSH_THEME="disconnect"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git extract z ssh-agent)
 
-zstyle :omz:plugins:ssh-agent identities id_rsa id_github
+zstyle :omz:plugins:ssh-agent identities id_rsa
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
