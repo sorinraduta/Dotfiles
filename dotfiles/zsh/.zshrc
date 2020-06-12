@@ -103,9 +103,9 @@ alias lockscreen="$HOME/.scripts/lockscreen.sh"
 alias resetwallpapers="rm $HOME/.cache/.used_wallpapers"
 alias resetlockscreens="rm $HOME/.cache/.used_lockscreens"
 alias gcb='git branch | egrep -v "(master|\*)" | xargs git branch -D'
-alias managepy '.venv/bin/python3 manage.py'
-alias makemig '.venv/bin/python3 manage.py makemigrations'
-alias mig '.venv/bin/python3 manage.py migrate'
+alias managepy='.venv/bin/python3 manage.py'
+alias makemig='.venv/bin/python3 manage.py makemigrations'
+alias mig='.venv/bin/python3 manage.py migrate'
 
 echo Welcome, $(whoami)!
 echo $(date +"%H:%M:%S - %d:%m:%Y")
