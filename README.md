@@ -9,4 +9,4 @@
 - Application launcher: [Rofi](https://github.com/davatorium/rofi)
 - Compositor: [Compton](https://github.com/chjj/compton)
 - Fonts: [Nerd Fonts](https://github.com/ryanoasis/nerd-fonts)
-- Colorscheme - [Helios](https://github.com/reyemxela/base16-helios-scheme)
+- Colorscheme - [Base16](https://github.com/chriskempson/base16) [Custom scheme](https://observablehq.com/@tomblcode/base16-style-color-scheme-generator)

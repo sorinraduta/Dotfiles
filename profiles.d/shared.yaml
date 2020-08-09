@@ -4,6 +4,7 @@ actions:
   post:
     i3-merge-modules: cat ~/.config/i3/modules/*.i3config > ~/.config/i3/config
     i3-restart: i3-msg restart
+    Xresources-refresh: xrdb ~/.Xresources
 
 config:
   backup: false
@@ -29,9 +30,15 @@ dotfiles:
   f_Xresources:
     dst: ~/.Xresources
     src: Xresources/.Xresources
+    actions:
+      - Xresources-refresh
+      - i3-restart
   d_Xresources:
     dst: ~/.Xresources.d
     src: Xresources/.Xresources.d
+    actions:
+      - Xresources-refresh
+      - i3-restart
   f_zshrc:
     dst: ~/.zshrc
     src: zsh/.zshrc

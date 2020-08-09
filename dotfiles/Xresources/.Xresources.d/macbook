@@ -1,0 +1,7 @@
+{%@@ if env['DOTDROP_IS_MACBOOK'] == "true" @@%}
+Xft.antialias:  true
+Xft.hinting:    true
+Xft.rgba:       rgba
+Xft.hintstyle:  hintfull
+Xft.dpi:        144
+{%@@ endif @@%}

@@ -5,35 +5,44 @@
 #        |_|  |_|
 
 # Font for window titles. Will also be used by the bar unless a different font
-# is used in the bar {} block below.
+# is used in the bar {} block.
 font pango:System San Francisco Display 8
 
-set $white  #ffffff
-set $grey   #888888
-set $urgent {{@@ env['DOTDROP_COLOR_ALERT'] @@}}
-set $color1 {{@@ env['DOTDROP_COLOR_1'] @@}}
-set $color3 {{@@ env['DOTDROP_COLOR_3'] @@}}
-set $color4 {{@@ env['DOTDROP_COLOR_4'] @@}}
-set $color5 {{@@ env['DOTDROP_COLOR_5'] @@}}
+# Define colors
+set_from_resource $base00 i3base00 #000000
+set_from_resource $base01 i3base01 #000000
+set_from_resource $base02 i3base02 #000000
+set_from_resource $base03 i3base03 #000000
+set_from_resource $base04 i3base04 #000000
+set_from_resource $base05 i3base05 #000000
+set_from_resource $base06 i3base06 #000000
+set_from_resource $base07 i3base07 #000000
+set_from_resource $base08 i3base08 #000000
+set_from_resource $base09 i3base09 #000000
+set_from_resource $base0A i3base0A #000000
+set_from_resource $base0B i3base0B #000000
+set_from_resource $base0C i3base0C #000000
+set_from_resource $base0D i3base0D #000000
+set_from_resource $base0E i3base0E #000000
+set_from_resource $base0F i3base0F #000001
 
-
-{{@@ env['DOTDROP_COLOR_2'] @@}}
-
-# Widow Colors
-# state                 border  background text     indicator
-client.focused          $color1 $color1    $grey    $color1
-client.focused_inactive $color3 $color3    $grey    $color3
-client.unfocused        $color3 $color3    $white   $color3
-client.urgent           $urgent $urgent    $grey    $urgent
+# Widow colors
+# state                 border      background  text        indicator   child_border
+client.focused          $base05     $base09     $base00     $base09     $base0E
+client.focused_inactive $base01     $base01     $base05     $base03     $base01
+client.unfocused        $base01     $base00     $base05     $base01     $base01
+client.urgent           $base08     $base08     $base00     $base08     $base08
+client.placeholder      $base00     $base00     $base05     $base00     $base00
+client.background       $base07
 
 # Borders
-default_border pixel 2
+default_border pixel 1
 default_border normal 1
 hide_edge_borders both
 
 # Hide title
 new_window 1pixel
-for_window [class="^.*"] border pixel 2
+for_window [class="^.*"] border pixel 1
 
 # Gaps
 gaps inner 10
