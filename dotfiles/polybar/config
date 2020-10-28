@@ -25,9 +25,9 @@ background-alt = #444
 ;foreground = ${xrdb:color7:#222}
 foreground = #dfdfdf
 foreground-alt = #555
-primary = {{@@ env['DOTDROP_COLOR_13'] @@}}
-secondary = {{@@ env['DOTDROP_COLOR_09'] @@}}
-alert = {{@@ env['DOTDROP_COLOR_08'] @@}}
+primary = {{@@ env['DOTDROP_COLOR_BASE0C'] @@}}
+secondary = {{@@ env['DOTDROP_COLOR_BASE09'] @@}}
+alert = {{@@ env['DOTDROP_COLOR_BASE08'] @@}}
 
 [bar/disconnect-main-top]
 monitor = {{@@ env['DOTDROP_MAIN_MONITOR'] @@}}

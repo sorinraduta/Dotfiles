@@ -4,20 +4,86 @@ config:
   create: true
   dotpath: dotfiles
   ignoreempty: false
-  import_configs:
-  - profiles.d/home.yaml
-  - profiles.d/work.yaml
   keepdot: false
   longkey: false
   showdiff: false
   workdir: ~/.dotfiles
 
-dotfiles:
+actions:
+  pre:
+    i3-clean-modules: rm ~/.config/i3/modules/*
+  post:
+    i3-merge-modules: cat ~/.config/i3/modules/*.i3config > ~/.config/i3/config
+    i3-restart: i3-msg restart
+    Xresources-refresh: xrdb ~/.Xresources
+    refresh-zsh: source ~/.zshrc
 
+dotfiles:
+  d_scripts:
+    dst: ~/.scripts
+    src: scripts
+  f_profile:
+    dst: ~/.profile
+    src: profile
+  f_cronjobs:
+    dst: ~/.cronjobs
+    src: .cronjobs
+  d_Xresources:
+    dst: ~/.Xresources.d
+    src: Xresources/.Xresources.d
+    actions:
+      - Xresources-refresh
+      - i3-restart
+  f_Xresources:
+    dst: ~/.Xresources
+    src: Xresources/.Xresources
+    actions:
+      - Xresources-refresh
+      - i3-restart
+  f_zshrc:
+    dst: ~/.zshrc
+    src: zsh/.zshrc
+    actions:
+      - refresh-zsh
+  f_zsh-theme:
+    dst: ~/.oh-my-zsh/themes/disconnect.zsh-theme
+    src: zsh/disconnect.zsh-theme
+  d_wal-templates:
+    dst: ~/.config/wal/templates
+    src: wal
+  f_compton:
+    dst: ~/.config/compton/compton.conf
+    src: compton.conf
+  f_rofi:
+    dst: ~/.config/rofi/disconnect.rasi
+    src: rofi.rasi
+  d_i3:
+    dst: ~/.config/i3/modules
+    src: i3
+    actions:
+    - i3-clean-modules
+    - i3-merge-modules
+    - i3-restart
+  d_polybar:
+    dst: ~/.config/polybar
+    src: polybar
+  f_dunst:
+    dst: ~/.config/dunst/dunstrc
+    src: dunstrc
+    
 profiles:
   disconnect:
-    include:
-    - home
-  goldwin:
-    include:
-    - work
+    dotfiles:
+    - f_profile
+    - f_cronjobs
+    - d_Xresources
+    - f_Xresources
+    - d_scripts
+    - f_zshrc
+    - f_zsh-theme
+    - d_wal-templates
+    - f_compton
+    - f_rofi
+    - d_i3
+    - d_polybar
+    - f_dunst
