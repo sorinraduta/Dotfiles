@@ -21,14 +21,8 @@ dotfiles:
     src: scripts/display-setup.sh
 
 profiles:
-  shared:
+  disconnect:
     dotfiles:
     - f_lightdm
     - f_lightdm-webkit2-greeter
     - f_display-setup
-  disconnect:
-    include:
-    - shared
-  work:
-    include:
-    - shared

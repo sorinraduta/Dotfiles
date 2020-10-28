@@ -402,7 +402,7 @@ margin-top = 5
 margin-bottom = 5
 
 ; vim:ft=dosini
-
+;
 [module/updates-arch-combined]
 type = custom/script
 exec = {{@@ env['DOTDROP_POLYBAR_SCRIPTS_PATH'] @@}}/updates-arch-combined.sh

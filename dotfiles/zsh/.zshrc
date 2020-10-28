@@ -94,10 +94,8 @@ alias mci="sudo make clean install"
 alias reload="source $HOME/.zshrc"
 alias dotfiles='eval $(grep -v "^#" $DOTFILES/.env | xargs) dotdrop --cfg=$DOTFILES/config.yaml'
 alias sudotfiles="sudo dotdrop --cfg=$DOTFILES/root-config.yaml"
-alias dot='eval $(grep -v "^#" $DOTFILES/.env | xargs) dotdrop --cfg=$DOTFILES/config.yaml -f install'
-alias sudot="sudo dotdrop --cfg=$DOTFILES/root-config.yaml -f install"
-alias rm="rm -i"
-alias cp="cp -i"
+alias dot='eval $(grep -v "^#" $DOTFILES/.env | xargs) dotdrop --cfg=$DOTFILES/config.yaml -f install --profile=disconnect'
+alias sudot="sudo dotdrop --cfg=$DOTFILES/root-config.yaml -f install --profile=disconnect"
 alias wallpaper="$HOME/.scripts/wallpaper.sh"
 alias lockscreen="$HOME/.scripts/lockscreen.sh"
 alias resetwallpapers="rm $HOME/.cache/.used_wallpapers"
