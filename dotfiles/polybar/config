@@ -25,12 +25,12 @@ background-alt = #444
 ;foreground = ${xrdb:color7:#222}
 foreground = #dfdfdf
 foreground-alt = #555
-primary = {{@@ env['DOTDROP_COLOR_BASE0C'] @@}}
-secondary = {{@@ env['DOTDROP_COLOR_BASE09'] @@}}
-alert = {{@@ env['DOTDROP_COLOR_BASE08'] @@}}
+primary = {{@@ DOTDROP_COLOR_BASE0C @@}}
+secondary = {{@@ DOTDROP_COLOR_BASE09 @@}}
+alert = {{@@ DOTDROP_COLOR_BASE08 @@}}
 
 [bar/disconnect-main-top]
-monitor = {{@@ env['DOTDROP_MAIN_MONITOR'] @@}}
+monitor = {{@@ DOTDROP_MAIN_MONITOR @@}}
 width = 100%
 height = 27
 ;offset-x = 1%
@@ -79,7 +79,7 @@ cursor-click = pointer
 cursor-scroll = ns-resize
 
 [bar/disconnect-secondary-top]
-monitor = {{@@ env['DOTDROP_SECONDARY_MONITOR'] @@}}
+monitor = {{@@ DOTDROP_SECONDARY_MONITOR @@}}
 width = 100%
 height = 27
 ;offset-x = 1%
@@ -272,10 +272,10 @@ label = %percentage_used%%
 ;;;;asdf
 [module/eth-up]
 type = internal/network
-interface = {{@@ env['DOTDROP_ETHERNET_INTERFACE'] @@}}
+interface = {{@@ DOTDROP_ETHERNET_INTERFACE @@}}
 interval = 3.0
 
-{%@@ if env['DOTDROP_HAS_WIRELESS'] == "true" @@%}
+{%@@ if DOTDROP_HAS_WIRELESS == "true" @@%}
 format-connected = <ramp-signal> <label-connected>
 {%@@ else @@%}
 format-connected = <label-connected>
@@ -299,10 +299,10 @@ ramp-signal-foreground = ${colors.foreground-alt}
 
 [module/eth-down]
 type = internal/network
-interface = {{@@ env['DOTDROP_ETHERNET_INTERFACE'] @@}}
+interface = {{@@ DOTDROP_ETHERNET_INTERFACE @@}}
 interval = 3.0
 
-{%@@ if env['DOTDROP_HAS_WIRELESS'] == "true" @@%}
+{%@@ if DOTDROP_HAS_WIRELESS == "true" @@%}
 format-connected = <ramp-signal> <label-connected>
 {%@@ else @@%}
 format-connected = <label-connected>
@@ -405,7 +405,7 @@ margin-bottom = 5
 ;
 [module/updates-arch-combined]
 type = custom/script
-exec = {{@@ env['DOTDROP_POLYBAR_SCRIPTS_PATH'] @@}}/updates-arch-combined.sh
+exec = {{@@ DOTDROP_POLYBAR_SCRIPTS_PATH @@}}/updates-arch-combined.sh
 interval = 600
 label=%output%
 label-foreground = ${colors.foreground}
@@ -414,22 +414,22 @@ format-prefix-foreground = ${colors.foreground-alt}
 
 [module/info-redshift-temp]
 type = custom/script
-exec = {{@@ env['DOTDROP_POLYBAR_SCRIPTS_PATH'] @@}}/info-redshift-temp.sh
+exec = {{@@ DOTDROP_POLYBAR_SCRIPTS_PATH @@}}/info-redshift-temp.sh
 interval = 5
 
 [module/info-trash]
 type = custom/script
-exec = {{@@ env['DOTDROP_POLYBAR_SCRIPTS_PATH'] @@}}/info-trash.sh
+exec = {{@@ DOTDROP_POLYBAR_SCRIPTS_PATH @@}}/info-trash.sh
 interval = 60
 label=%output%
 label-foreground = ${colors.foreground}
 format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
-click-left = {{@@ env['DOTDROP_POLYBAR_SCRIPTS_PATH'] @@}}/info-trash.sh --clean &
+click-left = {{@@ DOTDROP_POLYBAR_SCRIPTS_PATH @@}}/info-trash.sh --clean &
 
 [module/info-commit]
 type = custom/script
-exec = {{@@ env['DOTDROP_POLYBAR_SCRIPTS_PATH'] @@}}/info-commit.sh
+exec = {{@@ DOTDROP_POLYBAR_SCRIPTS_PATH @@}}/info-commit.sh
 interval = 60
 label=%output%
 label-foreground = ${colors.foreground}
@@ -442,11 +442,11 @@ tail = true
 label=%output%
 ;format-underline = ${colors.primary}
 
-exec = {{@@ env['DOTDROP_POLYBAR_SCRIPTS_PATH'] @@}}/pulseaudio-control.sh --listen
+exec = {{@@ DOTDROP_POLYBAR_SCRIPTS_PATH @@}}/pulseaudio-control.sh --listen
 click-right = exec pavucontrol &
-click-left = {{@@ env['DOTDROP_POLYBAR_SCRIPTS_PATH'] @@}}/pulseaudio-control.sh --togmute
-click-middle = {{@@ env['DOTDROP_POLYBAR_SCRIPTS_PATH'] @@}}/pulseaudio-control.sh --change
-scroll-up = {{@@ env['DOTDROP_POLYBAR_SCRIPTS_PATH'] @@}}/pulseaudio-control.sh --up
-scroll-down = {{@@ env['DOTDROP_POLYBAR_SCRIPTS_PATH'] @@}}/pulseaudio-control.sh --down
+click-left = {{@@ DOTDROP_POLYBAR_SCRIPTS_PATH @@}}/pulseaudio-control.sh --togmute
+click-middle = {{@@ DOTDROP_POLYBAR_SCRIPTS_PATH @@}}/pulseaudio-control.sh --change
+scroll-up = {{@@ DOTDROP_POLYBAR_SCRIPTS_PATH @@}}/pulseaudio-control.sh --up
+scroll-down = {{@@ DOTDROP_POLYBAR_SCRIPTS_PATH @@}}/pulseaudio-control.sh --down
 label-padding = 2
 label-foreground = ${colors.foreground}
