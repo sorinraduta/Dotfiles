@@ -10,7 +10,6 @@ config:
   workdir: ~/.dotfiles
   import_variables:
   - variables.d/main.yaml
-  - variables.d/colors.yaml
 
 actions:
   pre:
