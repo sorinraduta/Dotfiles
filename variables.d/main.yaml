@@ -5,6 +5,7 @@ variables:
   main_monitor: "DVI-0"
   secondary_monitor: "HDMI-0"
   ethernet_interface: "enp3s0"
+  module_divider: "" # This will be interpreted by i3 config so it must start with a "#"
   has_wireless: "false"
   is_macbook: "false"
   # 0 - Laptop
