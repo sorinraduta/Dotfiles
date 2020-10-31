@@ -8,8 +8,8 @@
 # exec --no-startup-id $HOME/.scripts/display-setup.sh
 exec --no-startup-id $HOME/.scripts/wallpaper.sh
 exec --no-startup-id $HOME/.scripts/lockscreen.sh
-exec --no-startup-id polybar disconnect-main-top
-exec --no-startup-id polybar disconnect-secondary-top
+exec --no-startup-id polybar top
+exec --no-startup-id polybar bottom
 
 # Programs
 exec --no-startup-id compton -b -c --paint-on-overlay --respect-prop-shadow --config $HOME/.config/compton/compton.conf

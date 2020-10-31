@@ -1,0 +1,8 @@
+[module/info-commit]
+type = custom/script
+exec = {{@@ polybar_scripts_path @@}}/info-commit.sh
+interval = 60
+label=%output%
+label-foreground = ${colors.foreground}
+format-prefix = " "
+format-prefix-foreground = ${colors.alert}

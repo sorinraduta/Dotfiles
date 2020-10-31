@@ -1,0 +1,9 @@
+[module/info-trash]
+type = custom/script
+exec = {{@@ polybar_scripts_path @@}}/info-trash.sh
+interval = 60
+label=%output%
+label-foreground = ${colors.foreground}
+format-prefix = " "
+format-prefix-foreground = ${colors.foreground-alt}
+click-left = {{@@ polybar_scripts_path @@}}/info-trash.sh --clean &

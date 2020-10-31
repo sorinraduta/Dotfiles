@@ -1,4 +1,4 @@
-{%@@ if DOTDROP_IS_MACBOOK == "true" @@%}
+{%@@ if is_macbook == "true" @@%}
 Xft.antialias:  true
 Xft.hinting:    true
 Xft.rgba:       rgba

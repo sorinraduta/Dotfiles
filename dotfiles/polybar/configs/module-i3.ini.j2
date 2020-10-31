@@ -1,0 +1,93 @@
+[module/i3]
+type = internal/i3
+format = <label-state> <label-mode>
+index-sort = true
+wrapping-scroll = false
+pin-workspaces = true
+
+# This name is linked in i3 config
+ws-icon-0 = ws1;1
+ws-icon-1 = ws2;2
+ws-icon-2 = ws3;3
+ws-icon-3 = ws4;4
+ws-icon-4 = ws5;5
+ws-icon-5 = ws6;6
+ws-icon-6 = ws7;7
+ws-icon-7 = ws8;8
+ws-icon-8 = ws9;9
+ws-icon-9 = ws10;10
+ws-icon-default = Dft
+
+; Only show workspaces on the same output as the bar
+;pin-workspaces = true
+
+label-mode-padding = 2
+label-mode-foreground = #000
+label-mode-background = ${colors.primary}
+
+; focused = Active workspace on focused monitor
+; Available tokens:
+;   %name%
+;   %icon%
+;   %index%
+;   %output%
+label-focused = %icon%
+label-focused-foreground = ${colors.foreground}
+label-focused-background = ${colors.background-transparent-1}
+label-focused-underline = ${colors.foreground}
+label-focused-padding = 3
+
+; unfocused = Inactive workspace on any monitor
+; Available tokens:
+;   %name%
+;   %icon%
+;   %index%
+;   %output%
+label-unfocused = %icon%
+label-unfocused-padding = 1
+
+; visible = Active workspace on unfocused monitor
+; Available tokens:
+;   %name%
+;   %icon%
+;   %index%
+;   %output%
+label-visible = %icon%
+label-visible-background = ${self.label-focused-background}
+label-visible-underline = ${self.label-focused-underline}
+label-visible-padding = ${self.label-focused-padding}
+
+; urgent = Workspace with urgency hint set
+; Available tokens:
+;   %name%
+;   %icon%
+;   %index%
+;   %output%
+label-urgent = %icon%
+label-urgent-background = ${colors.alert}
+label-urgent-padding = 1
+
+; Separator in between workspaces
+; label-separator = |
+
+;[module/xbacklight]
+;type = internal/xbacklight
+
+;format = <label> <bar>
+;label = BL
+
+bar-width = 10
+bar-indicator = |
+bar-indicator-foreground = #fff
+bar-indicator-font = 2
+bar-fill = ─
+bar-fill-font = 2
+bar-fill-foreground = #9f78e1
+bar-empty = ─
+bar-empty-font = 2
+bar-empty-foreground = ${colors.foreground-alt}
+
+;[module/backlight-acpi]
+;inherit = module/xbacklight
+;type = internal/backlight
+;card = intel_backlight

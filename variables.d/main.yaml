@@ -1,11 +1,13 @@
+dynvariables:
+  secret_key:  cat {{@@ _dotdrop_workdir @@}}/secret
 variables:
-  DOTDROP_POLYBAR_SCRIPTS_PATH: "~/.config/polybar/scripts"
-  DOTDROP_MAIN_MONITOR: "DVI-0"
-  DOTDROP_SECONDARY_MONITOR: "HDMI-0"
-  DOTDROP_ETHERNET_INTERFACE: "enp3s0"
-  DOTDROP_HAS_WIRELESS: "false"
-  DOTDROP_IS_MACBOOK: "false"
+  polybar_scripts_path: "~/.config/polybar/scripts"
+  main_monitor: "DVI-0"
+  secondary_monitor: "HDMI-0"
+  ethernet_interface: "enp3s0"
+  has_wireless: "false"
+  is_macbook: "false"
   # 0 - Laptop
   # 1 - Home PC
   # 2 - Work PC
-  DOTDROP_DISPLAY_LAYOUT: "1"
+  display_layout: "1"

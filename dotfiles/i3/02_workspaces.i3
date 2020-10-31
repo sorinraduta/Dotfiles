@@ -5,8 +5,8 @@
 #                          |_|
 
 # Define monitors
-set $mainMonitor "{{@@ DOTDROP_MAIN_MONITOR @@}}"
-set $secondaryMonitor "{{@@ DOTDROP_SECONDARY_MONITOR @@}}"
+set $mainMonitor "{{@@ main_monitor @@}}"
+set $secondaryMonitor "{{@@ secondary_monitor @@}}"
 
 # Define workspaces
 # This name is linked in polybar config

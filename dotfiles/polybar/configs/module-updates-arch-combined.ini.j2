@@ -1,0 +1,8 @@
+[module/updates-arch-combined]
+type = custom/script
+exec = {{@@ polybar_scripts_path @@}}/updates-arch-combined.sh
+interval = 600
+label=%output%
+label-foreground = ${colors.foreground}
+format-prefix = " "
+format-prefix-foreground = ${colors.foreground-alt}

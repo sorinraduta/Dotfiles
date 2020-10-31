@@ -1,0 +1,20 @@
+[module/powermenu]
+type = custom/menu
+
+expand-right = true
+
+format-spacing = 1
+
+label-open = 
+label-open-foreground = ${colors.secondary}
+label-close = 
+label-close-foreground = ${colors.secondary}
+label-separator = |
+label-separator-foreground = ${colors.foreground-alt}
+
+;Reboot
+menu-0-0 = %{F#ffb52a}
+menu-0-0-exec = reboot
+;Power off
+menu-0-1 = %{F#bd2c40}
+menu-0-1-exec = poweroff
