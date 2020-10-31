@@ -1,93 +1,121 @@
 [module/i3]
 type = internal/i3
-format = <label-state> <label-mode>
+
+; Only show workspaces defined on the same output as the bar
+;
+; Useful if you want to show monitor specific workspaces
+; on different bars
+;
+; Default: false
+pin-workspaces = false
+
+; This will split the workspace name on ':'
+; Default: false
+strip-wsnumbers = true
+
+; Sort the workspaces by index instead of the default
+; sorting that groups the workspaces by output
+; Default: false
 index-sort = true
-wrapping-scroll = false
-pin-workspaces = true
 
-# This name is linked in i3 config
-ws-icon-0 = ws1;1
-ws-icon-1 = ws2;2
-ws-icon-2 = ws3;3
-ws-icon-3 = ws4;4
-ws-icon-4 = ws5;5
-ws-icon-5 = ws6;6
-ws-icon-6 = ws7;7
-ws-icon-7 = ws8;8
-ws-icon-8 = ws9;9
-ws-icon-9 = ws10;10
-ws-icon-default = Dft
+; Create click handler used to focus workspace
+; Default: true
+enable-click = true
 
-; Only show workspaces on the same output as the bar
-;pin-workspaces = true
+; Create scroll handlers used to cycle workspaces
+; Default: true
+enable-scroll = true
 
+; Wrap around when reaching the first/last workspace
+; Default: true
+wrapping-scroll = true
+
+; Set the scroll cycle direction 
+; Default: true
+reverse-scroll = true
+
+; Use fuzzy (partial) matching on labels when assigning 
+; icons to workspaces
+; Example: code;♚ will apply the icon to all workspaces 
+; containing 'code' in the label
+; Default: false
+fuzzy-match = false
+
+; ws-icon-[0-9]+ = <label>;<icon>
+; NOTE: The <label> needs to match the name of the i3 workspace
+; Neither <label> nor <icon> can contain a semicolon (;)
+ws-icon-0 = 1;
+ws-icon-1 = 2;
+ws-icon-2 = 3;
+ws-icon-3 = 4;
+ws-icon-4 = 5;
+ws-icon-5 = 6;
+ws-icon-6 = 7;
+ws-icon-7 = 8;
+ws-icon-8 = 9;
+ws-icon-9 = 10;
+ws-icon-default = 
+; NOTE: You cannot skip icons, e.g. to get a ws-icon-6
+; you must also define a ws-icon-5.
+; NOTE: Icon will be available as the %icon% token inside label-*
+
+; Available tags:
+;   <label-state> (default) - gets replaced with <label-(focused|unfocused|visible|urgent)>
+;   <label-mode> (default)
+format = <label-state>
+
+; Available tokens:
+;   %mode%
+; Default: %mode%
+label-mode = %mode%
 label-mode-padding = 2
-label-mode-foreground = #000
-label-mode-background = ${colors.primary}
+label-mode-background = #ff5555
 
-; focused = Active workspace on focused monitor
 ; Available tokens:
 ;   %name%
 ;   %icon%
 ;   %index%
 ;   %output%
+; Default: %icon%  %name%
 label-focused = %icon%
-label-focused-foreground = ${colors.foreground}
-label-focused-background = ${colors.background-transparent-1}
-label-focused-underline = ${colors.foreground}
-label-focused-padding = 3
+label-focused-foreground = #bd93f9
+label-focused-background = #282a36
+label-focused-underline = 
+label-focused-padding = 4
 
-; unfocused = Inactive workspace on any monitor
 ; Available tokens:
 ;   %name%
 ;   %icon%
 ;   %index%
 ;   %output%
+; Default: %icon%  %name%
 label-unfocused = %icon%
-label-unfocused-padding = 1
+label-unfocused-padding = 2
+label-unfocused-foreground = #44475a
 
-; visible = Active workspace on unfocused monitor
 ; Available tokens:
 ;   %name%
 ;   %icon%
 ;   %index%
 ;   %output%
+; Default: %icon%  %name%
 label-visible = %icon%
-label-visible-background = ${self.label-focused-background}
-label-visible-underline = ${self.label-focused-underline}
-label-visible-padding = ${self.label-focused-padding}
+label-visible-foreground = #bd93f9
+label-visible-background =
+label-visible-underline = 
+label-visible-padding = 4
 
-; urgent = Workspace with urgency hint set
 ; Available tokens:
 ;   %name%
 ;   %icon%
 ;   %index%
 ;   %output%
+; Default: %icon%  %name%
 label-urgent = %icon%
-label-urgent-background = ${colors.alert}
-label-urgent-padding = 1
+label-urgent-foreground = #ff5555
+label-urgent-padding = 2
 
 ; Separator in between workspaces
-; label-separator = |
-
-;[module/xbacklight]
-;type = internal/xbacklight
-
-;format = <label> <bar>
-;label = BL
-
-bar-width = 10
-bar-indicator = |
-bar-indicator-foreground = #fff
-bar-indicator-font = 2
-bar-fill = ─
-bar-fill-font = 2
-bar-fill-foreground = #9f78e1
-bar-empty = ─
-bar-empty-font = 2
-bar-empty-foreground = ${colors.foreground-alt}
-
-;[module/backlight-acpi]
-;inherit = module/xbacklight
-;type = internal/backlight
-;card = intel_backlight
+label-separator =
+label-separator-foreground = #44475a
+label-separator-padding = 2
