@@ -1,7 +1,6 @@
-{%@@ if is_macbook == "true" @@%}
+
 Xft.antialias:  true
 Xft.hinting:    true
 Xft.rgba:       rgba
 Xft.hintstyle:  hintfull
 Xft.dpi:        144
-{%@@ endif @@%}

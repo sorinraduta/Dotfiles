@@ -87,7 +87,7 @@ dotfiles:
     trans_read: build-i3-config
     trans_write: split-i3-config
   d_polybar:
-    dst: ~/.config/polybar/scripts
+    dst: "{{@@ polybar_scripts_path @@}}"
     src: polybar/scripts
   f_polybar:
     dst: ~/.config/polybar/config

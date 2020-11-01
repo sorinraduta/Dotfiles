@@ -3,7 +3,7 @@ type = internal/network
 interface = {{@@ ethernet_interface @@}}
 interval = 3.0
 
-{%@@ if has_wireless == "true" @@%}
+{%@@ if is_laptop == "true" @@%}
 format-connected = <ramp-signal> <label-connected>
 {%@@ else @@%}
 format-connected = <label-connected>
