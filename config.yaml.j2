@@ -18,6 +18,8 @@ actions:
     i3-restart: i3-msg restart
     Xresources-refresh: xrdb ~/.Xresources
     refresh-zsh: source ~/.zshrc
+    ssh_key_private_permissions: chmod 600 ~/.ssh/id_rsa
+    ssh_key_public_permissions: chmod 600 ~/.ssh/id_rsa.pub
 
 trans_read:
   _decrypt: openssl enc -aes-256-cbc -d -pbkdf2 -in {0} -out {1} -pass pass:{{@@ secret_key @@}}
@@ -33,11 +35,15 @@ dotfiles:
   f_ssh_key_private:
     dst: ~/.ssh/id_rsa
     src: ssh/id_rsa
+    actions:
+      - ssh_key_private_permissions
     trans_read: _decrypt
     trans_write: _encrypt
   f_ssh_key_public:
     dst: ~/.ssh/id_rsa.pub
     src: ssh/id_rsa.pub
+    actions:
+      - ssh_key_public_permissions
     trans_read: _decrypt
     trans_write: _encrypt
   d_scripts:
