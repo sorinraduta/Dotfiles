@@ -7,7 +7,6 @@ dynvariables:
   is_macbook: if [[ $(uname) == "Darwin" ]]; then echo true; else echo false; fi
   is_laptop: if [[ $(cat /sys/class/dmi/id/chassis_type) == 9 ]]; then echo true; else echo false; fi
 variables:
-  polybar_scripts_path: "~/.config/polybar/scripts"
   module_divider: "" # This will be interpreted by i3 config so it must start with a "#"
   # 0 - Laptop
   # 1 - Home PC

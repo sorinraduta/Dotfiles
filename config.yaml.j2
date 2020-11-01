@@ -22,12 +22,12 @@ actions:
 trans_read:
   _decrypt: openssl enc -aes-256-cbc -d -pbkdf2 -in {0} -out {1} -pass pass:{{@@ secret_key @@}}
   build-i3-config: for i in {0}/*.i3; do cat $i;printf  "\n{{@@ module_divider @@}}\n"; done >> {1}
-  build-polybar-config: for i in {0}/*.ini.j2; do cat $i;printf  "\n{{@@ module_divider @@}}\n"; done >> {1}
+  build-polybar: mkdir {1}; touch {1}/config; for i in {0}/configs/*.ini.j2; do cat $i;printf  "\n{{@@ module_divider @@}}\n"; done >> {1}/config; cp -rf {0}/scripts {1}/scripts
 
 trans_write:
   _encrypt: openssl enc -aes-256-cbc -pbkdf2 -in {0} -out {1} -pass pass:{{@@ secret_key @@}}
   split-i3-config: #TODO
-  split-polybar-config: #TODO
+  split-polybar: #TODO
 
 dotfiles:
   f_ssh_key_private:
@@ -87,13 +87,10 @@ dotfiles:
     trans_read: build-i3-config
     trans_write: split-i3-config
   d_polybar:
-    dst: "{{@@ polybar_scripts_path @@}}"
-    src: polybar/scripts
-  f_polybar:
-    dst: ~/.config/polybar/config
-    src: polybar/configs
-    trans_read: build-polybar-config
-    trans_write: split-polybar-config
+    dst: ~/.config/polybar
+    src: polybar
+    trans_read: build-polybar
+    trans_write: split-polybar
   f_dunst:
     dst: ~/.config/dunst/dunstrc
     src: dunstrc
@@ -115,5 +112,4 @@ profiles:
     - f_rofi
     - f_i3
     - d_polybar
-    - f_polybar
     - f_dunst

@@ -4,11 +4,11 @@ tail = true
 label=%output%
 ;format-underline = ${colors.primary}
 
-exec = {{@@ polybar_scripts_path @@}}/pulseaudio-control.sh --listen
+exec = {{@@ _dotfile_abs_dst @@}}/scripts/pulseaudio-control.sh --listen
 click-right = exec pavucontrol &
-click-left = {{@@ polybar_scripts_path @@}}/pulseaudio-control.sh --togmute
-click-middle = {{@@ polybar_scripts_path @@}}/pulseaudio-control.sh --change
-scroll-up = {{@@ polybar_scripts_path @@}}/pulseaudio-control.sh --up
-scroll-down = {{@@ polybar_scripts_path @@}}/pulseaudio-control.sh --down
+click-left = {{@@ _dotfile_abs_dst @@}}/scripts/pulseaudio-control.sh --togmute
+click-middle = {{@@ _dotfile_abs_dst @@}}/scripts/pulseaudio-control.sh --change
+scroll-up = {{@@ _dotfile_abs_dst @@}}/scripts/pulseaudio-control.sh --up
+scroll-down = {{@@ _dotfile_abs_dst @@}}/scripts/pulseaudio-control.sh --down
 label-padding = 2
 label-foreground = ${colors.foreground}
