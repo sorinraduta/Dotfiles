@@ -52,12 +52,12 @@ offset-y = 0
 ;background = 
 
 ; Foreground ARGB color (e.g. #f00, #ff992a, #ddff1023)
-foreground = #F8F8F2
+foreground = ${colors.foreground}
 
 ; Background gradient (vertical steps)
 ;   background-[0-9]+ = #aarrggbb
-background-0 = #ee343646
-background-1 = #ee282A36
+background-0 = ${colors.background-0}
+background-1 = ${colors.background-1}
 
 ; Value used for drawing rounded corners
 ; Note: This shouldn't be used together with border-size because the border 
@@ -72,7 +72,7 @@ radius = 0.0
 ;   {overline,underline}-size
 ;   {overline,underline}-color
 line-size = 3
-line-color = #f00
+line-color = ${colors.primary}
 
 ; Values applied to all borders
 ; Individual side values can be defined using:
@@ -95,8 +95,8 @@ border-color = #00000000
 ; Number of spaces to add at the beginning/end of the bar
 ; Individual side values can be defined using:
 ;   padding-{left,right}
-padding-left = 4
-padding-right = 4
+padding-left = 3
+padding-right = 3
 
 ; Number of spaces to add before/after each module
 ; Individual side values can be defined using:
@@ -117,6 +117,7 @@ font-2 = Hack:pixelsize=9;1
 font-3 = Font Awesome 5 Free Solid:pixelsize=9;1
 font-4 = Font Awesome 5 Brands Regular:pixelsize=9;1
 font-5 = Font Awesome 5 Free Regular:pixelsize=9;1
+font-6 = icomoon:pixelsize=9;1
 
 ; The separator will be inserted between the output of each module
 separator =

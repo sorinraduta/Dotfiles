@@ -1,21 +1,22 @@
 [module/xwindow]
 type = internal/xwindow
-label = %title:0:50:...%
+
+; Available tags:
+;   <label> (default)
+format = <label>
 format-prefix = " "
 format-prefix-foreground = ${colors.primary}
+format-foreground = ${colors.foreground}
+format-padding = 4
 
-[module/xkeyboard]
-type = internal/xkeyboard
-blacklist-0 = num lock
+; Available tokens:
+;   %title%
+; Default: %title%
+label = %title:0:50:...%
+label-maxlen = 50
 
-format-prefix = " "
-format-prefix-foreground = ${colors.foreground-alt}
-;format-prefix-underline = ${colors.secondary}
-
-label-layout = %layout%
-;label-layout-underline = ${colors.secondary}
-
-label-indicator-padding = 2
-label-indicator-margin = 1
-label-indicator-background = ${colors.secondary}
-label-indicator-underline = ${colors.secondary}
+; Used instead of label when there is no window title
+; Available tokens:
+;   None
+label-empty =
+label-empty-foreground = ${colors.foreground}

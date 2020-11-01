@@ -14,7 +14,7 @@ exec --no-startup-id polybar bottom
 # Programs
 exec --no-startup-id compton -b -c --paint-on-overlay --respect-prop-shadow --config $HOME/.config/compton/compton.conf
 exec --no-startup-id volnoti
-exec --no-startup-id redshift -o
+exec --no-startup-id redshift
 exec --no-startup-id light-locker
 # exec --no-startup-id xfce4-power-manager &
 # exec --no-startup-id nm-applet 2>&1 > /dev/null &
