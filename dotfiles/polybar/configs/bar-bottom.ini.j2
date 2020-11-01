@@ -1,49 +1,19 @@
 [bar/bottom]
-monitor = {{@@ main_monitor @@}}
-width = 100%
-height = 27
+; Import common settings
+inherit = bar/base
+
+; Put the bar at the bottom of the screen
 bottom = true
-;offset-x = 1%
-;offset-y = 1%
-radius = 0.0
-fixed-center = true
 
-background = ${colors.background-transparent}
-foreground = ${colors.foreground}
+; Background gradient (vertical steps)
+;   background-[0-9]+ = #aarrggbb
+background-1 = ${bar/base.background-0}
+background-0 = ${bar/base.background-1}
 
-line-size = 3
-line-color = #f00
-
-border-size = 5
-border-color = #00000000
-
-padding-left = 2
-padding-right = 2
-
-module-margin-left = 1
-module-margin-right = 1
-
-font-0 = Hack:pixelsize=10;1
-font-1 = Hack:fontformat=truetype:size=8:antialias=false;0
-font-2 = Hack:pixelsize=10;1
-font-3 = Font Awesome 5 Free Solid:pixelsize=10;1
-font-4 = Font Awesome 5 Brands Regular:pixelsize=10;1
-font-5 = Font Awesome 5 Free Regular:pixelsize=10;1
-
+; Modules are added to one of the available blocks
+;   modules-left = cpu ram
+;   modules-center = xwindow xbacklight
+;   modules-right = ipc clock
 modules-left = filesystem info-commit
 modules-center = i3
 modules-right = info-redshift-temp info-trash updates-arch-combined xkeyboard memory cpu temperature eth-up eth-down
-
-tray-position = right
-tray-padding = 2
-;tray-background = #0063ff
-
-;wm-restack = i3
-
-;override-redirect = true
-
-;scroll-up = i3wm-wsnext
-;scroll-down = i3wm-wsprev
-
-cursor-click = pointer
-cursor-scroll = ns-resize
