@@ -64,7 +64,7 @@ workspace $workspace3 output $secondaryMonitor
 workspace $workspace4 output $mainMonitor
 workspace $workspace5 output $secondaryMonitor
 workspace $workspace6 output $mainMonitor
-workspace $workspace7 output $mainMonitor
+workspace $workspace7 output $secondaryMonitor
 workspace $workspace8 output $mainMonitor
 workspace $workspace9 output $mainMonitor
 workspace $workspace10 output $secondaryMonitor
@@ -114,6 +114,3 @@ assign [class="kitty"] $workspace3
 ## Workspace: 7 | Monitor: Secondary
 assign [class="Chromium" window_role="pop-up"] $workspace7
 assign [class="Google-chrome" window_role="pop-up"] $workspace7
-
-
-

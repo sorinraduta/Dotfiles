@@ -1,4 +1,5 @@
 dynvariables:
+  locale: locale | grep LANG= | sed -e 's/LANG=//'
   secret_key:  cat {{@@ _dotdrop_workdir @@}}/secret
 variables:
   polybar_scripts_path: "~/.config/polybar/scripts"
