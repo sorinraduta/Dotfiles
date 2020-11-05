@@ -83,15 +83,15 @@ assign [title="Skype"] $workspace5
 assign [title="Messenger"] $workspace5
 
 ## Media
-## Workspace: 6 | Monitor: Main | *1*
-assign [title="YouTube"] $workspace6
-assign [class="Spotify"] $workspace6
+## Workspace: 7 | Monitor: Main | *1*
+assign [title="YouTube"] $workspace7
+assign [class="Spotify"] $workspace7
 
 ## Productivity
-## Workspace: 4 | Monitor: Main | *1*
-assign [title="Trello"] $workspace4
-assign [title="Jira"] $workspace4
-assign [title="Evernote"] $workspace4
+## Workspace: 5 | Monitor: Main | *1*
+assign [title="Trello"] $workspace5
+assign [title="Jira"] $workspace5
+assign [title="Evernote"] $workspace5
 
 ## Browsers
 ## Workspace: 1 | Monitor: Main
@@ -111,6 +111,6 @@ assign [class="Termite"] $workspace3
 assign [class="kitty"] $workspace3
 
 ## Browser inspector
-## Workspace: 7 | Monitor: Secondary
-assign [class="Chromium" window_role="pop-up"] $workspace7
-assign [class="Google-chrome" window_role="pop-up"] $workspace7
+## Workspace: 8 | Monitor: Secondary
+assign [class="Chromium" window_role="pop-up"] $workspace8
+assign [class="Google-chrome" window_role="pop-up"] $workspace8
