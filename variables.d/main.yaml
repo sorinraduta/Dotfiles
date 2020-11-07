@@ -3,10 +3,12 @@ dynvariables:
   secondary_monitor: xrandr --query | grep '\bconnected\b' | grep -v 'primary' | awk '{ print $1 }'
   ethernet_interface: nmcli device status | sed '1d' | awk '{ if ($2 == "ethernet" || $2 == "wifi") print $1 }'
   locale: locale | grep LANG= | sed -e 's/LANG=//'
+  volume_sink: pacmd list-sinks | grep -e 'name:.*analog' | tr -d "[:blank:]" | sed -E 's/(name:|<|>)//g'
   secret_key:  cat {{@@ _dotdrop_workdir @@}}/secret
   is_macbook: if [[ $(uname) == "Darwin" ]]; then echo true; else echo false; fi
   is_laptop: if [[ $(cat /sys/class/dmi/id/chassis_type) == 9 ]]; then echo true; else echo false; fi
 variables:
+  scripts: "~/.scripts"
   module_divider: "" # This will be interpreted by i3 config so it must start with a "#"
   # 0 - Laptop
   # 1 - Home PC

@@ -20,3 +20,5 @@ for unmounted_disk_name in $(echo "$devices" | jq -r '.blockdevices[]  | select(
 done
 
 echo "$output"
+
+pacmd list-sinks | grep -e 'name:.*analog' | tr "name:" " " | tr -d "[:blank:]"
