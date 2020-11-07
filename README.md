@@ -8,5 +8,5 @@
 - Text Editor [VS Code](https://code.visualstudio.com/)
 - Application launcher: [Rofi](https://github.com/davatorium/rofi)
 - Compositor: [Compton](https://github.com/chjj/compton)
-- Fonts: [Nerd Fonts](https://github.com/ryanoasis/nerd-fonts)
-- Colorscheme - [Base16](https://github.com/chriskempson/base16) [Custom scheme](https://observablehq.com/@tomblcode/base16-style-color-scheme-generator)
+- Fonts: [Font Awesome](https://fontawesome.com/cheatsheet) [Hack](https://github.com/source-foundry/Hack)
+- Colorscheme - [Dracula](https://draculatheme.com/)

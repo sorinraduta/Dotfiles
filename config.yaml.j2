@@ -9,7 +9,7 @@ config:
   showdiff: false
   workdir: ~/.dotfiles
   import_variables:
-  - variables.d/main.yaml
+  - variables.yaml
 
 actions:
   pre:
@@ -18,8 +18,7 @@ actions:
     i3-restart: i3-msg restart
     Xresources-refresh: xrdb ~/.Xresources
     refresh-zsh: source ~/.zshrc
-    ssh_key_private_permissions: chmod 600 ~/.ssh/id_rsa
-    ssh_key_public_permissions: chmod 600 ~/.ssh/id_rsa.pub
+    chmod: "chmod {0} {1}"
 
 trans_read:
   _decrypt: openssl enc -aes-256-cbc -d -pbkdf2 -in {0} -out {1} -pass pass:{{@@ secret_key @@}}
@@ -36,22 +35,19 @@ dotfiles:
     dst: ~/.ssh/id_rsa
     src: ssh/id_rsa
     actions:
-      - ssh_key_private_permissions
+      - chmod "600" "~/.ssh/id_rsa"
     trans_read: _decrypt
     trans_write: _encrypt
   f_ssh_key_public:
     dst: ~/.ssh/id_rsa.pub
     src: ssh/id_rsa.pub
     actions:
-      - ssh_key_public_permissions
+      - chmod "600" "~/.ssh/id_rsa.pub"
     trans_read: _decrypt
     trans_write: _encrypt
   d_scripts:
     dst: ~/.scripts
     src: scripts
-  f_profile:
-    dst: ~/.profile
-    src: profile
   f_cronjobs:
     dst: ~/.cronjobs
     src: .cronjobs
@@ -76,9 +72,6 @@ dotfiles:
   f_zsh-theme:
     dst: ~/.oh-my-zsh/themes/disconnect.zsh-theme
     src: zsh/disconnect.zsh-theme
-  d_wal-templates:
-    dst: ~/.config/wal/templates
-    src: wal
   f_compton:
     dst: ~/.config/compton/compton.conf
     src: compton.conf
@@ -106,14 +99,12 @@ profiles:
     dotfiles:
     - f_ssh_key_private
     - f_ssh_key_public
-    - f_profile
     - f_cronjobs
     - d_Xresources
     - f_Xresources
     - d_scripts
     - f_zshrc
     - f_zsh-theme
-    - d_wal-templates
     - f_compton
     - f_rofi
     - f_i3

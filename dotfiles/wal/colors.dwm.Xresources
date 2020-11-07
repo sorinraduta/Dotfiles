@@ -1,8 +1,0 @@
-dwm.normbordercolor: {background}
-dwm.normbgcolor: {background}
-dwm.normfgcolor: {foreground}
-dwm.selbordercolor: {color5}
-dwm.selbgcolor: {background}
-dwm.selfgcolor: {foreground}
-dwm.markbordercolor: {color3}
-dwm.markswappedbordercolor: {color1}
