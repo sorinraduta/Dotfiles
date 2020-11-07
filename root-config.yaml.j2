@@ -2,12 +2,14 @@ config:
   backup: false
   banner: false
   create: true
-  dotpath: ./dotfiles
+  dotpath: dotfiles
   ignoreempty: false
   keepdot: false
   longkey: false
   showdiff: false
   workdir: ~/.dotfiles
+  import_variables:
+  - variables.yaml
 
 dotfiles:
   f_lightdm:

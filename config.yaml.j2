@@ -50,7 +50,7 @@ dotfiles:
     src: scripts
   f_cronjobs:
     dst: ~/.cronjobs
-    src: .cronjobs
+    src: cronjobs/.cronjobs
   d_Xresources:
     dst: ~/.Xresources.d
     src: Xresources/.Xresources.d
@@ -74,10 +74,10 @@ dotfiles:
     src: zsh/disconnect.zsh-theme
   f_compton:
     dst: ~/.config/compton/compton.conf
-    src: compton.conf
+    src: compton/compton.conf
   f_rofi:
     dst: ~/.config/rofi/disconnect.rasi
-    src: rofi.rasi
+    src: rofi/rofi.rasi
   f_i3:
     dst: ~/.config/i3/config
     src: i3
@@ -92,7 +92,7 @@ dotfiles:
     trans_write: split-polybar
   f_dunst:
     dst: ~/.config/dunst/dunstrc
-    src: dunstrc
+    src: dunst/dunstrc
     
 profiles:
   disconnect:
