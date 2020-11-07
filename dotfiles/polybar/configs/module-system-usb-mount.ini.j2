@@ -1,0 +1,9 @@
+[module/system-usb-mount]
+type = custom/script
+exec = {{@@ _dotfile_abs_dst @@}}/scripts/system-usb-mount.sh
+interval = 2
+
+label=%output%
+label-foreground = ${colors.foreground}
+format-prefix = " "
+format-prefix-foreground = ${colors.primary}
