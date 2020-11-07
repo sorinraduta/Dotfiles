@@ -4,15 +4,15 @@
 #  |___/\__\__,_|_|  \__|\_,_| .__/
 #                            |_|
 
-
-# exec --no-startup-id $HOME/.scripts/display-setup.sh
+# Ambient
 exec --no-startup-id $HOME/.scripts/wallpaper.sh
 exec --no-startup-id $HOME/.scripts/lockscreen.sh
 exec --no-startup-id polybar top
 exec --no-startup-id polybar bottom
 
 # Programs
-exec --no-startup-id compton -b -c --paint-on-overlay --respect-prop-shadow --config $HOME/.config/compton/compton.conf
+# TODO: make services
+exec --no-startup-id picom -b -c --config $HOME/.config/picom/picom.conf
 exec --no-startup-id volnoti
 exec --no-startup-id redshift
 exec --no-startup-id light-locker

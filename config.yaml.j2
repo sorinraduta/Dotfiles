@@ -16,8 +16,9 @@ actions:
     set-zsh-default-shell: chsh -s $(which zsh)
   post:
     i3-restart: i3-msg restart
-    Xresources-refresh: xrdb ~/.Xresources
-    refresh-zsh: source ~/.zshrc
+    Xresources-restart: xrdb ~/.Xresources
+    restart-zsh: source ~/.zshrc
+    restart-picom: pkill picom;picom -b -c --config {{@@ _dotfile_abs_dst @@}}
     chmod: "chmod {0} {1}"
 
 trans_read:
@@ -55,26 +56,28 @@ dotfiles:
     dst: ~/.Xresources.d
     src: Xresources/.Xresources.d
     actions:
-      - Xresources-refresh
+      - Xresources-restart
       - i3-restart
   f_Xresources:
     dst: ~/.Xresources
     src: Xresources/.Xresources
     actions:
-      - Xresources-refresh
+      - Xresources-restart
       - i3-restart
   f_zshrc:
     dst: ~/.zshrc
     src: zsh/.zshrc
     actions:
       - set-zsh-default-shell
-      - refresh-zsh
+      - restart-zsh
   f_zsh-theme:
     dst: ~/.oh-my-zsh/themes/disconnect.zsh-theme
     src: zsh/disconnect.zsh-theme
-  f_compton:
-    dst: ~/.config/compton/compton.conf
-    src: compton/compton.conf
+  f_picom:
+    dst: ~/.config/picom/picom.conf
+    src: picom/picom.conf
+    actions:
+      - restart-picom
   f_rofi:
     dst: ~/.config/rofi/disconnect.rasi
     src: rofi/rofi.rasi
@@ -105,7 +108,7 @@ profiles:
     - d_scripts
     - f_zshrc
     - f_zsh-theme
-    - f_compton
+    - f_picom
     - f_rofi
     - f_i3
     - d_polybar
