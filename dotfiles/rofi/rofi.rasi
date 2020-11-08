@@ -1,98 +1,142 @@
 /*
- * ROFI One Dark
  *
- * Based on OneDark.vim (https://github.com/joshdick/onedark.vim)
- *
+ * Author : Aditya Shakya (adi1090x)
+ * Mail : adi1090x@gmail.com
+ * Github : @adi1090x
+ * Reddit : @adi1090x
+ * https://github.com/adi1090x/rofi 
  *
  */
- 
- 
+
+configuration {
+    font:                           "Noto Sans 10";
+    show-icons:                     true;
+	icon-theme: 					"Papirus";
+    drun-display-format:            "{name}";
+    threads:                        0;
+    scroll-method:                  0;
+    disable-history:                false;
+    fullscreen:                     false;
+	hide-scrollbar: 				true;
+	sidebar-mode: 					false;
+}
+
 * {
-  black:      #000000;
-  red:        #eb6e67;
-  green:      #95ee8f;
-  yellow:     #f8c456;
-  blue:       #6eaafb;
-  mangenta:   #d886f3;
-  cyan:       #6cdcf7;
-  emphasis:   #F2AA8A; /* #50536b; */
-  text:       #dfdfdf;
-  text-alt:   #b2b2b2;
-  fg:         #abb2bf;
-  bg:         #282c34;
- 
-  spacing: 0;
-  background-color: transparent;
- 
-  font: "Ubuntu Mono 14";
-  text-color: @text;
+    background:                     #00000000;
+    background-color:               #282A36AA;
+    background-entry:               #00000033;
+    background-alt:                 #f2f2f215;
+    foreground:                     #f2f2f2EE;
+    foreground-selected:            #ffffffFF;
+    urgent:                         #FF6E6766;
+    urgent-selected:                #FF6E6777;
 }
- 
+
 window {
-  transparency: "real";
-  fullscreen: true;
-  background-color: #282c34dd;
+    transparency:                   "real";
+    background-color:               @background;
+    text-color:                     @foreground;
+    height:                         100%;
+    width:                          100%;
+    location:                       northwest;
+    anchor:                         northwest;
+    x-offset:                       0;
+    y-offset:                       0;
 }
- 
-mainbox {
-  padding: 30% 30%;
-}
- 
-inputbar {
-  margin: 0px 0px 20px 0px;
-  children: [prompt, textbox-prompt-colon, entry, case-indicator];
-}
- 
+
 prompt {
-  text-color: @blue;
+    enabled: false;
 }
- 
-textbox-prompt-colon {
-  expand: false;
-  str: ":";
-  text-color: @text-alt;
+
+
+inputbar {
+    background-color:               @background-alt;
+    text-color:                     @foreground;
+    expand:                         false;
+    border-radius:                  6px;
+    margin:                         0px 430px 0px 430px;
+    padding:                        10px 10px 10px 10px;
+    position:                       north;
 }
- 
+
+
 entry {
-  margin: 0px 10px;
+    background-color:               @background;
+    text-color:                     @foreground;
+    placeholder-color:              @foreground;
+    expand:                         true;
+    horizontal-align:               0.5;
+    placeholder:                    "Search applications";
+    blink:                          true;
 }
- 
+
+case-indicator {
+    background-color:               @background;
+    text-color:                     @foreground;
+    spacing:                        0;
+}
+
+
 listview {
-  spacing: 5px;
-  dynamic: true;
-  scrollbar: false;
+    background-color:               @background;
+    columns:                        7;
+    spacing:                        4px;
+    cycle:                          false;
+    dynamic:                        true;
+    layout:                         vertical;
 }
- 
+
+mainbox {
+    background-color:               @background-color;
+    children:                       [ inputbar, listview ];
+    spacing:                        25px;
+    padding:                        70px 135px 55px 135px;
+}
+
 element {
-  padding: 5px;
-  text-color: @text-alt;
-  highlight: bold #95ee8f; /* green */
-  border-radius: 3px;
+    background-color:               @background;
+    text-color:                     @foreground;
+    orientation:                    vertical;
+    border-radius:                  9px;
+    padding:                        20px 0px 20px 0px;
 }
- 
+
+element-icon {
+    size:                           65px;
+    border:                         0px;
+}
+
+element-text {
+    expand:                         true;
+    horizontal-align:               0.5;
+    vertical-align:                 0.5;
+    margin:                         5px 10px 0px 10px;
+}
+
+element normal.urgent,
+element alternate.urgent {
+    background-color:               @urgent;
+    text-color:                     @foreground;
+    border-radius:                  9px;
+}
+
+element normal.active,
+element alternate.active {
+    background-color:               @background-alt;
+    text-color:                     @foreground;
+}
+
 element selected {
-  background-color: @emphasis;
-  text-color: @text;
+    background-color:               @background-alt;
+    text-color:                     @foreground-selected;
 }
- 
-element urgent, element selected urgent {
-  text-color: @red;
+
+element selected.urgent {
+    background-color:               @urgent-selected;
+    text-color:                     @foreground;
 }
- 
-element active, element selected active {
-  text-color: @purple;
-}
- 
-message {
-  padding: 5px;
-  border-radius: 3px;
-  background-color: @emphasis;
-  border: 1px;
-  border-color: @cyan;
-}
- 
-button selected {
-  padding: 5px;
-  border-radius: 3px;
-  background-color: @emphasis;
+
+element selected.active {
+    background-color:               @background-alt;
+    color:                          @foreground-selected;
 }
