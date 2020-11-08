@@ -7,7 +7,7 @@ config:
   keepdot: false
   longkey: false
   showdiff: false
-  workdir: ~/.dotfiles
+  workdir: /home/rappy/.dotfiles
   import_variables:
   - variables.yaml
 
@@ -19,7 +19,7 @@ dotfiles:
     dst: /etc/lightdm/lightdm-webkit2-greeter.conf
     src: lightdm/lightdm-webkit2-greeter.conf
   f_display-setup:
-    dst: /usr/share/display-setup.sh
+    dst: /usr/share/lightdm/display-setup.sh
     src: scripts/display-setup.sh
 
 profiles:
