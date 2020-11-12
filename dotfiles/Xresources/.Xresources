@@ -1,5 +1,4 @@
 #include ".Xresources.d/colors"
-#include ".Xresources.d/rofi"
 
 {%@@ if is_macbook == "true" @@%}
 #include ".Xresources.d/macbook"

@@ -36,5 +36,4 @@ case "$1" in
     ;;
 esac
 
-
 a=$((if [[ $next_perc < 0 ]] ; then echo "111" ; else echo "222" ; fi))

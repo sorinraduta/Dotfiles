@@ -23,9 +23,11 @@ actions:
 
 trans_read:
   _decrypt: openssl enc -aes-256-cbc -d -pbkdf2 -in {0} -out {1} -pass pass:{{@@ secret_key @@}}
-  build-i3-config: for i in {0}/*.i3; do cat $i;printf  "\n{{@@ module_divider @@}}\n"; done >> {1}
   build-polybar: mkdir {1}; touch {1}/config; for i in {0}/configs/*.ini.j2; do cat $i;printf  "\n{{@@ module_divider @@}}\n"; done >> {1}/config; cp -rf {0}/scripts {1}/scripts
+  build-i3-config: for i in {0}/*.i3; do cat $i;printf  "\n{{@@ module_divider @@}}\n"; done >> {1}
   build-dunst: for i in {0}/*.conf; do cat $i;printf  "\n{{@@ module_divider @@}}\n"; done >> {1}
+  build-kitty: for i in {0}/*.conf; do cat $i;printf  "\n{{@@ module_divider @@}}\n"; done >> {1}
+  build-picom: for i in {0}/*.conf; do cat $i;printf  "\n{{@@ module_divider @@}}\n"; done >> {1}
 
 trans_write:
   _encrypt: openssl enc -aes-256-cbc -pbkdf2 -in {0} -out {1} -pass pass:{{@@ secret_key @@}}
@@ -76,9 +78,10 @@ dotfiles:
     src: zsh/disconnect.zsh-theme
   f_picom:
     dst: ~/.config/picom/picom.conf
-    src: picom/picom.conf
+    src: picom
     actions:
       - restart-picom
+    trans_read: build-picom
   f_rofi:
     dst: ~/.config/rofi/disconnect.rasi
     src: rofi/rofi.rasi
@@ -98,6 +101,10 @@ dotfiles:
     dst: ~/.config/dunst/dunstrc
     src: dunst
     trans_read: build-dunst
+  f_kitty:
+    dst: ~/.config/kitty/kitty.conf
+    src: kitty
+    trans_read: build-kitty
     
 profiles:
   disconnect:
@@ -115,3 +122,4 @@ profiles:
     - f_i3
     - d_polybar
     - f_dunst
+    - f_kitty

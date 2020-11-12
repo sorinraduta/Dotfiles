@@ -1,8 +1,6 @@
-#  __      __       _
-#  \ \    / /__ _ _| |__ ____ __  __ _ __ ___ ___
-#   \ \/\/ / _ \ '_| / /(_-< '_ \/ _` / _/ -_|_-<
-#    \_/\_/\___/_| |_\_\/__/ .__/\__,_\__\___/__/
-#                          |_|
+################################################################################
+##  Workspaces                                                                ##
+################################################################################                       |_|
 
 # Define monitors
 set $mainMonitor "{{@@ main_monitor @@}}"
@@ -32,7 +30,6 @@ for_window [class="Gpick"] floating enable
 # exec --no-startup-id i3-msg workspace ""
 # exec --no-startup-id i3-msg workspace ""
 
-
 # Focus workspace
 bindsym $mod+1 workspace $workspace1
 bindsym $mod+2 workspace $workspace2
@@ -43,7 +40,7 @@ bindsym $mod+6 workspace $workspace6
 bindsym $mod+7 workspace $workspace7
 bindsym $mod+8 workspace $workspace8
 bindsym $mod+9 workspace $workspace9
-bindsym $mod+0 workspace $workspace0
+bindsym $mod+0 workspace $workspace10
 
 # Move focused container to workspace and focuse it
 bindsym $mod+Shift+1 move container to workspace $workspace1; workspace $workspace1
@@ -69,48 +66,47 @@ workspace $workspace8 output $mainMonitor
 workspace $workspace9 output $mainMonitor
 workspace $workspace10 output $secondaryMonitor
 
-
 # Assign apps to workspaces
-### *1* - This needs to be above 'Browsers workspace' because
-### some programs are within browsers
+# *1* - This needs to be above 'Browsers workspace' because
+# some programs are within browsers
 
-## Social
-## Workspace: 5 | Monitor: Secondary | *1*
+# Social
+# Workspace: 5 | Monitor: Secondary | *1*
 assign [title="WhatsApp"] $workspace5
 assign [title="Slack"] $workspace5
 assign [title="Discord"] $workspace5
 assign [title="Skype"] $workspace5
 assign [title="Messenger"] $workspace5
 
-## Media
-## Workspace: 7 | Monitor: Main | *1*
+# Media
+# Workspace: 7 | Monitor: Main | *1*
 assign [title="YouTube"] $workspace7
 assign [class="Spotify"] $workspace7
 
-## Productivity
-## Workspace: 5 | Monitor: Main | *1*
+# Productivity
+# Workspace: 5 | Monitor: Main | *1*
 assign [title="Trello"] $workspace5
 assign [title="Jira"] $workspace5
 assign [title="Evernote"] $workspace5
 
-## Browsers
-## Workspace: 1 | Monitor: Main
+# Browsers
+# Workspace: 1 | Monitor: Main
 assign [class="Chromium" window_role="browser"] $workspace1
 assign [class="Google-chrome" window_role="browser"] $workspace1
 
-## Coding
-## Workspace: 2 | Monitor: Main
+# Coding
+# Workspace: 2 | Monitor: Main
 assign [class="Code"] $workspace2
 assign [class="code-oss"] $workspace2
 
-## Terminal
-## Workspace: 3 | Monitor: Secondary
+# Terminal
+# Workspace: 3 | Monitor: Secondary
 assign [class="Gnome-terminal"] $workspace3
 assign [class="St"] $workspace3
 assign [class="Termite"] $workspace3
 assign [class="kitty"] $workspace3
 
-## Browser inspector
-## Workspace: 8 | Monitor: Secondary
+# Browser inspector
+# Workspace: 8 | Monitor: Secondary
 assign [class="Chromium" window_role="pop-up"] $workspace8
 assign [class="Google-chrome" window_role="pop-up"] $workspace8

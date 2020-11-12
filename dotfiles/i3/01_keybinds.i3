@@ -1,8 +1,6 @@
-#   _  __         _    _         _    
-#  | |/ /___ _  _| |__(_)_ _  __| |___
-#  | ' </ -_) || | '_ \ | ' \/ _` (_-<
-#  |_|\_\___|\_, |_.__/_|_||_\__,_/__/
-#            |__/                     
+################################################################################
+##  Keybinds                                                                  ##
+################################################################################          
 
 # Mod key
 set $mod Mod4
@@ -19,10 +17,6 @@ bindsym $mod+w kill
 
 # Start dmenu (a program launcher)
 bindsym $mod+space exec rofi -show drun -show-icons
-# There also is the (new) i3-dmenu-desktop which only displays applications
-# shipping a .desktop file. It is a wrapper around dmenu, so you need that
-# installed.
-# bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
 # Change focus
 bindsym $mod+j focus left
@@ -80,13 +74,13 @@ bindsym $mod+Shift+c reload
 # Restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 
-# http://ubuntuhandbook.org/index.php/2017/03/install-sopcast-player-ubuntu-16-04-16-10/
 # exit i3 (logs you out of your X session)
+# http://ubuntuhandbook.org/index.php/2017/03/install-sopcast-player-ubuntu-16-04-16-10/
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
+# Pulse Audio controls
 # https://faq.i3wm.org/question/3747/enabling-multimedia-keys/?answer=3759#post-id-3759
 # http://wiki.linuxquestions.org/wiki/XF86_keyboard_symbols
-# Pulse Audio controls
 bindsym XF86AudioRaiseVolume exec --no-startup-id ~/.scripts/volnoti.sh up
 bindsym XF86AudioLowerVolume exec --no-startup-id ~/.scripts/volnoti.sh down
 bindsym XF86AudioMute exec --no-startup-id ~/.scripts/volnoti.sh mute-toggle
@@ -96,7 +90,7 @@ bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 20 # increase s
 bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 20 # decrease screen brightness
 
 # Touchpad controls
-# bindsym XF86TouchpadToggle exec --no-startup-id ~/.toggletouchpad.sh # toggle touchpad
+# bindsym XF86TouchpadToggle exec --no-startup-id ~/.toggletouchpad.sh
 
 # Media player controls
 #bindsym XF86AudioPlay exec playerctl play
