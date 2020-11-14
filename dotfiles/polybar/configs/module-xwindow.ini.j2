@@ -1,22 +1,26 @@
+################################################################################
+##  Module Xwindow                                                            ##
+################################################################################
+
 [module/xwindow]
 type = internal/xwindow
 
-; Available tags:
-;   <label> (default)
+# Available tags:
+#   <label> (default)
 format = <label>
 format-prefix = " "
 format-prefix-foreground = ${colors.primary}
 format-foreground = ${colors.foreground}
 format-padding = 4
 
-; Available tokens:
-;   %title%
-; Default: %title%
+# Available tokens:
+#   %title%
+# Default: %title%
 label = %title:0:50:...%
 label-maxlen = 50
 
-; Used instead of label when there is no window title
-; Available tokens:
-;   None
+# Used instead of label when there is no window title
+# Available tokens:
+#   None
 label-empty =
 label-empty-foreground = ${colors.foreground}

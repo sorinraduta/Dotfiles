@@ -1,22 +1,26 @@
+################################################################################
+##  Bar top                                                                   ##
+################################################################################
+
 [bar/top]
-; Import common settings
+# Import common settings
 inherit = bar/base
 
-; Position of the system tray window
-; If empty or undefined, tray support will be disabled
-; NOTE: A center aligned tray will cover center aligned modules
-;
-; Available positions:
-;   left
-;   center
-;   right
-;   none
+# Position of the system tray window
+# If empty or undefined, tray support will be disabled
+# NOTE: A center aligned tray will cover center aligned modules
+#
+# Available positions:
+#   left
+#   center
+#   right
+#   none
 tray-position = none
 
-; Modules are added to one of the available blocks
-;   modules-left = cpu ram
-;   modules-center = xwindow xbacklight
-;   modules-right = ipc clock
+# Modules are added to one of the available blocks
+#   modules-left = cpu ram
+#   modules-center = xwindow xbacklight
+#   modules-right = ipc clock
 modules-left = text info-redshift-temp updates-arch-combined info-commit
 modules-center = xwindow
 modules-right = date powermenu

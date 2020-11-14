@@ -1,49 +1,52 @@
+################################################################################
+##  Module i3                                                                 ##
+################################################################################
+
 [module/i3]
 type = internal/i3
 
-; Only show workspaces defined on the same output as the bar
-;
-; Useful if you want to show monitor specific workspaces
-; on different bars
-;
-; Default: false
+# Only show workspaces defined on the same output as the bar
+# Useful if you want to show monitor specific workspaces on different bars
+# Default: false
 pin-workspaces = false
 
-; This will split the workspace name on ':'
-; Default: false
+# This will split the workspace name on ':'
+# Default: false
 strip-wsnumbers = true
 
-; Sort the workspaces by index instead of the default
-; sorting that groups the workspaces by output
-; Default: false
+# Sort the workspaces by index instead of the default sorting that groups the
+# workspaces by output
+# Default: false
 index-sort = true
 
-; Create click handler used to focus workspace
-; Default: true
+# Create click handler used to focus workspace
+# Default: true
 enable-click = true
 
-; Create scroll handlers used to cycle workspaces
-; Default: true
+# Create scroll handlers used to cycle workspaces
+# Default: true
 enable-scroll = true
 
-; Wrap around when reaching the first/last workspace
-; Default: true
+# Wrap around when reaching the first/last workspace
+# Default: true
 wrapping-scroll = true
 
-; Set the scroll cycle direction 
-; Default: true
+# Set the scroll cycle direction
+# Default: true
 reverse-scroll = true
 
-; Use fuzzy (partial) matching on labels when assigning 
-; icons to workspaces
-; Example: code;♚ will apply the icon to all workspaces 
-; containing 'code' in the label
-; Default: false
+# Use fuzzy (partial) matching on labels when assigning icons to workspaces
+# Example: code;♚ will apply the icon to all workspaces containing 'code' in the
+# label
+# Default: false
 fuzzy-match = false
 
-; ws-icon-[0-9]+ = <label>;<icon>
-; NOTE: The <label> needs to match the name of the i3 workspace
-; Neither <label> nor <icon> can contain a semicolon (;)
+# ws-icon-[0-9]+ = <label>;<icon>
+# NOTE: The <label> needs to match the name of the i3 workspace
+# Neither <label> nor <icon> can contain a semicolon (;)
+# NOTE: You cannot skip icons, e.g. to get a ws-icon-6 you must also define a
+# ws-icon-5.
+# NOTE: Icon will be available as the %icon% token inside label-*
 ws-icon-0 = 1;
 ws-icon-1 = 2;
 ws-icon-2 = 3;
@@ -55,67 +58,65 @@ ws-icon-7 = 8;
 ws-icon-8 = 9;
 ws-icon-9 = 10;
 ws-icon-default = 
-; NOTE: You cannot skip icons, e.g. to get a ws-icon-6
-; you must also define a ws-icon-5.
-; NOTE: Icon will be available as the %icon% token inside label-*
 
-; Available tags:
-;   <label-state> (default) - gets replaced with <label-(focused|unfocused|visible|urgent)>
-;   <label-mode> (default)
+# Available tags:
+#   <label-state> (default) - gets replaced with
+# <label-(focused|unfocused|visible|urgent)>
+#   <label-mode> (default)
 format = <label-state>
 
-; Available tokens:
-;   %mode%
-; Default: %mode%
+# Available tokens:
+#   %mode%
+# Default: %mode%
 label-mode = %mode%
 label-mode-padding = 2
 label-mode-background = ${colors.alert}
 
-; Available tokens:
-;   %name%
-;   %icon%
-;   %index%
-;   %output%
-; Default: %icon%  %name%
+# Available tokens:
+#   %name%
+#   %icon%
+#   %index%
+#   %output%
+# Default: %icon%  %name%
 label-focused = %icon%
 label-focused-foreground = ${colors.primary}
 label-focused-background = #282A36
-label-focused-underline = 
+label-focused-underline =
 label-focused-padding = 4
 
-; Available tokens:
-;   %name%
-;   %icon%
-;   %index%
-;   %output%
-; Default: %icon%  %name%
+# Available tokens:
+#   %name%
+#   %icon%
+#   %index%
+#   %output%
+# Default: %icon%  %name%
 label-unfocused = %icon%
 label-unfocused-padding = 2
 label-unfocused-foreground = ${colors.foreground}
 
-; Available tokens:
-;   %name%
-;   %icon%
-;   %index%
-;   %output%
-; Default: %icon%  %name%
+# Available tokens:
+#   %name%
+#   %icon%
+#   %index%
+#   %output%
+# Default: %icon%  %name%
 label-visible = %icon%
 label-visible-foreground = ${colors.primary}
 label-visible-background =
-label-visible-underline = 
+label-visible-underline =
 label-visible-padding = 4
 
-; Available tokens:
-;   %name%
-;   %icon%
-;   %index%
-;   %output%
-; Default: %icon%  %name%
+# Available tokens:
+#   %name%
+#   %icon%
+#   %index%
+#   %output%
+# Default: %icon%  %name%
 label-urgent = %icon%
 label-urgent-foreground = ${colors.alert}
 label-urgent-padding = 2
 
-; Separator in between workspaces
+# Separator in between workspaces
 label-separator =
 label-separator-foreground = ${colors.foreground}
 label-separator-padding = 2

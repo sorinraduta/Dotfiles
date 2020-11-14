@@ -1,3 +1,7 @@
+################################################################################
+##  Module Backlight                                                          ##
+################################################################################
+
 [module/backlight]
 type = internal/backlight
 
@@ -9,7 +13,7 @@ card = intel_backlight
 ; NOTE: This may require additional configuration on some systems. Polybar will
 ; write to `/sys/class/backlight/${self.card}/brightness` which requires polybar
 ; to have write access to that file.
-; DO NOT RUN POLYBAR AS ROOT. 
+; DO NOT RUN POLYBAR AS ROOT.
 ; The recommended way is to add the user to the
 ; `video` group and give that group write-privileges for the `brightness` file.
 ; See the ArchWiki for more information:

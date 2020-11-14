@@ -1,19 +1,23 @@
+################################################################################
+##  Bar bottom                                                                ##
+################################################################################
+
 [bar/bottom]
-; Import common settings
+# Import common settings
 inherit = bar/base
 
-; Put the bar at the bottom of the screen
+# Put the bar at the bottom of the screen
 bottom = true
 
-; Background gradient (vertical steps)
-;   background-[0-9]+ = #aarrggbb
+# Background gradient (vertical steps)
+#   background-[0-9]+ = #aarrggbb
 background-1 = ${bar/base.background-0}
 background-0 = ${bar/base.background-1}
 
-; Modules are added to one of the available blocks
-;   modules-left = cpu ram
-;   modules-center = xwindow xbacklight
-;   modules-right = ipc clock
+# Modules are added to one of the available blocks
+#   modules-left = cpu ram
+#   modules-center = xwindow xbacklight
+#   modules-right = ipc clock
 modules-left = cpu temperature memory filesystem
 modules-center = i3
 modules-right = system-usb-mount pulseaudio xkeyboard
