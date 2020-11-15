@@ -17,10 +17,10 @@ ZSH_THEME_GIT_PROMPT_CLEAN=""
 aphrodite_get_welcome_symbol() {
 
 	echo -n "%(?..%F{1})"
-	
+
 	local welcome_symbol='$'
 	[ $EUID -ne 0 ] || welcome_symbol='#'
-	
+
 	echo -n $welcome_symbol
 	echo -n "%(?..%f)"
 }
@@ -30,7 +30,7 @@ aphrodite_get_welcome_symbol() {
 aphrodite_get_current_branch() {
 
 	local branch=$(git_current_branch)
-	
+
 	if [ -n "$branch" ]; then
 		echo -n $ZSH_THEME_GIT_PROMPT_PREFIX
 		echo -n $(parse_git_dirty)
@@ -42,11 +42,11 @@ aphrodite_get_current_branch() {
 aphrodite_get_prompt() {
 
 	# 256-colors check (will be used later): tput colors
-	
+
 	echo -n "%F{6}%n%f" # User
 	echo -n "%F{8}@%f" # at
 	echo -n "%F{12}%m%f" # Host
-	echo -n "%F{8}:%f" # in 
+	echo -n "%F{8}:%f" # in
 	echo -n "%{$reset_color%}%~" # Dir
 	echo -n "$(aphrodite_get_current_branch)" # Git branch
 	echo -n "\n"
