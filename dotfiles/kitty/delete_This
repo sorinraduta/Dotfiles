@@ -1,7 +1,0 @@
-map alt+1 disable_ligatures_in active always
-map alt+2 disable_ligatures_in all never
-map alt+3 disable_ligatures_in tab cursor
-
-map cmd+shift+v paste_from_buffer a1
-
-copy_on_select no
