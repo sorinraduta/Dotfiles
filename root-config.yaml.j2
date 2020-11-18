@@ -11,6 +11,12 @@ config:
   import_variables:
   - variables.yaml
 
+actions:
+  post:
+    mkinitcpio: mkinitcpio -p linux
+    grub-install: grub-install --efi-directory=/boot {{@@ boot_device @@}}
+    grub-mkconfig: grub-mkconfig -o /boot/grub/grub.cfg
+
 dotfiles:
   f_lightdm:
     dst: /etc/lightdm/lightdm.conf
@@ -21,6 +27,20 @@ dotfiles:
   f_display-setup:
     dst: /usr/share/lightdm/display-setup.sh
     src: scripts/display-setup.sh
+  f_plymounth:
+    dst: /etc/plymouth/plymouthd.conf
+    src: plymouth/plymouthd.conf
+  f_mkinitcpio:
+    dst: /etc/mkinitcpio.conf
+    src: mkinitcpio/mkinitcpio.conf
+    actions:
+      - mkinitcpio
+  f_grub:
+    dst: /etc/default/grub
+    src: grub/grub.cfg
+    actions:
+      - grub-install
+      - grub-mkconfig
 
 profiles:
   disconnect:

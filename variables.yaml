@@ -13,5 +13,7 @@ variables:
   module_divider: ""
   # 0 - Laptop
   # 1 - Home PC
-  # 2 - Work PC
-  display_layout: "1"
+  # 2 - Goldwin PC
+  display_layout: "2"
+  boot_device: "/dev/sda1"
+  encrypted_main_device: "/dev/sda2"
