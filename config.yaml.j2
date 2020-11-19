@@ -46,6 +46,9 @@ dotfiles:
       - chmod "600" "~/.ssh/id_rsa.pub"
     trans_read: _decrypt
     trans_write: _encrypt
+  f_ssh_config:
+    dst: ~/.ssh/config
+    src: ssh/config
   d_scripts:
     dst: ~/.scripts
     src: scripts
@@ -114,6 +117,7 @@ profiles:
     dotfiles:
     - f_ssh_key_private
     - f_ssh_key_public
+    - f_ssh_config
     - f_cronjobs
     - d_Xresources
     - f_Xresources

@@ -1,0 +1,28 @@
+{%@@ set servers = [
+    'stage.h4k.co',
+    'jenkins.h4k.co',
+    'web.gplat.h4k.co',
+    'web.west.h4k.co',
+    'db.west.h4k.co',
+    'web.westuk.h4k.co',
+    'db.westuk.h4k.co',
+    'web.goldwin.h4k.co',
+    'db.goldwin.h4k.co',
+    'dw.axm.h4k.co',
+    'dw.mongo.h4k.co',
+    'dbext.h4k.co',
+    'pbn.h4k.co',
+    'e11h.h4k.co',
+    'l6h.h4k.co',
+    'k4a.h4k.co',
+    'm7e.h4k.co',
+    'r6y.h4k.co',
+] @@%}
+
+{%@@ for server in servers @@%}
+Host {{@@ server @@}}
+    AddKeysToAgent yes
+    HostName {{@@ server @@}}
+    Port 55555
+    User root
+{%@@ endfor @@%}

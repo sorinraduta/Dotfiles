@@ -96,10 +96,10 @@ alias mci="sudo make clean install"
 alias gcb='git branch | egrep -v "(master|\*)" | xargs git branch -D'
 
 # Dotfiles
-alias dotfiles="dotdrop --cfg=$DOTFILES/config.yaml.j2 -f install --profile=disconnect"
-alias sudotfiles="sudo dotdrop --cfg=$DOTFILES/root-config.yaml.j2 -f install --profile=disconnect"
-alias dot="dotfiles"
-alias sudot="sudotfiles"
+alias dotfiles="dotdrop --cfg=$DOTFILES/config.yaml.j2 -f --profile=disconnect"
+alias sudotfiles="sudo dotdrop --cfg=$DOTFILES/root-config.yaml.j2 -f --profile=disconnect"
+alias dot="dotfiles install"
+alias sudot="sudotfiles install"
 
 # Ambient
 alias wallpaper="$HOME/.scripts/wallpaper.sh"
