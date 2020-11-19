@@ -15,5 +15,7 @@ variables:
   # 1 - Home PC
   # 2 - Goldwin PC
   display_layout: "2"
-  boot_device: "/dev/sda1"
-  encrypted_main_device: "/dev/sda2"
+  cryptdevice: "UUID=bf36ecbc-0c22-43bd-8278-51b1f41b5a4d"
+  #cryptdevice: "/dev/sda2"
+  root_device: "/dev/Arch/root"
+  boot_loader_entry: "Disconnect"

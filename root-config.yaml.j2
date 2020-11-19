@@ -14,7 +14,6 @@ config:
 actions:
   post:
     mkinitcpio: mkinitcpio -p linux
-    grub-install: grub-install --efi-directory=/boot {{@@ boot_device @@}}
     grub-mkconfig: grub-mkconfig -o /boot/grub/grub.cfg
 
 dotfiles:
@@ -37,10 +36,12 @@ dotfiles:
       - mkinitcpio
   f_grub:
     dst: /etc/default/grub
-    src: grub/grub.cfg
+    src: bootloaders/grub/grub.cfg
     actions:
-      - grub-install
       - grub-mkconfig
+  d_systemd_boot:
+    dst: /boot/loader
+    src: bootloaders/systemd-boot
 
 profiles:
   disconnect:
@@ -48,3 +49,4 @@ profiles:
     - f_lightdm
     - f_lightdm-webkit2-greeter
     - f_display-setup
+    - d_systemd_boot
