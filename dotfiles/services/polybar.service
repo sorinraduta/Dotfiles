@@ -1,0 +1,9 @@
+[Unit]
+Description=Polybar
+
+[Service]
+ExecStart=/usr/bin/polybar top --config=%h/.config/polybar/config
+ExecStart=/usr/bin/polybar bottom --config=%h/.config/polybar/config
+
+[Install]
+WantedBy=multi-user.target
