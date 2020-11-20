@@ -15,6 +15,7 @@ actions:
   post:
     mkinitcpio: mkinitcpio -p linux
     grub-mkconfig: grub-mkconfig -o /boot/grub/grub.cfg
+    start-services: systemctl enable light-locker picom redshift volnoti
 
 dotfiles:
   f_lightdm:
@@ -42,6 +43,11 @@ dotfiles:
   d_systemd_boot:
     dst: /boot/loader
     src: bootloaders/systemd-boot
+  d_services:
+    dst: /usr/lib/systemd/system
+    src: services
+    actions:
+      - start-services
 
 profiles:
   disconnect:
@@ -50,3 +56,4 @@ profiles:
     - f_lightdm-webkit2-greeter
     - f_display-setup
     - d_systemd_boot
+    - d_services

@@ -1,0 +1,8 @@
+[Unit]
+Description=Picom
+
+[Service]
+ExecStart=/usr/bin/picom -b -c --config /home/{{@@ user @@}}/.config/picom/picom.conf
+
+[Install]
+WantedBy=multi-user.target

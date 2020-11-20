@@ -19,3 +19,4 @@ variables:
   #cryptdevice: "/dev/sda2"
   root_device: "/dev/Arch/root"
   boot_loader_entry: "Disconnect"
+  user: "rappy"
