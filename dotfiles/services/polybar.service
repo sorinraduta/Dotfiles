@@ -2,6 +2,7 @@
 Description=Polybar
 
 [Service]
+Type=oneshot
 ExecStart=/usr/bin/polybar top --config=%h/.config/polybar/config
 ExecStart=/usr/bin/polybar bottom --config=%h/.config/polybar/config
 
