@@ -35,11 +35,11 @@ dotfiles:
     src: mkinitcpio/mkinitcpio.conf
     actions:
       - mkinitcpio
-  f_grub:
-    dst: /etc/default/grub
-    src: bootloaders/grub/grub.cfg
-    actions:
-      - grub-mkconfig
+  #f_grub:
+  #  dst: /etc/default/grub
+  #  src: bootloaders/grub/grub.cfg
+  #  actions:
+  #    - grub-mkconfig
   d_systemd_boot:
     dst: /boot/loader
     src: bootloaders/systemd-boot
@@ -48,12 +48,11 @@ dotfiles:
     src: services
     actions:
       - start-services
+  d_openvpn:
+    dst: /etc/openvpn
+    src: openvpn
 
 profiles:
   disconnect:
     dotfiles:
-    - f_lightdm
-    - f_lightdm-webkit2-greeter
-    - f_display-setup
-    - d_systemd_boot
-    - d_services
+    - ALL

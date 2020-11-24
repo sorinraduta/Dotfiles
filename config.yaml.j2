@@ -8,6 +8,12 @@ config:
   longkey: false
   showdiff: false
   workdir: ~/.dotfiles
+  cmpignore:
+  - '**/README.md'
+  upignore:
+  - '**/README.md'
+  instignore:
+  - '**/README.md'
   import_variables:
   - variables.yaml
 
@@ -19,33 +25,28 @@ actions:
     Xresources-restart: xrdb ~/.Xresources
     restart-zsh: source ~/.zshrc
     restart-picom: pkill picom;picom -b -c --config {{@@ _dotfile_abs_dst @@}}
-    chmod: "chmod {0} {1}"
 
 trans_read:
   _decrypt: openssl enc -aes-256-cbc -d -pbkdf2 -in {0} -out {1} -pass pass:{{@@ secret_key @@}}
   build-polybar: mkdir {1}; touch {1}/config; for i in {0}/configs/*.ini.j2; do cat $i;printf  "\n{{@@ module_divider @@}}\n"; done >> {1}/config; cp -rf {0}/scripts {1}/scripts
-  build-config: for i in {0}/*.conf; do cat $i;printf  "\n{{@@ module_divider @@}}\n"; done >> {1}
+  build-config: for i in {0}/*.conf; do cat $i;printf  "\n{{@@ module_divider @@}}\n";done >> {1}
 
 trans_write:
   _encrypt: openssl enc -aes-256-cbc -pbkdf2 -in {0} -out {1} -pass pass:{{@@ secret_key @@}}
-  split-config: # TODO
-  split-polybar: # TODO
 
 dotfiles:
   f_ssh_key_private:
     dst: ~/.ssh/id_rsa
     src: ssh/id_rsa
-    actions:
-      - chmod "600" "~/.ssh/id_rsa"
-    trans_read: _decrypt
+    trans_r: _decrypt
     trans_write: _encrypt
+    chmod: 600
   f_ssh_key_public:
     dst: ~/.ssh/id_rsa.pub
     src: ssh/id_rsa.pub
-    actions:
-      - chmod "600" "~/.ssh/id_rsa.pub"
-    trans_read: _decrypt
+    trans_r: _decrypt
     trans_write: _encrypt
+    chmod: 600
   f_ssh_config:
     dst: ~/.ssh/config
     src: ssh/config
@@ -59,20 +60,20 @@ dotfiles:
     dst: ~/.Xresources.d
     src: Xresources/.Xresources.d
     actions:
-      - Xresources-restart
-      - i3-restart
+    - Xresources-restart
+    - i3-restart
   f_Xresources:
     dst: ~/.Xresources
     src: Xresources/.Xresources
     actions:
-      - Xresources-restart
-      - i3-restart
+    - Xresources-restart
+    - i3-restart
   f_zshrc:
     dst: ~/.zshrc
     src: zsh/.zshrc
     actions:
-      - set-zsh-default-shell
-      - restart-zsh
+    - set-zsh-default-shell
+    - restart-zsh
   f_zsh-theme:
     dst: ~/.oh-my-zsh/themes/disconnect.zsh-theme
     src: zsh/disconnect.zsh-theme
@@ -80,7 +81,7 @@ dotfiles:
     dst: ~/.config/picom/picom.conf
     src: picom
     actions:
-      - restart-picom
+    - restart-picom
     trans_read: build-config
   f_rofi:
     dst: ~/.config/rofi/disconnect.rasi
@@ -91,12 +92,12 @@ dotfiles:
     actions:
     - i3-restart
     trans_read: build-config
-    trans_write: split-config
+    #trans_write: split-config
   d_polybar:
     dst: ~/.config/polybar
     src: polybar
     trans_read: build-polybar
-    trans_write: split-polybar
+    #trans_write: split-polybar
   f_dunst:
     dst: ~/.config/dunst/dunstrc
     src: dunst
@@ -105,28 +106,14 @@ dotfiles:
     dst: ~/.config/kitty/kitty.conf
     src: kitty
     trans_read: build-config
-#  d_vscode:
-#    dst: ~/.config/Code - OSS/User/settings.json
-#    src: vscode/settings.json
-#  d_vscode-extensions:
-#    dst: ~/.vscode/extensions
-#    src: vscode/extensions
+  d_vscode-user:
+    dst: ~/.config/Code - OSS/User
+    src: vscode/user
+  d_vscode-extensions:
+    dst: ~/.vscode-oss/extensions
+    src: vscode/extensions
 
 profiles:
   disconnect:
     dotfiles:
-    - f_ssh_key_private
-    - f_ssh_key_public
-    - f_ssh_config
-    - f_cronjobs
-    - d_Xresources
-    - f_Xresources
-    - d_scripts
-    - f_zshrc
-    - f_zsh-theme
-    - f_picom
-    - f_rofi
-    - f_i3
-    - d_polybar
-    - f_dunst
-    - f_kitty
+    - ALL

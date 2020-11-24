@@ -1,8 +1,9 @@
 [Unit]
 Description=Redshift
+After=graphical.target
 
 [Service]
-ExecStart=/usr/bin/redshift
+ExecStart=/usr/bin/redshift &
 
 [Install]
 WantedBy=multi-user.target

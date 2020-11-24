@@ -93,19 +93,23 @@ alias pac="sudo pacman --noconfirm"
 alias mci="sudo make clean install"
 
 # Git
-alias gcb='git branch | egrep -v "(master|\*)" | xargs git branch -D'
+alias gbr='git checkout master && git branch | grep -v "master" | xargs git branch -D'
+
+# Ansible
+alias apb='ansible-playbook --vault-password-file=../pass --inventory=hosts.ini'
+alias avv='ansible-vault view --vault-password-file=../pass vault.yml'
 
 # Dotfiles
-alias dotfiles="dotdrop --cfg=$DOTFILES/config.yaml.j2 -f --profile=disconnect"
-alias sudotfiles="sudo dotdrop --cfg=$DOTFILES/root-config.yaml.j2 -f --profile=disconnect"
-alias dot="dotfiles install"
-alias sudot="sudotfiles install"
+alias dotfiles='dotdrop --cfg=$DOTFILES/config.yaml.j2 -f --profile=disconnect'
+alias sudotfiles='sudo dotdrop --cfg=$DOTFILES/root-config.yaml.j2 -f --profile=disconnect'
+alias dot='dotfiles install'
+alias sudot='sudotfiles install'
 
 # Ambient
-alias wallpaper="$HOME/.scripts/wallpaper.sh"
-alias lockscreen="$HOME/.scripts/lockscreen.sh"
-alias resetwallpapers="rm $HOME/.cache/.used_wallpapers"
-alias resetlockscreens="rm $HOME/.cache/.used_lockscreens"
+alias wallpaper='$HOME/.scripts/wallpaper.sh'
+alias lockscreen='$HOME/.scripts/lockscreen.sh'
+alias resetwallpapers='rm $HOME/.cache/.used_wallpapers'
+alias resetlockscreens='rm $HOME/.cache/.used_lockscreens'
 
 # Django
 alias managepy='.venv/bin/python3 manage.py'
