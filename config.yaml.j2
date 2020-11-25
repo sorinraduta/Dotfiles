@@ -38,15 +38,15 @@ dotfiles:
   f_ssh_key_private:
     dst: ~/.ssh/id_rsa
     src: ssh/id_rsa
-    trans_r: _decrypt
+    trans_read: _decrypt
     trans_write: _encrypt
-    chmod: 600
+    chmod: '600'
   f_ssh_key_public:
     dst: ~/.ssh/id_rsa.pub
     src: ssh/id_rsa.pub
-    trans_r: _decrypt
+    trans_read: _decrypt
     trans_write: _encrypt
-    chmod: 600
+    chmod: '600'
   f_ssh_config:
     dst: ~/.ssh/config
     src: ssh/config
@@ -92,12 +92,10 @@ dotfiles:
     actions:
     - i3-restart
     trans_read: build-config
-    #trans_write: split-config
   d_polybar:
     dst: ~/.config/polybar
     src: polybar
     trans_read: build-polybar
-    #trans_write: split-polybar
   f_dunst:
     dst: ~/.config/dunst/dunstrc
     src: dunst
