@@ -19,6 +19,17 @@ do
     fi
 done
 
-echo $random_wallpaper >> $used_wallpapers_file
+for run in {1..100}
+do
+    i=$(($RANDOM%num_wallpapers))
+    random_wallpaper2=${wallpapers[$i]}
+    if [[ ! " ${used_wallpapers[@]} " =~ " ${random_wallpaper2} " ]];
+    then
+        break
+    fi
+done
 
-feh --bg-fill $random_wallpaper
+echo $random_wallpaper >> $used_wallpapers_file
+echo $random_wallpaper2 >> $used_wallpapers_file
+
+feh --bg-fill $random_wallpaper $random_wallpaper2
