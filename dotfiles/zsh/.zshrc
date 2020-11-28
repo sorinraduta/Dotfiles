@@ -92,6 +92,10 @@ alias dco="docker-compose"
 alias pac="sudo pacman --noconfirm"
 alias mci="sudo make clean install"
 
+# Navigation
+alias ..="cd .."
+alias ...="cd ../.."
+
 # Git
 alias gbr='git checkout master && git branch | grep -v "master" | xargs git branch -D'
 
@@ -106,10 +110,15 @@ alias dot='dotfiles install'
 alias sudot='sudotfiles install'
 
 # Ambient
-alias wallpaper='$HOME/.scripts/wallpaper.sh'
-alias lockscreen='$HOME/.scripts/lockscreen.sh'
+alias wallpaper='{{@@ user_bin @@}}/wallpaper.sh'
+alias lockscreen='{{@@ user_bin @@}}/lockscreen.sh'
 alias resetwallpapers='rm $HOME/.cache/.used_wallpapers'
 alias resetlockscreens='rm $HOME/.cache/.used_lockscreens'
+
+# Python
+alias py="python3"
+alias py2="python2"
+alias py3="python3"
 
 # Django
 alias managepy='.venv/bin/python3 manage.py'

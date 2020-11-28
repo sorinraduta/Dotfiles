@@ -1,0 +1,9 @@
+[Unit]
+Description=Polybar
+PartOf=graphical-session.target
+After=i3.service
+Requires=i3.service
+
+[Service]
+RemainAfterExit=yes
+ExecStart=/usr/bin/polybar %i --config=%h/.config/polybar/config

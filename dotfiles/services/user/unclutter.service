@@ -1,0 +1,10 @@
+[Unit]
+Description=Unclutter
+PartOf=graphical-session.target
+
+[Service]
+RemainAfterExit=yes
+ExecStart=/usr/bin/unclutter -b --ignore-scrolling --timeout 5 --jitter 10
+
+[Install]
+WantedBy=graphical-session.target

@@ -1,0 +1,10 @@
+[Unit]
+Description=Light Locker
+PartOf=graphical-session.target
+
+[Service]
+RemainAfterExit=yes
+ExecStart=/usr/bin/light-locker
+
+[Install]
+WantedBy=graphical-session.target

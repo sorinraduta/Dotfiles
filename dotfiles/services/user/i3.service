@@ -1,0 +1,12 @@
+[Unit]
+Description=i3 Window Manager
+PartOf=graphical-session.target
+
+[Service]
+ExecStart=/usr/bin/i3
+ExecStopPost=/bin/systemctl --user stop graphical-session.target
+Restart=on-failure
+
+#[Install]
+#RequiredBy=xsession.target
+#BindsTo=graphical-session.target

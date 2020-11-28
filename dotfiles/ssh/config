@@ -1,3 +1,6 @@
+Host *
+  ServerAliveInterval 60
+
 {%@@ set servers = [
     'stage.h4k.co',
     'jenkins.h4k.co',

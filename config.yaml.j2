@@ -37,46 +37,34 @@ trans_write:
 dotfiles:
   f_ssh_key_private:
     dst: ~/.ssh/id_rsa
-    src: ssh/id_rsa
+    src: ssh/keys/id_rsa
     trans_read: _decrypt
     trans_write: _encrypt
     chmod: '600'
   f_ssh_key_public:
     dst: ~/.ssh/id_rsa.pub
-    src: ssh/id_rsa.pub
+    src: ssh/keys/id_rsa.pub
     trans_read: _decrypt
     trans_write: _encrypt
     chmod: '600'
-  f_ssh_config:
+  d_ssh_config:
     dst: ~/.ssh/config
     src: ssh/config
-  d_scripts:
-    dst: ~/.scripts
-    src: scripts
-  f_cronjobs:
-    dst: ~/.cronjobs
-    src: cronjobs/.cronjobs
+  d_bin:
+    dst: "{{@@ user_bin @@}}"
+    src: bin/user
   d_Xresources:
-    dst: ~/.Xresources.d
-    src: Xresources/.Xresources.d
+    dst: ~
+    src: Xresources
     actions:
     - Xresources-restart
     - i3-restart
-  f_Xresources:
-    dst: ~/.Xresources
-    src: Xresources/.Xresources
-    actions:
-    - Xresources-restart
-    - i3-restart
-  f_zshrc:
-    dst: ~/.zshrc
-    src: zsh/.zshrc
+  d_zsh:
+    dst: ~
+    src: zsh
     actions:
     - set-zsh-default-shell
     - restart-zsh
-  f_zsh-theme:
-    dst: ~/.oh-my-zsh/themes/disconnect.zsh-theme
-    src: zsh/disconnect.zsh-theme
   f_picom:
     dst: ~/.config/picom/picom.conf
     src: picom
@@ -110,6 +98,12 @@ dotfiles:
   d_vscode-extensions:
     dst: ~/.vscode-oss/extensions
     src: vscode/extensions
+  d_services:
+    dst: ~/.config/systemd/user
+    src: services/user
+  f_gitconfig:
+    dst: ~/.gitconfig
+    src: git/.gitconfig
 
 profiles:
   disconnect:

@@ -1,9 +1,0 @@
-[Unit]
-Description=Volnoti
-After=graphical.target
-
-[Service]
-ExecStart=/usr/bin/volnoti &
-
-[Install]
-WantedBy=multi-user.target

@@ -1,0 +1,8 @@
+[Unit]
+Description=Timer for Polybar
+
+[Timer]
+OnStartupSec=1sec
+
+[Install]
+WantedBy=graphical-session.target

@@ -15,21 +15,26 @@ actions:
   post:
     mkinitcpio: mkinitcpio -p linux
     grub-mkconfig: grub-mkconfig -o /boot/grub/grub.cfg
-    start-services: systemctl enable light-locker picom redshift volnoti
+    ln: "ln -s {0} {1}"
 
 dotfiles:
+  d_xsessions:
+    dst: /usr/share/xsessions
+    src: xsessions
   f_lightdm:
     dst: /etc/lightdm/lightdm.conf
     src: lightdm/lightdm.conf
+    actions:
+      - ln /usr/local/bin/display-setup.sh /usr/share/lightdm/display-setup.sh
   f_lightdm-webkit2-greeter:
     dst: /etc/lightdm/lightdm-webkit2-greeter.conf
     src: lightdm/lightdm-webkit2-greeter.conf
-  f_display-setup:
-    dst: /usr/share/lightdm/display-setup.sh
-    src: scripts/display-setup.sh
-  f_plymounth:
-    dst: /etc/plymouth/plymouthd.conf
-    src: plymouth/plymouthd.conf
+  d_bin:
+    dst: /usr/local/bin
+    src: bin/global
+  #f_plymounth:
+  #  dst: /etc/plymouth/plymouthd.conf
+  #  src: plymouth/plymouthd.conf
   f_mkinitcpio:
     dst: /etc/mkinitcpio.conf
     src: mkinitcpio/mkinitcpio.conf
@@ -43,11 +48,6 @@ dotfiles:
   d_systemd_boot:
     dst: /boot/loader
     src: bootloaders/systemd-boot
-  d_services:
-    dst: /usr/lib/systemd/system
-    src: services
-    actions:
-      - start-services
   d_openvpn:
     dst: /etc/openvpn
     src: openvpn

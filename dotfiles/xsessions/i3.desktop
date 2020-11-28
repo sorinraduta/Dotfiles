@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=i3
+Comment=Improved dynamic tiling window manager
+Exec=systemctl --user start --wait i3wm.target
+Type=Application
+X-LightDM-DesktopName=i3
+DesktopNames=i3
+Keywords=tiling;wm;windowmanager;window;manager;
