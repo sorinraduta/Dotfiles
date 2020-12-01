@@ -25,6 +25,7 @@ actions:
     Xresources-restart: xrdb ~/.Xresources
     restart-zsh: source ~/.zshrc
     restart-picom: pkill picom;picom -b -c --config {{@@ _dotfile_abs_dst @@}}
+    install-backgrounds: test -d {{@@ backgrounds_dir @@}} || git clone {{@@ backgrounds_repo @@}} {{@@ backgrounds_dir @@}}
 
 trans_read:
   _decrypt: openssl enc -aes-256-cbc -d -pbkdf2 -in {0} -out {1} -pass pass:{{@@ secret_key @@}}
@@ -35,6 +36,11 @@ trans_write:
   _encrypt: openssl enc -aes-256-cbc -pbkdf2 -in {0} -out {1} -pass pass:{{@@ secret_key @@}}
 
 dotfiles:
+  backgrounds:
+    src:
+    dst:
+    actions:
+    - install-backgrounds
   f_ssh_key_private:
     dst: ~/.ssh/id_rsa
     src: ssh/keys/id_rsa
@@ -54,16 +60,15 @@ dotfiles:
     dst: "{{@@ user_bin @@}}"
     src: bin/user
   d_Xresources:
-    dst: ~
+    dst: "~"
     src: Xresources
     actions:
     - Xresources-restart
     - i3-restart
   d_zsh:
-    dst: ~
+    dst: "~"
     src: zsh
     actions:
-    - set-zsh-default-shell
     - restart-zsh
   f_picom:
     dst: ~/.config/picom/picom.conf

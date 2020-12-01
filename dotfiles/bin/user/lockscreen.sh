@@ -1,7 +1,7 @@
 #!/bin/bash
 
 lockscreens_dir=$HOME/.wallpapers
-used_lockscreens_file=$HOME/.cache/.used_lockscreens
+used_lockscreens_file=$HOME/.cache/lockscreens
 
 cd $lockscreens_dir
 

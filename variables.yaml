@@ -22,3 +22,5 @@ variables:
   #cryptdevice: "/dev/sda2"
   root_device: "/dev/Arch/root"
   boot_loader_entry: "Disconnect"
+  backgrounds_dir: ~/.local/share/backgrounds
+  backgrounds_repo: git@github.com:sorinraduta/backgrounds.git

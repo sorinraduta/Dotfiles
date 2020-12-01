@@ -2,12 +2,12 @@
 
 DIRS=(
     $HOME/.dotfiles
-    $HOME/.wallpapers
+    {{@@ backgrounds_dir @@}}
 )
 
 NAMES=(
     "dotfiles"
-    "wallpapers"
+    "backgrounds"
 )
 
 diff_actives=false

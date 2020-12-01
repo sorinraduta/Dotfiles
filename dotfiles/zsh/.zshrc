@@ -95,6 +95,8 @@ alias mci="sudo make clean install"
 # Navigation
 alias ..="cd .."
 alias ...="cd ../.."
+alias cdbg="cd ~/.local/share/backgrounds"
+alias cddot="cd ~/.dotfiles"
 
 # Git
 alias gbr='git checkout master && git branch | grep -v "master" | xargs git branch -D'
@@ -108,6 +110,7 @@ alias dotfiles='dotdrop --cfg=$DOTFILES/config.yaml.j2 -f --profile=disconnect'
 alias sudotfiles='sudo dotdrop --cfg=$DOTFILES/root-config.yaml.j2 -f --profile=disconnect'
 alias dot='dotfiles install'
 alias sudot='sudotfiles install'
+alias codedot='code ~/.dotfiles'
 
 # Ambient
 alias wallpaper='{{@@ user_bin @@}}/wallpaper.sh'

@@ -1,7 +1,7 @@
 #!/bin/bash
 
-wallpapers_dir=$HOME/.wallpapers
-used_wallpapers_file=$HOME/.cache/.used_wallpapers
+wallpapers_dir=$HOME/.local/share/backgrounds
+used_wallpapers_file=$HOME/.cache/wallpapers
 
 cd $wallpapers_dir
 
