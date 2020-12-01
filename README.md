@@ -14,5 +14,5 @@
 - Application launcher: [Rofi](https://github.com/davatorium/rofi)
 - Compositor: [Picom](https://github.com/yshui/picom)
 - Fonts: [Hack](https://github.com/source-foundry/Hack) | [Font Awesome](https://fontawesome.com/cheatsheet)
-- Colorscheme - [Dracula](https://draculatheme.com/)
-- Color temperature adjuster [Redshift](https://github.com/jonls/redshift)
+- Colorscheme: [Dracula](https://draculatheme.com/)
+- Color temperature adjuster: [Redshift](https://github.com/jonls/redshift)
