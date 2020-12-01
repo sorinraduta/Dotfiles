@@ -1,27 +1,27 @@
-#!/bin/sh
+#!/bin/bash
 
 DIRS=(
-    $HOME/.dotfiles
+    "$HOME"/.dotfiles
     {{@@ backgrounds_dir @@}}
 )
 
 NAMES=(
     "dotfiles"
-    "backgrounds"
+    "wallpapers"
 )
 
 diff_actives=false
 diff_message="Commit: "
 
-for i in ${!DIRS[@]}
+for i in "${!DIRS[@]}"
 do
-    dir=${DIRS[$i]}
-    name=${NAMES[$i]}
+    dir="${DIRS[$i]}"
+    name="${NAMES[$i]}"
 
-    cd $dir
+    cd "$dir" || exit
 
-    if [ "$(git status | grep "nothing to commit" | wc -l)" -eq 0 ]; then
-        if $diff_actives ;then
+    if [ "$(git status | grep -c "nothing to commit")" -eq 0 ]; then
+        if "$diff_actives" ;then
             diff_message="$diff_message, $name"
         else
             diff_message="$diff_message $name"
@@ -30,8 +30,8 @@ do
     fi
 done
 
-if $diff_actives ;then
-    echo $diff_message
+if "$diff_actives" ;then
+    echo "$diff_message"
 else
     echo ''
 fi
