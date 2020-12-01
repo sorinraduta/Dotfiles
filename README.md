@@ -3,6 +3,13 @@
   <h3 align="center">Dotfiles</h3>
 </p>
 
+## Installation
+- clone this repository
+- `cd` in this folder
+- update variables from `variables.yaml`
+- `$ dotdrop -f --profile=disconnect`
+- `$ sudo dotdrop --cfg=./root-config.yaml.j2 -f --profile=disconnect`
+
 ## Content
 - Boot manager: [Systemd-boot](https://www.freedesktop.org/software/systemd/man/systemd-boot.html)
 - Window manager: [i3](https://i3wm.org/docs/)
