@@ -1,4 +1,7 @@
-# Dotfiles
+<p align="center">
+  <img height="100" width="100" src="configuration.svg" />
+  <h3 align="center">Dotfiles</h3>
+</p>
 
 ## Content
 - Boot manager: [Systemd-boot](https://www.freedesktop.org/software/systemd/man/systemd-boot.html)

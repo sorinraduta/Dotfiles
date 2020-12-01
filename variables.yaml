@@ -23,4 +23,4 @@ variables:
   root_device: "/dev/Arch/root"
   boot_loader_entry: "Disconnect"
   backgrounds_dir: ~/.local/share/backgrounds
-  backgrounds_repo: git@github.com:sorinraduta/backgrounds.git
+  backgrounds_repo: git@github.com:sorinraduta/Backgrounds.git
