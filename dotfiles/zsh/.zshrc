@@ -91,10 +91,12 @@ alias reload="source $HOME/.zshrc"
 alias dco="docker-compose"
 alias pac="sudo pacman --noconfirm"
 alias mci="sudo make clean install"
+alias openmedia="chromium https://music.youtube.com/ https://web.whatsapp.com/ https:/goldwin.slack.com/ https://web.skype.com/ https://trello.com/ https://goldwin.atlassian.net/ &"
 
 # Navigation
 alias ..="cd .."
 alias ...="cd ../.."
+alias ....="cd ../../.."
 alias cdbg="cd ~/.local/share/backgrounds"
 alias cddot="cd ~/.dotfiles"
 

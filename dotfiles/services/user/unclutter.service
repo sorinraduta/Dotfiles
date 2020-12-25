@@ -4,7 +4,7 @@ PartOf=graphical-session.target
 
 [Service]
 RemainAfterExit=yes
-ExecStart=/usr/bin/unclutter -b --ignore-scrolling --timeout 15 --jitter 10
+ExecStart=/usr/bin/unclutter -b --ignore-scrolling --timeout 10 --jitter 10
 
 [Install]
 WantedBy=graphical-session.target
