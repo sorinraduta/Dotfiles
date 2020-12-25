@@ -21,9 +21,9 @@ rm -rf yay
 yay -S --noconfirm \
 
 # X Server
-xorg-server \
-xorg-apps \
-xorg-xinit \
+#xorg-server \
+#xorg-apps \
+#xorg-xinit \
 xorg-xsetroot \
 xorg-xinput \
 xorg-server-xephyr \
@@ -32,9 +32,9 @@ xorg-xlsfonts \
 xorg-xfontsel \
 
 # Display manager
-lightdm \
-lightdm-gtk-greeter \
-lightdm-webkit2-greeter \
+#lightdm \
+#lightdm-gtk-greeter \
+#lightdm-webkit2-greeter \
 lightdm-webkit-theme-sequoia-git \
 
 # Desktop enviroment
@@ -70,11 +70,11 @@ volnoti \
 deepin-screenshot \
 network-manager-applet \
 redshift \
-gnome-icon-theme \
+gnome-icon-theme \xs
 ttf-hack \
 ttf-font-awesome \
 
-# VPN
+# Network
 openvpn \
 xl2tpd \
 strongswan \
