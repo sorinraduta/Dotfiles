@@ -55,7 +55,7 @@ docker-compose \
 mycli \
 python \
 python2 \
-python-pip \
+python-pip
 
 # Rice
 zsh \
@@ -120,6 +120,7 @@ lastpass
 sh -c "$(wget -O- https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 chsh -s $(which zsh)
 
+
 # MariaDB
 mariadb-install-db --user=mysql --basedir=/usr --datadir=/var/lib/mysql
 
@@ -142,7 +143,6 @@ timedatectl set-timezone Europe/Bucharest
 timedatectl set-ntp true
 sudo systemctl restart systemd-timedated
 sudo systemctl restart systemd-timesyncd
-
 
 # Login on sites
 chromium \
