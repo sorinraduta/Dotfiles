@@ -48,9 +48,18 @@ dotfiles:
   d_systemd_boot:
     dst: /boot/loader
     src: bootloaders/systemd-boot
-  d_openvpn:
-    dst: /etc/openvpn
-    src: openvpn
+  #d_openvpn:
+  #  dst: /etc/openvpn
+  #  src: openvpn
+  d_ipsec:
+    dst: /etc
+    src: openswan/ipsec
+  d_ppp:
+    dst: /etc/ppp
+    src: openswan/ppp
+  d_xl2tpd:
+    dst: /etc/xl2tpd
+    src: openswan/xl2tpd
 
 profiles:
   disconnect:

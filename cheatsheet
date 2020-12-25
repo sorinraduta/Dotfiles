@@ -53,6 +53,9 @@ mariadb \
 docker \
 docker-compose \
 mycli \
+python \
+python2 \
+python-pip
 
 # Rice
 zsh \
@@ -71,12 +74,16 @@ gnome-icon-theme \
 ttf-hack \
 ttf-font-awesome \
 
+# VPN
+openvpn \
+xl2tpd \
+strongswan \
+
 # Utils
 dotdrop \
 playerctl \
 curl \
 wget \
-openvpn \
 man \
 jq \
 imagemagick \
@@ -113,10 +120,15 @@ lastpass
 sh -c "$(wget -O- https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 chsh -s $(which zsh)
 
+
+# MariaDB
+mariadb-install-db --user=mysql --basedir=/usr --datadir=/var/lib/mysql
+
 # Enable system services
 sudo systemctl enable lightdm
 sudo systemctl enable light-locker
 sudo systemctl enable mariadb
+sudo systemctl enable strongswan
 
 # Enable user services
 systemctl --user enable picom
