@@ -1,26 +1,30 @@
-# Update pacman packages
-pacman -Suy --noconfirm
+## Arch packages
+##### Update pacman packages
+`pacman -Suy --noconfirm`
 
-# Install make utils
+##### Install make utils
+```
 pacman -S --noconfirm \
 git \
 binutils \
 make \
 gcc \
 fakeroot
+```
 
-# Install yay
-cd /tmp
-git clone https://aur.archlinux.org/yay.git
-cd yay
-makepkg -si
-cd ..
-rm -rf yay
+##### Install yay
+`cd /tmp`
+`git clone https://aur.archlinux.org/yay.git`
+`cd yay`
+`makepkg -si`
+`cd ..`
+`rm -rf yay`
 
-# Install packages
-yay -S --noconfirm \
+#### Install packages
+`yay -S --noconfirm \`
 
-# X Server
+##### X Server
+```
 #xorg-server \
 #xorg-apps \
 #xorg-xinit \
@@ -30,19 +34,25 @@ xorg-server-xephyr \
 xorg-xev \
 xorg-xlsfonts \
 xorg-xfontsel \
+```
 
-# Display manager
+##### Display manager
+```
 #lightdm \
 #lightdm-gtk-greeter \
 #lightdm-webkit2-greeter \
 lightdm-webkit-theme-sequoia-git \
+```
 
-# Desktop enviroment
+##### Desktop enviroment
+```
 i3-gaps \
 gnome \
 gnome-extra \
+```
 
-# Development
+##### Development
+```
 code \
 nodejs \
 yarn \
@@ -56,8 +66,10 @@ mycli \
 python \
 python2 \
 python-pip
+```
 
-# Rice
+##### Rice
+```
 zsh \
 feh \
 dunst \
@@ -73,13 +85,17 @@ redshift \
 gnome-icon-theme \xs
 ttf-hack \
 ttf-font-awesome \
+```
 
-# Network
+##### Network
+```
 openvpn \
 xl2tpd \
 strongswan \
+```
 
-# Utils
+##### Utils
+```
 dotdrop \
 playerctl \
 curl \
@@ -102,49 +118,55 @@ tty-clock \
 pacman-contrib \
 projectlibre \
 unclutter \
+```
 
-# X Utils
+##### X Utils
+```
 xclip \
 xdotool \
 xautolock \
+```
 
-# Display applications
+##### Display applications
+```
 gimp \
 slack-desktop \
 postman-bin
 rambox \
 chromium \
 lastpass
+```
 
-# Install oh my zsh
-sh -c "$(wget -O- https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-chsh -s $(which zsh)
+##### Install oh my zsh
+`sh -c "$(wget -O- https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"`
+`chsh -s $(which zsh)`
 
 
-# MariaDB
-mariadb-install-db --user=mysql --basedir=/usr --datadir=/var/lib/mysql
+##### MariaDB
+`mariadb-install-db --user=mysql --basedir=/usr --datadir=/var/lib/mysql`
 
-# Enable system services
-sudo systemctl enable lightdm
-sudo systemctl enable light-locker
-sudo systemctl enable mariadb
-sudo systemctl enable strongswan
+##### Enable system services
+`sudo systemctl enable lightdm`
+`sudo systemctl enable light-locker`
+`sudo systemctl enable mariadb`
+`sudo systemctl enable strongswan`
 
-# Enable user services
-systemctl --user enable picom
-systemctl --user enable redshift
-systemctl --user enable unclutter
-systemctl --user enable volnoti
-systemctl --user enable polybar@bottom.timer
-systemctl --user enable polybar@top.timer
+##### Enable user services
+`systemctl --user enable picom`
+`systemctl --user enable redshift`
+`systemctl --user enable unclutter`
+`systemctl --user enable volnoti`
+`systemctl --user enable polybar@bottom.timer`
+`systemctl --user enable polybar@top.timer`
 
-# Sync date and time
-timedatectl set-timezone Europe/Bucharest
-timedatectl set-ntp true
-sudo systemctl restart systemd-timedated
-sudo systemctl restart systemd-timesyncd
+##### Sync date and time
+`timedatectl set-timezone Europe/Bucharest`
+`timedatectl set-ntp true`
+`sudo systemctl restart systemd-timedated`
+`sudo systemctl restart systemd-timesyncd`
 
-# Login on sites
+##### Login on websites
+```
 chromium \
 https://accounts.google.com \
 https://trello.com/login \
@@ -163,3 +185,4 @@ https://reddit.com/login \
 https://twitter.com/login \
 https://web.whatsapp.com \
 chrome://flags/#enable-native-notifications
+```
