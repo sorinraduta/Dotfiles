@@ -14,8 +14,7 @@ variables:
   user_bin: "~/.local/bin"
   module_divider: ""
   display_layout: "1"
-  cryptdevice: "UUID=bf36ecbc-0c22-43bd-8278-51b1f41b5a4d"
-  root_device: "/dev/Arch/root"
-  boot_loader_entry: "Disconnect"
+  cryptdevice: "/dev/sda2"
+  root_device: "/dev/Disconnect/root"
   backgrounds_dir: ~/.local/share/backgrounds
   backgrounds_repo: git@github.com:sorinraduta/Backgrounds.git

@@ -15,7 +15,8 @@ actions:
   post:
     mkinitcpio: mkinitcpio -p linux
     grub-mkconfig: grub-mkconfig -o /boot/grub/grub.cfg
-    ln: "ln -s {0} {1}"
+    ln: "mkdir -p {1};ln -s {0} {1}"
+
 
 dotfiles:
   d_xsessions:

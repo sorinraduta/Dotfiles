@@ -13,12 +13,14 @@ fakeroot
 ```
 
 ##### Install yay
-`cd /tmp`
-`git clone https://aur.archlinux.org/yay.git`
-`cd yay`
-`makepkg -si`
-`cd ..`
-`rm -rf yay`
+```
+cd /tmp
+git clone https://aur.archlinux.org/yay.git
+cd yay
+makepkg -si
+cd ..
+rm -rf yay
+```
 
 #### Install packages
 `yay -S --noconfirm \`
@@ -70,6 +72,7 @@ python-pip
 
 ##### Rice
 ```
+chromium \
 zsh \
 feh \
 dunst \
@@ -82,7 +85,7 @@ volnoti \
 deepin-screenshot \
 network-manager-applet \
 redshift \
-gnome-icon-theme \xs
+gnome-icon-theme \
 ttf-hack \
 ttf-font-awesome \
 ```
@@ -138,32 +141,40 @@ lastpass
 ```
 
 ##### Install oh my zsh
-`sh -c "$(wget -O- https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"`
-`chsh -s $(which zsh)`
-
+```
+sh -c "$(wget -O- https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+chsh -s $(which zsh)
+homectl update rappy --shell=/usr/bin/zsh
+```
 
 ##### MariaDB
 `mariadb-install-db --user=mysql --basedir=/usr --datadir=/var/lib/mysql`
 
 ##### Enable system services
-`sudo systemctl enable lightdm`
-`sudo systemctl enable light-locker`
-`sudo systemctl enable mariadb`
-`sudo systemctl enable strongswan`
+```
+sudo systemctl enable lightdm
+sudo systemctl enable light-locker
+sudo systemctl enable mariadb
+sudo systemctl enable strongswan
+```
 
 ##### Enable user services
-`systemctl --user enable picom`
-`systemctl --user enable redshift`
-`systemctl --user enable unclutter`
-`systemctl --user enable volnoti`
-`systemctl --user enable polybar@bottom.timer`
-`systemctl --user enable polybar@top.timer`
+```
+systemctl --user enable picom
+systemctl --user enable redshift
+systemctl --user enable unclutter
+systemctl --user enable volnoti
+systemctl --user enable polybar@bottom.timer
+systemctl --user enable polybar@top.timer
+```
 
 ##### Sync date and time
-`timedatectl set-timezone Europe/Bucharest`
-`timedatectl set-ntp true`
-`sudo systemctl restart systemd-timedated`
-`sudo systemctl restart systemd-timesyncd`
+```
+timedatectl set-timezone Europe/Bucharest
+timedatectl set-ntp true
+sudo systemctl restart systemd-timedated
+sudo systemctl restart systemd-timesyncd
+```
 
 ##### Login on websites
 ```
