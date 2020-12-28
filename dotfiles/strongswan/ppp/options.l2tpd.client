@@ -11,5 +11,5 @@ defaultroute
 usepeerdns
 debug
 connect-delay 5000
-name
-password
+name {{@@ env['VPN_GOLDWIN_OFFICE_USER'] @@}}
+password {{@@ env['VPN_GOLDWIN_OFFICE_PASSWORD'] @@}}

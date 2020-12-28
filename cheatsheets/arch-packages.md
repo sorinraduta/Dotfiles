@@ -121,6 +121,8 @@ tty-clock \
 pacman-contrib \
 projectlibre \
 unclutter \
+dialog \
+fping \
 ```
 
 ##### X Utils
@@ -156,6 +158,7 @@ sudo systemctl enable lightdm
 sudo systemctl enable light-locker
 sudo systemctl enable mariadb
 sudo systemctl enable strongswan
+sudo systemctl enable docker
 ```
 
 ##### Enable user services

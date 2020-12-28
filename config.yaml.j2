@@ -28,12 +28,12 @@ actions:
     install-backgrounds: test -d {{@@ backgrounds_dir @@}} || git clone {{@@ backgrounds_repo @@}} {{@@ backgrounds_dir @@}}
 
 trans_read:
-  _decrypt: openssl enc -aes-256-cbc -d -pbkdf2 -in {0} -out {1} -pass pass:{{@@ secret_key @@}}
+  _decrypt: openssl enc -aes-256-cbc -d -pbkdf2 -in {0} -out {1} -pass pass:{{@@ env['SECRET'] @@}}
   build-polybar: mkdir {1}; touch {1}/config; for i in {0}/configs/*.ini.j2; do cat $i;printf  "\n{{@@ module_divider @@}}\n"; done >> {1}/config; cp -rf {0}/scripts {1}/scripts
   build-config: for i in {0}/*.conf; do cat $i;printf  "\n{{@@ module_divider @@}}\n";done >> {1}
 
 trans_write:
-  _encrypt: openssl enc -aes-256-cbc -pbkdf2 -in {0} -out {1} -pass pass:{{@@ secret_key @@}}
+  _encrypt: openssl enc -aes-256-cbc -pbkdf2 -in {0} -out {1} -pass pass:{{@@ env['SECRET'] @@}}
 
 dotfiles:
   backgrounds:
@@ -59,6 +59,13 @@ dotfiles:
   d_bin:
     dst: "{{@@ user_bin @@}}"
     src: bin/user
+  f_hma_script:
+    dst: "{{@@ user_bin @@}}/hma-vpn.sh"
+    src: hma/hma-vpn.sh
+    chmod: '700'
+  f_hma_credentials:
+    dst: ~/.local/hma/credentials
+    src: hma/credentials
   d_Xresources:
     dst: "~"
     src: Xresources

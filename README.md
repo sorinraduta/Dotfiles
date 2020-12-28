@@ -8,9 +8,10 @@
 - `cd` in this folder
 - update [variables](#Variables) from `variables.yaml`, don't modify dynvariables
   - for `main_monitor` and `secondary_monitor` you can use `arandr`
-- on root level, create a `secret` file with a password to be used for encryption
+- copy `.env.example` in a new `.env` file and complete the values
 - `$ dotdrop -f --profile=disconnect`
 - `$ sudo dotdrop --cfg=./root-config.yaml.j2 -f --profile=disconnect`
+- open a new terminal and run again `dot` and `sudot` (these will inject the `.env` in the templates as well)
 
 ## Variables
 |Name|Description|Used by|Example|Comments|
@@ -32,6 +33,7 @@
 ### Features
 - System bootstrap cheatsheet
 - Encrypted SSH key
+- HMA VPN Setup (put your credentials in `.env`, install the dotfiles and use `hma` command)
 ### Packages
 - Boot manager: [Systemd-boot](https://www.freedesktop.org/software/systemd/man/systemd-boot.html)
 - Window manager: [i3](https://i3wm.org/docs/)

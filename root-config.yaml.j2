@@ -43,24 +43,27 @@ dotfiles:
       - mkinitcpio
   #f_grub:
   #  dst: /etc/default/grub
-  #  src: bootloaders/grub/grub.cfg
+  #  src: grub/grub.cfg
   #  actions:
   #    - grub-mkconfig
   d_systemd_boot:
     dst: /boot/loader
-    src: bootloaders/systemd-boot
+    src: systemd-boot
   #d_openvpn:
   #  dst: /etc/openvpn
   #  src: openvpn
   d_ipsec:
     dst: /etc
-    src: openswan/ipsec
+    src: strongswan/ipsec
   d_ppp:
     dst: /etc/ppp
-    src: openswan/ppp
+    src: strongswan/ppp
   d_xl2tpd:
     dst: /etc/xl2tpd
-    src: openswan/xl2tpd
+    src: strongswan/xl2tpd
+  f_sysctl:
+    dst: /etc/sysctl.conf
+    src: sysctl/sysctl.conf
 
 profiles:
   disconnect:

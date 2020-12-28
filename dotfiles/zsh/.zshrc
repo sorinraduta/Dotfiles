@@ -103,16 +103,19 @@ alias cddot="cd ~/.dotfiles"
 # Git
 alias gbr='git checkout master && git branch | grep -v "master" | xargs git branch -D'
 
+# VPN
+alias hma='{{@@ user_bin @@}}/hma-vpn.sh -c ~/.local/hma/credentials'
+
 # Ansible
 alias apb='ansible-playbook --vault-password-file=../pass --inventory=hosts.ini'
 alias avv='ansible-vault view --vault-password-file=../pass vault.yml'
 
 # Dotfiles
-alias dotfiles='dotdrop --cfg=$DOTFILES/config.yaml.j2 -f --profile=disconnect'
-alias sudotfiles='sudo dotdrop --cfg=$DOTFILES/root-config.yaml.j2 -f --profile=disconnect'
+alias dotfiles='eval $(grep -v "^#" $DOTFILES/.env) dotdrop --cfg=$DOTFILES/config.yaml.j2 -f --profile=disconnect'
+alias sudotfiles='sudo -s eval $(grep -v "^#" $DOTFILES/.env) dotdrop --cfg=$DOTFILES/root-config.yaml.j2 -f --profile=disconnect'
 alias dot='dotfiles install'
 alias sudot='sudotfiles install'
-alias codedot='code ~/.dotfiles'
+alias codedot='code $DOTFILES'
 
 # Ambient
 alias wallpaper='{{@@ user_bin @@}}/wallpaper.sh'
