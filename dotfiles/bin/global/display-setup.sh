@@ -6,8 +6,13 @@ xrandr --addmode {{@@ main_monitor @@}} 1920x1200_60.00
 xrandr --output {{@@ main_monitor @@}} --primary --mode 1920x1200_60.00 --pos 1080x635 --rotate normal \
   --output {{@@ secondary_monitor @@}} --mode 1920x1080 --pos 0x0 --rotate left
 {%@@ elif display_layout == "2" @@%}
-xrandr --output {{@@ main_monitor @@}} --primary --mode 1920x1080 --pos 1080x462 --rotate normal \
-  --output {{@@ secondary_monitor @@}} --mode 1920x1080 --pos 0x0 --rotate left
+xrandr \
+  --output {{@@ main_monitor @@}} --primary --mode 1920x1080 --pos 1080x420 --rotate normal \
+  --output {{@@ secondary_monitor @@}} --mode 1920x1080 --pos 0x0 --rotate left \
+  --output DVI-0 --off \
+  --output DVI-1 --off
 {%@@ else @@%}
-  # Default display layout
+xrandr \
+  --output {{@@ main_monitor @@}} --primary --mode 1920x1080 --pos 1080x420 --rotate normal \
+  --output {{@@ secondary_monitor @@}} --mode 1920x1080 --pos 0x0 --rotate left
 {%@@ endif @@%}

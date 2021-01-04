@@ -1,11 +1,11 @@
 variables:
-  main_monitor: DVI-0
-  secondary_monitor: HDMI-0
+  main_monitor: HDMI-0
+  secondary_monitor: DisplayPort-0
   name: "Sorin Raduta"
   email: "raduta.sorin@yahoo.com"
   user_bin: "~/.local/bin"
   module_divider: ""
-  display_layout: "1"
+  display_layout: "2"
   cryptdevice: "/dev/sda2"
   root_device: "/dev/Disconnect/root"
   boot_loader_entry: "Disconnect"

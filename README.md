@@ -22,7 +22,7 @@
 |email|Your email|git|`contact@sorinraduta.ro`||
 |user_bin|The path where custom scripts are installed|i3, polybar, zsh|`~/.local/bin`||
 |module_divider|Some text to be placed between config modules|polybar, picom,i3, dunst, kitty|`## ---------- ##`|This is injected in configs so it must start with a `#`|
-|display_layout|Used to place the monitors in a specific layout|ligthdm in the future|~~`0` - Laptop~~<br />`1` - PC (2 monitors)||
+|display_layout|Used to place the monitors in a specific layout|ligthdm in the future|~~`0` - Laptop~~<br />`1` - Home PC (2 monitors)<br />`2` - Work PC (2 monitors)||
 |cryptdevice|The device that needs to be decrypted at boot|bootloader (systemd-boot/grub)|`/dev/sda2`<br />`UUID=bf36ecbc-0c22-43bd-8278-51b1f41b5a4d`||
 |root_device|The device that contains the root of the operating system|bootloader (systemd-boot/grub)|`/dev/Arch/root`||
 |boot_loader_entry|This name will appear in the boot loader menu|systemd|`Disconnect`||
