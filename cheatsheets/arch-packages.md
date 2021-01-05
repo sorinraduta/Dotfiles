@@ -67,7 +67,8 @@ docker-compose \
 mycli \
 python \
 python2 \
-python-pip
+python-pip \
+dbeaver \
 ```
 
 ##### Rice
