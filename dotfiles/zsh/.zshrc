@@ -104,7 +104,7 @@ alias cddot="cd ~/.dotfiles"
 alias gbr='git checkout master && git branch | grep -v "master" | xargs git branch -D'
 
 # VPN
-alias hma='{{@@ user_bin @@}}/hma-vpn.sh -c ~/.local/hma/credentials'
+alias hma='sudo {{@@ user_bin @@}}/hma-vpn.sh -c ~/.local/hma/credentials'
 
 # Ansible
 alias apb='ansible-playbook --vault-password-file=../pass --inventory=hosts.ini'

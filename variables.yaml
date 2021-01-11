@@ -2,7 +2,7 @@ variables:
   main_monitor: HDMI-0
   secondary_monitor: DisplayPort-0
   name: "Sorin Raduta"
-  email: "raduta.sorin@yahoo.com"
+  email: "sorinradutaa@gmail.com"
   user_bin: "~/.local/bin"
   module_divider: ""
   display_layout: "2"
