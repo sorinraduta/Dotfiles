@@ -1,7 +1,7 @@
 Host *
   ServerAliveInterval 60
 
-{%@@ set servers = [
+{%@@ set root_servers = [
     'stage.h4k.co',
     'jenkins.h4k.co',
     'web.gplat.h4k.co',
@@ -22,10 +22,25 @@ Host *
     'r6y.h4k.co',
 ] @@%}
 
-{%@@ for server in servers @@%}
+
+{%@@ for server in root_servers @@%}
 Host {{@@ server @@}}
     AddKeysToAgent yes
     HostName {{@@ server @@}}
     Port 55555
     User root
+{%@@ endfor @@%}
+
+{%@@ set goldwin_servers = [
+    'node1.stage.h4k.co',
+    'node2.stage.h4k.co',
+    'master.stage.h4k.co',
+] @@%}
+
+{%@@ for server in goldwin_servers @@%}
+Host {{@@ server @@}}
+    AddKeysToAgent yes
+    HostName {{@@ server @@}}
+    Port 55555
+    User goldwin
 {%@@ endfor @@%}

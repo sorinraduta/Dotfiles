@@ -1,6 +1,6 @@
 [Unit]
 Description=Redshift
-PartOf=graphical-session.target
+PartOf=default.target
 
 [Service]
 Type=oneshot
@@ -8,4 +8,4 @@ RemainAfterExit=yes
 ExecStart=/usr/bin/redshift
 
 [Install]
-WantedBy=graphical-session.target
+WantedBy=default.target

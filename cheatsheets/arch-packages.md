@@ -69,6 +69,7 @@ python \
 python2 \
 python-pip \
 dbeaver \
+ansible \
 ```
 
 ##### Rice

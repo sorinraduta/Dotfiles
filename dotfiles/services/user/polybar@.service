@@ -1,6 +1,6 @@
 [Unit]
 Description=Polybar
-PartOf=graphical-session.target
+PartOf=default.target
 After=i3.service
 Requires=i3.service
 

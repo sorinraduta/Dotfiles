@@ -1,10 +1,10 @@
 [Unit]
 Description=Volnoti
-PartOf=graphical-session.target
+PartOf=default.target
 
 [Service]
 RemainAfterExit=yes
 ExecStart=/usr/bin/volnoti
 
 [Install]
-WantedBy=graphical-session.target
+WantedBy=default.target

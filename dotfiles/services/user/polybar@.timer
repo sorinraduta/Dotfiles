@@ -5,4 +5,4 @@ Description=Timer for Polybar
 OnStartupSec=1sec
 
 [Install]
-WantedBy=graphical-session.target
+WantedBy=default.target

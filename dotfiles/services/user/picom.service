@@ -1,10 +1,10 @@
 [Unit]
 Description=Picom
-PartOf=graphical-session.target
+PartOf=default.target
 
 [Service]
 RemainAfterExit=yes
 ExecStart=/usr/bin/picom -b -c --config %h/.config/picom/picom.conf
 
 [Install]
-WantedBy=graphical-session.target
+WantedBy=default.target
