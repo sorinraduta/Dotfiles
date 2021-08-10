@@ -104,7 +104,7 @@ alias cddot="cd ~/.dotfiles"
 # Work related
 alias gw="cd ~/Projects/Goldwin/frontend"
 alias wc="cd ~/Projects/Westcasino/frontend"
-alias sc="cd ~/Projects/frontend-artifact-special-campaign"
+alias sc="cd ~/Projects/frontend-artifact-special-campaigns"
 
 # Git
 alias gbr='git checkout master && git branch | grep -v "master" | xargs git branch -D'
