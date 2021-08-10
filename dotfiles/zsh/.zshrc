@@ -74,6 +74,7 @@ fi
 export ZSH="$HOME/.oh-my-zsh"
 export DOTFILES={{@@ _dotdrop_workdir @@}}
 export GOPATH="$HOME/go"
+export TERM=xterm-256color
 
 # Which plugins would you like to load?
 # Standard plugins can be found in ~/.oh-my-zsh/plugins/*
@@ -99,6 +100,11 @@ alias ...="cd ../.."
 alias ....="cd ../../.."
 alias cdbg="cd ~/.local/share/backgrounds"
 alias cddot="cd ~/.dotfiles"
+
+# Work related
+alias gw="cd ~/Projects/Goldwin/frontend"
+alias wc="cd ~/Projects/Westcasino/frontend"
+alias sc="cd ~/Projects/frontend-artifact-special-campaign"
 
 # Git
 alias gbr='git checkout master && git branch | grep -v "master" | xargs git branch -D'
