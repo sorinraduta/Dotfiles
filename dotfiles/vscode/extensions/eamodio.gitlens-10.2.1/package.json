@@ -5920,7 +5920,7 @@
 	"dependencies": {
 		"dayjs": "1.8.17",
 		"iconv-lite": "0.5.0",
-		"lodash-es": "4.17.15",
+		"lodash-es": "4.17.21",
 		"vsls": "0.3.1291"
 	},
 	"devDependencies": {
